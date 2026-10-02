@@ -1,0 +1,1597 @@
+{
+ "funnel": [
+  {
+   "label": "TRELLIS curated subset",
+   "count": 168315,
+   "note": "Sketchfab assets in TRELLIS's Objaverse-XL training list"
+  },
+  {
+   "label": "TexVerse subset",
+   "count": 858669,
+   "note": "Sketchfab assets in the TexVerse ID list"
+  },
+  {
+   "label": "Step1X-3D subset",
+   "count": 322883,
+   "note": "Sketchfab assets in Step1X-3D's Objaverse list"
+  },
+  {
+   "label": "In all 3 subsets",
+   "count": 51552,
+   "note": "Intersection of the three lists"
+  }
+ ],
+ "losses": {
+  "min_height": 1.0,
+  "max_height": 3.14,
+  "height_rejected": 19546,
+  "load_failed": 2271,
+  "not_processed": 0,
+  "converted": 29735,
+  "first_run": {
+   "attempted": 46537,
+   "min_height": 1.0,
+   "max_height": 3.14,
+   "height_rejected": 17577,
+   "too_flat": 9383,
+   "too_tall": 8181,
+   "load_failed": 2255,
+   "not_processed": 5015,
+   "converted": 26705
+  },
+  "recovery": {
+   "attempted": 7078,
+   "min_height": 1.0,
+   "max_height": 3.14,
+   "height_rejected": 1969,
+   "too_flat": 1037,
+   "too_tall": 931,
+   "load_failed": 2079,
+   "not_processed": 0,
+   "converted": 3030,
+   "retried": 7078,
+   "not_retried": 192
+  }
+ },
+ "n_scored": 29735,
+ "n_kept": 26782,
+ "n_rejected": 2953,
+ "n_heldout": 500,
+ "n_train": 26282,
+ "keep_fraction": 0.9006894232386077,
+ "threshold": 0.2182,
+ "median": 0.0746,
+ "mean": 0.0999,
+ "tau": 0.12,
+ "blur_sigma": 1.0,
+ "fg_thresh": 0.02,
+ "good_max_score": 0.02,
+ "n_good_pool": 3847,
+ "hist": [
+  {
+   "lo": 0.0,
+   "hi": 0.01,
+   "count": 2361
+  },
+  {
+   "lo": 0.01,
+   "hi": 0.02,
+   "count": 1953
+  },
+  {
+   "lo": 0.02,
+   "hi": 0.03,
+   "count": 1991
+  },
+  {
+   "lo": 0.03,
+   "hi": 0.04,
+   "count": 2048
+  },
+  {
+   "lo": 0.04,
+   "hi": 0.05,
+   "count": 1960
+  },
+  {
+   "lo": 0.05,
+   "hi": 0.06,
+   "count": 1881
+  },
+  {
+   "lo": 0.06,
+   "hi": 0.07,
+   "count": 1866
+  },
+  {
+   "lo": 0.07,
+   "hi": 0.08,
+   "count": 1656
+  },
+  {
+   "lo": 0.08,
+   "hi": 0.09,
+   "count": 1548
+  },
+  {
+   "lo": 0.09,
+   "hi": 0.1,
+   "count": 1410
+  },
+  {
+   "lo": 0.1,
+   "hi": 0.11,
+   "count": 1214
+  },
+  {
+   "lo": 0.11,
+   "hi": 0.12,
+   "count": 1052
+  },
+  {
+   "lo": 0.12,
+   "hi": 0.13,
+   "count": 947
+  },
+  {
+   "lo": 0.13,
+   "hi": 0.14,
+   "count": 875
+  },
+  {
+   "lo": 0.14,
+   "hi": 0.15,
+   "count": 762
+  },
+  {
+   "lo": 0.15,
+   "hi": 0.16,
+   "count": 651
+  },
+  {
+   "lo": 0.16,
+   "hi": 0.17,
+   "count": 574
+  },
+  {
+   "lo": 0.17,
+   "hi": 0.18,
+   "count": 482
+  },
+  {
+   "lo": 0.18,
+   "hi": 0.19,
+   "count": 497
+  },
+  {
+   "lo": 0.19,
+   "hi": 0.2,
+   "count": 389
+  },
+  {
+   "lo": 0.2,
+   "hi": 0.21,
+   "count": 411
+  },
+  {
+   "lo": 0.21,
+   "hi": 0.22,
+   "count": 304
+  },
+  {
+   "lo": 0.22,
+   "hi": 0.23,
+   "count": 316
+  },
+  {
+   "lo": 0.23,
+   "hi": 0.24,
+   "count": 250
+  },
+  {
+   "lo": 0.24,
+   "hi": 0.25,
+   "count": 233
+  },
+  {
+   "lo": 0.25,
+   "hi": 0.26,
+   "count": 189
+  },
+  {
+   "lo": 0.26,
+   "hi": 0.27,
+   "count": 167
+  },
+  {
+   "lo": 0.27,
+   "hi": 0.28,
+   "count": 167
+  },
+  {
+   "lo": 0.28,
+   "hi": 0.29,
+   "count": 167
+  },
+  {
+   "lo": 0.29,
+   "hi": 0.3,
+   "count": 128
+  },
+  {
+   "lo": 0.3,
+   "hi": 0.31,
+   "count": 117
+  },
+  {
+   "lo": 0.31,
+   "hi": 0.32,
+   "count": 99
+  },
+  {
+   "lo": 0.32,
+   "hi": 0.33,
+   "count": 115
+  },
+  {
+   "lo": 0.33,
+   "hi": 0.34,
+   "count": 94
+  },
+  {
+   "lo": 0.34,
+   "hi": 0.35,
+   "count": 83
+  },
+  {
+   "lo": 0.35,
+   "hi": 0.36,
+   "count": 88
+  },
+  {
+   "lo": 0.36,
+   "hi": 0.37,
+   "count": 77
+  },
+  {
+   "lo": 0.37,
+   "hi": 0.38,
+   "count": 78
+  },
+  {
+   "lo": 0.38,
+   "hi": 0.39,
+   "count": 52
+  },
+  {
+   "lo": 0.39,
+   "hi": 0.4,
+   "count": 49
+  },
+  {
+   "lo": 0.4,
+   "hi": 0.41,
+   "count": 55
+  },
+  {
+   "lo": 0.41,
+   "hi": 0.42,
+   "count": 33
+  },
+  {
+   "lo": 0.42,
+   "hi": 0.43,
+   "count": 44
+  },
+  {
+   "lo": 0.43,
+   "hi": 0.44,
+   "count": 34
+  },
+  {
+   "lo": 0.44,
+   "hi": 0.45,
+   "count": 23
+  },
+  {
+   "lo": 0.45,
+   "hi": 0.46,
+   "count": 20
+  },
+  {
+   "lo": 0.46,
+   "hi": 0.47,
+   "count": 25
+  },
+  {
+   "lo": 0.47,
+   "hi": 0.48,
+   "count": 21
+  },
+  {
+   "lo": 0.48,
+   "hi": 0.49,
+   "count": 17
+  },
+  {
+   "lo": 0.49,
+   "hi": 0.5,
+   "count": 15
+  },
+  {
+   "lo": 0.5,
+   "hi": 0.51,
+   "count": 19
+  },
+  {
+   "lo": 0.51,
+   "hi": 0.52,
+   "count": 20
+  },
+  {
+   "lo": 0.52,
+   "hi": 0.53,
+   "count": 12
+  },
+  {
+   "lo": 0.53,
+   "hi": 0.54,
+   "count": 9
+  },
+  {
+   "lo": 0.54,
+   "hi": 0.55,
+   "count": 11
+  },
+  {
+   "lo": 0.55,
+   "hi": 0.56,
+   "count": 7
+  },
+  {
+   "lo": 0.56,
+   "hi": 0.57,
+   "count": 8
+  },
+  {
+   "lo": 0.57,
+   "hi": 0.58,
+   "count": 5
+  },
+  {
+   "lo": 0.58,
+   "hi": 0.59,
+   "count": 7
+  },
+  {
+   "lo": 0.59,
+   "hi": 0.6,
+   "count": 49,
+   "open_ended": true
+  }
+ ],
+ "good": [
+  {
+   "score": 3e-06,
+   "worst_view": 0,
+   "per_view": [
+    2.7e-05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "caption": "A single egg with an oval shape, smooth and slightly mottled surface, olive green color with lighter patches, and a matte finish.",
+   "source": "https://sketchfab.com/3d-models/61cc07edd271423a876375c3d8f8ebe4",
+   "orig": "examples/good_00_orig.jpg",
+   "recon": "examples/good_00_recon.jpg",
+   "diff": "examples/good_00_diff.jpg"
+  },
+  {
+   "score": 3.7e-05,
+   "worst_view": 3,
+   "per_view": [
+    0.0,
+    0.0,
+    0.0,
+    0.000298,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "caption": "A mango with a smooth, elongated shape, rough surface, and a small stem. It is colored reddish-pink at the top, blending into green and yellow towards the bottom, with lighter green and white near the stem.",
+   "source": "https://sketchfab.com/3d-models/6017630990da4e57a7e4d016cdfb0427",
+   "orig": "examples/good_01_orig.jpg",
+   "recon": "examples/good_01_recon.jpg",
+   "diff": "examples/good_01_diff.jpg"
+  },
+  {
+   "score": 4.4e-05,
+   "worst_view": 1,
+   "per_view": [
+    0.0,
+    0.000353,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "caption": "A muscular, humanoid monster with an elongated head, pointed ears, and four glowing orange attachments on its back. The body has a rough, stone-like texture and is primarily greyish. It looks strong and threatening.",
+   "source": "https://sketchfab.com/3d-models/4224a40021d44323b0789da82efa194f",
+   "orig": "examples/good_02_orig.jpg",
+   "recon": "examples/good_02_recon.jpg",
+   "diff": "examples/good_02_diff.jpg"
+  },
+  {
+   "score": 0.000179,
+   "worst_view": 2,
+   "per_view": [
+    0.0,
+    0.000196,
+    0.000972,
+    6.3e-05,
+    0.0,
+    0.0,
+    0.0,
+    0.000197
+   ],
+   "caption": "Darth Maul is a tall, slender figure with a red face, black markings, and horns. He wears a black robe, gloves, and dark boots. The model is perfect for sci-fi settings.",
+   "source": "https://sketchfab.com/3d-models/f918a2dbf34b4c48984eb29afa8769f7",
+   "orig": "examples/good_03_orig.jpg",
+   "recon": "examples/good_03_recon.jpg",
+   "diff": "examples/good_03_diff.jpg"
+  },
+  {
+   "score": 0.000194,
+   "worst_view": 5,
+   "per_view": [
+    0.0,
+    0.0,
+    0.000122,
+    0.0,
+    0.000378,
+    0.001051,
+    0.0,
+    0.0
+   ],
+   "caption": "A small, elongated mango with a smooth surface and a prominent stem. It has a color gradient from green to yellow to orange, with some darker spots.",
+   "source": "https://sketchfab.com/3d-models/74a47f3f0dda4a32a529934b20a02554",
+   "orig": "examples/good_04_orig.jpg",
+   "recon": "examples/good_04_recon.jpg",
+   "diff": "examples/good_04_diff.jpg"
+  },
+  {
+   "score": 0.00072,
+   "worst_view": 5,
+   "per_view": [
+    0.0,
+    4.3e-05,
+    0.0,
+    0.0,
+    0.0,
+    0.005719,
+    0.0,
+    0.0
+   ],
+   "caption": "A simple, low poly barrel with a cylindrical shape, flat top, and vertical ribbing. It has a dark gray, rusty surface with two red bolts on the top and one black bolt near the top edge. The red bolts are glossy, and the black bolt is slightly shiny.",
+   "source": "https://sketchfab.com/3d-models/bb7998ad7ffb4a88aa7bf1072a750247",
+   "orig": "examples/good_05_orig.jpg",
+   "recon": "examples/good_05_recon.jpg",
+   "diff": "examples/good_05_diff.jpg"
+  },
+  {
+   "score": 0.000917,
+   "worst_view": 4,
+   "per_view": [
+    0.000629,
+    0.00041,
+    0.000135,
+    0.000355,
+    0.003339,
+    0.001709,
+    0.000436,
+    0.000328
+   ],
+   "caption": "An elongated oval egg with a smooth, glossy surface. It features a vibrant, abstract pattern of swirling lines and circular motifs in various colors.",
+   "source": "https://sketchfab.com/3d-models/e2f51dc2cde24baba825abaf46e714e8",
+   "orig": "examples/good_06_orig.jpg",
+   "recon": "examples/good_06_recon.jpg",
+   "diff": "examples/good_06_diff.jpg"
+  },
+  {
+   "score": 0.001379,
+   "worst_view": 6,
+   "per_view": [
+    0.000884,
+    0.000108,
+    0.00136,
+    0.002863,
+    0.000335,
+    0.000107,
+    0.00486,
+    0.000511
+   ],
+   "caption": "A rounded pottery jar with a broad base, two handles, and a long neck. It has smooth vertical grooves and star patterns, colored in muted pink and light blue. Used in ancient Peruvian culture.",
+   "source": "https://sketchfab.com/3d-models/1dd4519567a04d40981047d147755367",
+   "orig": "examples/good_07_orig.jpg",
+   "recon": "examples/good_07_recon.jpg",
+   "diff": "examples/good_07_diff.jpg"
+  },
+  {
+   "score": 0.001665,
+   "worst_view": 5,
+   "per_view": [
+    0.000222,
+    0.000647,
+    0.003132,
+    0.00034,
+    0.001135,
+    0.005295,
+    0.000571,
+    0.00198
+   ],
+   "caption": "A human head in profile with a cylindrical neck, featuring exaggerated facial features and about twenty small holes on the top of the head. Made of rough, aged clay with a dark grey color.",
+   "source": "https://sketchfab.com/3d-models/44f690fa39de4a339a8e2c9a18059dd6",
+   "orig": "examples/good_08_orig.jpg",
+   "recon": "examples/good_08_recon.jpg",
+   "diff": "examples/good_08_diff.jpg"
+  },
+  {
+   "score": 0.002267,
+   "worst_view": 1,
+   "per_view": [
+    0.000207,
+    0.006961,
+    0.000255,
+    0.00069,
+    0.001538,
+    0.006436,
+    0.00094,
+    0.001106
+   ],
+   "caption": "The avocado is an elongated oval shape with a rough, bumpy skin, smooth green pulp, and a brownish-red seed at one end. It is primarily green with some brown spots.",
+   "source": "https://sketchfab.com/3d-models/3f8d24373dff4dc59377f10113c367b4",
+   "orig": "examples/good_09_orig.jpg",
+   "recon": "examples/good_09_recon.jpg",
+   "diff": "examples/good_09_diff.jpg"
+  },
+  {
+   "score": 0.0023,
+   "worst_view": 5,
+   "per_view": [
+    0.000962,
+    0.003852,
+    0.000805,
+    0.0,
+    0.001196,
+    0.010573,
+    0.000831,
+    0.000183
+   ],
+   "caption": "A bird, similar to an owl, with a rounded body, small head, and compact wings. The texture resembles realistic bird skin with earthy tones.",
+   "source": "https://sketchfab.com/3d-models/5046d1844380496c906eaf1ee3b97ef6",
+   "orig": "examples/good_10_orig.jpg",
+   "recon": "examples/good_10_recon.jpg",
+   "diff": "examples/good_10_diff.jpg"
+  },
+  {
+   "score": 0.005367,
+   "worst_view": 5,
+   "per_view": [
+    9.1e-05,
+    0.013104,
+    9.2e-05,
+    0.001412,
+    0.001416,
+    0.026225,
+    0.000137,
+    0.000456
+   ],
+   "caption": "The Hacky Sack is a slightly flattened spherical toy for juggling. It has a crocheted surface and vibrant colors: purple top, gradient midsection, and flame-like patterns on the bottom.",
+   "source": "https://sketchfab.com/3d-models/5b6a33958ffa492a8dd96c12322156f9",
+   "orig": "examples/good_11_orig.jpg",
+   "recon": "examples/good_11_recon.jpg",
+   "diff": "examples/good_11_diff.jpg"
+  },
+  {
+   "score": 0.006169,
+   "worst_view": 5,
+   "per_view": [
+    0.005893,
+    0.003648,
+    0.007227,
+    0.006974,
+    0.003564,
+    0.014723,
+    0.004675,
+    0.00265
+   ],
+   "caption": "A bust with an oval face, smooth forehead, straight nose, full red lips, and a chignon hairstyle. The earring is white and glossy. The skin is light tan, and the hair is dark brown with highlights.",
+   "source": "https://sketchfab.com/3d-models/a7a0f333e7a3429e82ef8f94f392b7ad",
+   "orig": "examples/good_12_orig.jpg",
+   "recon": "examples/good_12_recon.jpg",
+   "diff": "examples/good_12_diff.jpg"
+  },
+  {
+   "score": 0.007933,
+   "worst_view": 0,
+   "per_view": [
+    0.015657,
+    0.004746,
+    0.002172,
+    0.004861,
+    0.012876,
+    0.006733,
+    0.010682,
+    0.005737
+   ],
+   "caption": "A test tube with a hexagonal cap and a flat base. The body is clear and green, with a smooth finish. The cap is black and soft. The test tube stands upright and is used for holding liquids in labs.",
+   "source": "https://sketchfab.com/3d-models/476ce13f96994e47b306fe39d6edbaac",
+   "orig": "examples/good_13_orig.jpg",
+   "recon": "examples/good_13_recon.jpg",
+   "diff": "examples/good_13_diff.jpg"
+  },
+  {
+   "score": 0.008102,
+   "worst_view": 5,
+   "per_view": [
+    0.0,
+    0.01714,
+    0.0,
+    0.0,
+    0.0,
+    0.047675,
+    0.0,
+    0.0
+   ],
+   "caption": "The oil barrel is a cylindrical object with a slightly tapered shape, supported by three horizontal bands. It has a worn red finish with rust marks and a robust base. The top has a flat flange with a raised edge for the lid.",
+   "source": "https://sketchfab.com/3d-models/671b264034d448958be5d30d6de6e2e0",
+   "orig": "examples/good_14_orig.jpg",
+   "recon": "examples/good_14_recon.jpg",
+   "diff": "examples/good_14_diff.jpg"
+  },
+  {
+   "score": 0.008644,
+   "worst_view": 6,
+   "per_view": [
+    0.005967,
+    0.003415,
+    0.002975,
+    0.004028,
+    0.009728,
+    0.010661,
+    0.017524,
+    0.014855
+   ],
+   "caption": "A red cylindrical UK Post Office Pillar Box with a convex lid, decorative flanges, and two collection slots labeled \"POST CARDS\" and \"LETTERS.\" It features a weathered look and a broad base for stability.",
+   "source": "https://sketchfab.com/3d-models/2ee23bbe8de44874afefc35d376c6bbd",
+   "orig": "examples/good_15_orig.jpg",
+   "recon": "examples/good_15_recon.jpg",
+   "diff": "examples/good_15_diff.jpg"
+  },
+  {
+   "score": 0.008809,
+   "worst_view": 5,
+   "per_view": [
+    0.003024,
+    0.021863,
+    0.000892,
+    0.002853,
+    0.006078,
+    0.029599,
+    0.002019,
+    0.004146
+   ],
+   "caption": "A futuristic grenade with a spherical top and cylindrical base. It has a green line, warning labels, and a rugged, metallic texture. Mostly grey with green, black, white, and blue accents.",
+   "source": "https://sketchfab.com/3d-models/39f193d97e154b1a9a0a55ab94575a62",
+   "orig": "examples/good_16_orig.jpg",
+   "recon": "examples/good_16_recon.jpg",
+   "diff": "examples/good_16_diff.jpg"
+  },
+  {
+   "score": 0.010092,
+   "worst_view": 5,
+   "per_view": [
+    0.000844,
+    0.035021,
+    0.000355,
+    0.00102,
+    7.7e-05,
+    0.042898,
+    0.0,
+    0.000523
+   ],
+   "caption": "A traditional pottery jar with a rounded top, a narrower base, and horizontal ridges. It has a dark brown or black, rough, matte finish. The jar includes a lid and a flat base for stability.",
+   "source": "https://sketchfab.com/3d-models/096a3b87d6f042fca7fabe19a30a0ec4",
+   "orig": "examples/good_17_orig.jpg",
+   "recon": "examples/good_17_recon.jpg",
+   "diff": "examples/good_17_diff.jpg"
+  },
+  {
+   "score": 0.010462,
+   "worst_view": 1,
+   "per_view": [
+    0.023964,
+    0.027566,
+    0.004873,
+    0.006355,
+    0.001061,
+    0.009574,
+    0.005065,
+    0.005239
+   ],
+   "caption": "A sitting teddy bear with a round head, small black eyes, and a tiny nose. It has a plump body with a white chest patch and shorter arms and legs. The bear is light brown with white patches and a soft, velvety texture.",
+   "source": "https://sketchfab.com/3d-models/2ea82367c9ee4256b45e78bdfd83f199",
+   "orig": "examples/good_18_orig.jpg",
+   "recon": "examples/good_18_recon.jpg",
+   "diff": "examples/good_18_diff.jpg"
+  },
+  {
+   "score": 0.010901,
+   "worst_view": 3,
+   "per_view": [
+    0.014961,
+    0.01738,
+    0.001687,
+    0.039982,
+    0.001804,
+    0.004091,
+    0.000728,
+    0.006574
+   ],
+   "caption": "The Gungnir helmet is a rounded, gray helmet with a red stripe and white UNSC logos on the sides. It has a smooth front, vents at the back, and a beige chin guard.",
+   "source": "https://sketchfab.com/3d-models/d529aa542b134b0589fee1f67e2bcc62",
+   "orig": "examples/good_19_orig.jpg",
+   "recon": "examples/good_19_recon.jpg",
+   "diff": "examples/good_19_diff.jpg"
+  },
+  {
+   "score": 0.011598,
+   "worst_view": 4,
+   "per_view": [
+    0.007391,
+    0.010196,
+    0.006835,
+    0.010203,
+    0.022149,
+    0.014094,
+    0.008393,
+    0.013521
+   ],
+   "caption": "The \"Space Head\" is a symmetrical humanoid head with a hexagonal pattern on top and intricate eyes. It has a smooth, reflective surface and is primarily blue and purple with bright accents.",
+   "source": "https://sketchfab.com/3d-models/715d6c617fba45009b00e525356d2637",
+   "orig": "examples/good_20_orig.jpg",
+   "recon": "examples/good_20_recon.jpg",
+   "diff": "examples/good_20_diff.jpg"
+  },
+  {
+   "score": 0.012967,
+   "worst_view": 1,
+   "per_view": [
+    0.00204,
+    0.041078,
+    0.032276,
+    0.010042,
+    0.007901,
+    0.000245,
+    5.9e-05,
+    0.010093
+   ],
+   "caption": "A human skull, with a smooth top, detailed jaw and teeth, and defined eye sockets. The texture is white with subtle shading.",
+   "source": "https://sketchfab.com/3d-models/cdae640bd95f4371ba57004a6b04ee10",
+   "orig": "examples/good_21_orig.jpg",
+   "recon": "examples/good_21_recon.jpg",
+   "diff": "examples/good_21_diff.jpg"
+  },
+  {
+   "score": 0.013535,
+   "worst_view": 5,
+   "per_view": [
+    7e-05,
+    0.038943,
+    0.00019,
+    4.7e-05,
+    0.000372,
+    0.068657,
+    0.0,
+    0.0
+   ],
+   "caption": "A wooden barrel with a slight taper, made of planks with visible wood grain. Three metal hoops secure the planks, and flat plates cover the top and bottom. The wood is dark brown, and the hoops are silver or grey.",
+   "source": "https://sketchfab.com/3d-models/49d7344589014f0c9417d79f1d7359ef",
+   "orig": "examples/good_22_orig.jpg",
+   "recon": "examples/good_22_recon.jpg",
+   "diff": "examples/good_22_diff.jpg"
+  },
+  {
+   "score": 0.01406,
+   "worst_view": 0,
+   "per_view": [
+    0.037969,
+    0.013923,
+    0.009788,
+    0.023526,
+    0.000257,
+    0.008674,
+    0.006414,
+    0.011932
+   ],
+   "caption": "The model represents the Temporomandibular Joint (TMJ), featuring a smooth, bony cranial base and a soft, layered articular disc. The model is symmetrical and accurately reflects the joint's anatomy.",
+   "source": "https://sketchfab.com/3d-models/a2c3d9bd82274fa187ee482bbe750d78",
+   "orig": "examples/good_23_orig.jpg",
+   "recon": "examples/good_23_recon.jpg",
+   "diff": "examples/good_23_diff.jpg"
+  },
+  {
+   "score": 0.014222,
+   "worst_view": 4,
+   "per_view": [
+    0.013046,
+    0.007584,
+    0.001949,
+    0.019893,
+    0.031598,
+    0.025035,
+    0.002916,
+    0.011755
+   ],
+   "caption": "A stylized octopus with a big, round head and eight tentacles, each with detailed suction cups. The model has a greenish, matte finish and subtle color variations, making it look realistic and organic.",
+   "source": "https://sketchfab.com/3d-models/f3e0d9e7785840f9b49a389d91d8655e",
+   "orig": "examples/good_24_orig.jpg",
+   "recon": "examples/good_24_recon.jpg",
+   "diff": "examples/good_24_diff.jpg"
+  },
+  {
+   "score": 0.014913,
+   "worst_view": 1,
+   "per_view": [
+    0.000429,
+    0.058612,
+    0.003365,
+    0.000896,
+    0.019704,
+    0.036112,
+    0.000111,
+    7.3e-05
+   ],
+   "caption": "A simple, spherical apple with a stem at the top. It has a red color that fades to yellow at the bottom. The surface is slightly textured, making it look realistic and suitable for various scenes.",
+   "source": "https://sketchfab.com/3d-models/0176be079c2449e7aaebfb652910a854",
+   "orig": "examples/good_25_orig.jpg",
+   "recon": "examples/good_25_recon.jpg",
+   "diff": "examples/good_25_diff.jpg"
+  },
+  {
+   "score": 0.016814,
+   "worst_view": 5,
+   "per_view": [
+    8.9e-05,
+    0.042241,
+    0.0,
+    0.000429,
+    0.005815,
+    0.084395,
+    0.001168,
+    0.000375
+   ],
+   "caption": "A biconical vase with a central ridge and a wide, flared rim. Smooth and polished surface, dark grey or black color, with some worn areas. Found in burial sites, used in ceremonies.",
+   "source": "https://sketchfab.com/3d-models/d2793add586a4f4b819f793c2f4a2ba1",
+   "orig": "examples/good_26_orig.jpg",
+   "recon": "examples/good_26_recon.jpg",
+   "diff": "examples/good_26_diff.jpg"
+  },
+  {
+   "score": 0.016817,
+   "worst_view": 5,
+   "per_view": [
+    0.000631,
+    0.049235,
+    5.5e-05,
+    0.000169,
+    0.001096,
+    0.082956,
+    0.000393,
+    0.0
+   ],
+   "caption": "A wooden barrel with a hexagonal base, smooth wooden planks, and thick metal bands. It has a circular top opening for a lid. The barrel is brown with dark gray or black bands and can be used indoors or outdoors.",
+   "source": "https://sketchfab.com/3d-models/12abfebe42664f19b69a84b5f0a83448",
+   "orig": "examples/good_27_orig.jpg",
+   "recon": "examples/good_27_recon.jpg",
+   "diff": "examples/good_27_diff.jpg"
+  },
+  {
+   "score": 0.017838,
+   "worst_view": 1,
+   "per_view": [
+    0.025096,
+    0.02918,
+    0.002921,
+    0.02274,
+    0.027103,
+    0.020922,
+    0.003495,
+    0.011251
+   ],
+   "caption": "A character with a white rabbit mask, gray wig, white shirt, and dark blue overalls. The figure has a slender build and large rabbit ears.",
+   "source": "https://sketchfab.com/3d-models/910dfb7e471a46eab8769ac534dfb4b2",
+   "orig": "examples/good_28_orig.jpg",
+   "recon": "examples/good_28_recon.jpg",
+   "diff": "examples/good_28_diff.jpg"
+  },
+  {
+   "score": 0.019118,
+   "worst_view": 3,
+   "per_view": [
+    0.026816,
+    0.02102,
+    0.00222,
+    0.037091,
+    0.024798,
+    0.012936,
+    0.001661,
+    0.026406
+   ],
+   "caption": "The model shows the internal organs of the human torso, including the heart, lungs, kidneys, and blood vessels. The heart is red, the lungs are light pink, and the kidneys are dark brown/red. Blood vessels are smooth and colored pink and blue. The ribcage outlines the chest, and the abdomen houses the digestive organs.",
+   "source": "https://sketchfab.com/3d-models/234f4171c5d64816a9159635e557eec9",
+   "orig": "examples/good_29_orig.jpg",
+   "recon": "examples/good_29_recon.jpg",
+   "diff": "examples/good_29_diff.jpg"
+  }
+ ],
+ "bad": [
+  {
+   "score": 0.22008,
+   "worst_view": 1,
+   "per_view": [
+    0.300148,
+    0.377658,
+    0.147033,
+    0.143849,
+    0.147449,
+    0.331599,
+    0.228929,
+    0.083977
+   ],
+   "caption": "A tranquil garden scene with a red and white lighthouse, a small pond with lilies, and a green frog on a lily pad. Dark gray rocks and colorful vegetation complete the peaceful environment.",
+   "source": "https://sketchfab.com/3d-models/706da4fbc0fe4d40a90021739421ba01",
+   "orig": "examples/bad_00_orig.jpg",
+   "recon": "examples/bad_00_recon.jpg",
+   "diff": "examples/bad_00_diff.jpg"
+  },
+  {
+   "score": 0.221841,
+   "worst_view": 5,
+   "per_view": [
+    0.150587,
+    0.619559,
+    0.000213,
+    0.0,
+    0.284858,
+    0.709309,
+    0.010205,
+    0.0
+   ],
+   "caption": "A circular kiwi slice with a rough brown skin, bright green flesh, black seeds in circles, and a white core. Flat and ideal for food displays.",
+   "source": "https://sketchfab.com/3d-models/cee81182d4fc452485531346d2887cac",
+   "orig": "examples/bad_01_orig.jpg",
+   "recon": "examples/bad_01_recon.jpg",
+   "diff": "examples/bad_01_diff.jpg"
+  },
+  {
+   "score": 0.223829,
+   "worst_view": 5,
+   "per_view": [
+    0.1668,
+    0.425728,
+    0.064114,
+    0.194423,
+    0.195991,
+    0.435229,
+    0.191568,
+    0.11678
+   ],
+   "caption": "A wooden rectangle with five jars of different heights and colors, a glass pipe/funnel, a hanging eyeball, and a large screw. The jars are dark brown with colorful corks and caps, and one jar has a green glow.",
+   "source": "https://sketchfab.com/3d-models/63a7993f0cb945c991a8a569955dfc1e",
+   "orig": "examples/bad_02_orig.jpg",
+   "recon": "examples/bad_02_recon.jpg",
+   "diff": "examples/bad_02_diff.jpg"
+  },
+  {
+   "score": 0.223978,
+   "worst_view": 1,
+   "per_view": [
+    0.201144,
+    0.359899,
+    0.322551,
+    0.265973,
+    0.110657,
+    0.137204,
+    0.209843,
+    0.184553
+   ],
+   "caption": "A rustic wooden cottage with a snow-covered gabled roof and a central brick chimney. It has two small square windows, a wooden balcony, and external stairs. The foundation is raised on stone blocks. The cottage is symmetrical and primarily cubic.",
+   "source": "https://sketchfab.com/3d-models/8cc0016e0ab24c5cb9b13ad48fb202ff",
+   "orig": "examples/bad_03_orig.jpg",
+   "recon": "examples/bad_03_recon.jpg",
+   "diff": "examples/bad_03_diff.jpg"
+  },
+  {
+   "score": 0.225352,
+   "worst_view": 1,
+   "per_view": [
+    0.192161,
+    0.373727,
+    0.15534,
+    0.176612,
+    0.214026,
+    0.356321,
+    0.16911,
+    0.165517
+   ],
+   "caption": "An open pinecone with a conical shape and overlapping scales. The scales are curved and glossy, with a rich brown color.",
+   "source": "https://sketchfab.com/3d-models/c6ea23d3e053419cbf7addee94f2ff7c",
+   "orig": "examples/bad_04_orig.jpg",
+   "recon": "examples/bad_04_recon.jpg",
+   "diff": "examples/bad_04_diff.jpg"
+  },
+  {
+   "score": 0.232451,
+   "worst_view": 5,
+   "per_view": [
+    0.233288,
+    0.327544,
+    0.203554,
+    0.098128,
+    0.304864,
+    0.356514,
+    0.269821,
+    0.065895
+   ],
+   "caption": "A galloping horse with a strong, smooth body, detailed face, flowing mane, and tail. It stands on a rectangular base and is colored light cream.",
+   "source": "https://sketchfab.com/3d-models/6e1ea7412cc9426cbac033a839936435",
+   "orig": "examples/bad_05_orig.jpg",
+   "recon": "examples/bad_05_recon.jpg",
+   "diff": "examples/bad_05_diff.jpg"
+  },
+  {
+   "score": 0.233869,
+   "worst_view": 5,
+   "per_view": [
+    0.06401,
+    0.246189,
+    0.249288,
+    0.293991,
+    0.146236,
+    0.336263,
+    0.292459,
+    0.242515
+   ],
+   "caption": "This model is a compact, modern submachine gun with a blue camouflage pattern. It has a cylindrical barrel, a comfortable grip, an adjustable stock, and a foregrip. The design is streamlined and ergonomic, suitable for tactical use.",
+   "source": "https://sketchfab.com/3d-models/e536c8cd91e346c5bd116f78537e41ca",
+   "orig": "examples/bad_06_orig.jpg",
+   "recon": "examples/bad_06_recon.jpg",
+   "diff": "examples/bad_06_diff.jpg"
+  },
+  {
+   "score": 0.23474,
+   "worst_view": 1,
+   "per_view": [
+    0.259956,
+    0.429391,
+    0.283,
+    0.167455,
+    0.264351,
+    0.15614,
+    0.190159,
+    0.127467
+   ],
+   "caption": "A circular diorama of a lakeside scene with a house, an orange shed, two evergreen trees, wooden docks with rowboats, rocks, and benches.",
+   "source": "https://sketchfab.com/3d-models/715b0f5102fc4c5ca2ec71f05aa59afc",
+   "orig": "examples/bad_07_orig.jpg",
+   "recon": "examples/bad_07_recon.jpg",
+   "diff": "examples/bad_07_diff.jpg"
+  },
+  {
+   "score": 0.237516,
+   "worst_view": 1,
+   "per_view": [
+    0.308051,
+    0.442323,
+    0.233521,
+    0.17222,
+    0.149774,
+    0.212905,
+    0.179241,
+    0.202095
+   ],
+   "caption": "A cartoonish Corgi sits on a light wooden bench, holding a glossy white bottle with pink labels and a small white mouse toy.",
+   "source": "https://sketchfab.com/3d-models/1ad76bd8293c4edd8d710213decf43d8",
+   "orig": "examples/bad_08_orig.jpg",
+   "recon": "examples/bad_08_recon.jpg",
+   "diff": "examples/bad_08_diff.jpg"
+  },
+  {
+   "score": 0.239797,
+   "worst_view": 5,
+   "per_view": [
+    0.166667,
+    0.197338,
+    0.164105,
+    0.161877,
+    0.392838,
+    0.438508,
+    0.342017,
+    0.055025
+   ],
+   "caption": "The Viking House is a large wooden building with a thatched roof and gabled sides. It has a raised entrance with a wooden door and is surrounded by grass, bushes, rocks, and a small body of water. Practical elements like benches and tools are also present.",
+   "source": "https://sketchfab.com/3d-models/c288372c57d4429396c92930cd815f95",
+   "orig": "examples/bad_09_orig.jpg",
+   "recon": "examples/bad_09_recon.jpg",
+   "diff": "examples/bad_09_diff.jpg"
+  },
+  {
+   "score": 0.244426,
+   "worst_view": 5,
+   "per_view": [
+    0.261625,
+    0.280028,
+    0.159294,
+    0.198367,
+    0.261946,
+    0.298251,
+    0.225187,
+    0.270708
+   ],
+   "caption": "A friendly stuffed dragon toy with a green body, yellow highlights, and a long tail with red spines. It has large eyes, a pointed snout, and vibrant blue, yellow, and red wings. The texture is soft and plushy, with bright yellow horns and claws.",
+   "source": "https://sketchfab.com/3d-models/8c0ec07322914726ad86cc4885052e08",
+   "orig": "examples/bad_10_orig.jpg",
+   "recon": "examples/bad_10_recon.jpg",
+   "diff": "examples/bad_10_diff.jpg"
+  },
+  {
+   "score": 0.247746,
+   "worst_view": 4,
+   "per_view": [
+    0.403405,
+    0.276031,
+    0.017002,
+    0.257705,
+    0.421824,
+    0.272171,
+    0.08136,
+    0.252468
+   ],
+   "caption": "A pair of earmuffs with a smooth, arched headband that changes from light blue to dark navy. The ear cups have a woven spiral pattern in various colors on the outside and are smooth and black on the inside.",
+   "source": "https://sketchfab.com/3d-models/629c2b7ef5d44aceaf50fadca448eae4",
+   "orig": "examples/bad_11_orig.jpg",
+   "recon": "examples/bad_11_recon.jpg",
+   "diff": "examples/bad_11_diff.jpg"
+  },
+  {
+   "score": 0.248731,
+   "worst_view": 0,
+   "per_view": [
+    0.442136,
+    0.365904,
+    0.095333,
+    0.184135,
+    0.298548,
+    0.277364,
+    0.09657,
+    0.22986
+   ],
+   "caption": "The SCV is a robust, red robot with a head, large eyes, and a central antenna. It has a bulky torso, two armored arms with claws, and two sets of legs forming a stable tripod base. It also has cables and small tools, designed for construction and repair tasks.",
+   "source": "https://sketchfab.com/3d-models/a310221f274b4189901f165731939ec1",
+   "orig": "examples/bad_12_orig.jpg",
+   "recon": "examples/bad_12_recon.jpg",
+   "diff": "examples/bad_12_diff.jpg"
+  },
+  {
+   "score": 0.255482,
+   "worst_view": 5,
+   "per_view": [
+    0.310152,
+    0.266898,
+    0.085332,
+    0.103119,
+    0.201551,
+    0.402004,
+    0.385142,
+    0.289657
+   ],
+   "caption": "A lion with blue eyes, standing on a rectangular base with marble patterns. The lion has a robust, muscular body, detailed fur, and a prominent mane. The base is smooth and polished.",
+   "source": "https://sketchfab.com/3d-models/04b554c761b649fbb8d4702a751bbf6c",
+   "orig": "examples/bad_13_orig.jpg",
+   "recon": "examples/bad_13_recon.jpg",
+   "diff": "examples/bad_13_diff.jpg"
+  },
+  {
+   "score": 0.257702,
+   "worst_view": 4,
+   "per_view": [
+    0.352004,
+    0.327811,
+    0.066663,
+    0.255759,
+    0.364482,
+    0.344611,
+    0.1113,
+    0.238984
+   ],
+   "caption": "A ship's wheel with a wooden central hub, eight spokes, and a segmented wooden rim.",
+   "source": "https://sketchfab.com/3d-models/2f1e5edfdd354df7aa2579443d7cd088",
+   "orig": "examples/bad_14_orig.jpg",
+   "recon": "examples/bad_14_recon.jpg",
+   "diff": "examples/bad_14_diff.jpg"
+  },
+  {
+   "score": 0.267166,
+   "worst_view": 5,
+   "per_view": [
+    0.326303,
+    0.442388,
+    0.189634,
+    0.006612,
+    0.376703,
+    0.477132,
+    0.295737,
+    0.022814
+   ],
+   "caption": "A wooden barrel with metal bands, a golden lamp, and three gold coins on a stone base. The barrel is weathered, and the stone base is natural-looking. Set on a round stone platform.",
+   "source": "https://sketchfab.com/3d-models/ec3523ef962e4ef0be3f600b54f52feb",
+   "orig": "examples/bad_15_orig.jpg",
+   "recon": "examples/bad_15_recon.jpg",
+   "diff": "examples/bad_15_diff.jpg"
+  },
+  {
+   "score": 0.279027,
+   "worst_view": 7,
+   "per_view": [
+    0.370326,
+    0.34313,
+    0.150149,
+    0.283802,
+    0.284368,
+    0.272215,
+    0.155301,
+    0.372921
+   ],
+   "caption": "A round wooden shield with a central iron boss, a leather hand grip, and a metallic rim. It features a wooden arrowhead emblem and shows signs of wear, including scratches and red smears.",
+   "source": "https://sketchfab.com/3d-models/4daf9a6d948a4d1bae4097e170b1219d",
+   "orig": "examples/bad_16_orig.jpg",
+   "recon": "examples/bad_16_recon.jpg",
+   "diff": "examples/bad_16_diff.jpg"
+  },
+  {
+   "score": 0.285811,
+   "worst_view": 5,
+   "per_view": [
+    0.379284,
+    0.428252,
+    0.022194,
+    0.289413,
+    0.369826,
+    0.483447,
+    0.035178,
+    0.278894
+   ],
+   "caption": "A traditional Japanese torii gate. It has two tall, tapered pillars, two horizontal crossbars, and a curved lintel at the top. The pillars are red with a green base, and the crossbars and lintel are bright yellow. The gate is symmetrical and balanced.",
+   "source": "https://sketchfab.com/3d-models/a167f431ac6140e794daf792f5bebc5a",
+   "orig": "examples/bad_17_orig.jpg",
+   "recon": "examples/bad_17_recon.jpg",
+   "diff": "examples/bad_17_diff.jpg"
+  },
+  {
+   "score": 0.288992,
+   "worst_view": 1,
+   "per_view": [
+    0.270851,
+    0.41288,
+    0.249051,
+    0.166853,
+    0.307751,
+    0.387247,
+    0.340113,
+    0.17719
+   ],
+   "caption": "A whimsical tower with a broad base, red and wooden design, pointed roofs, and multiple windows and balconies. A prominent balcony wraps around the middle. Green support beams, a circular pathway, and a small bridge over blue water.",
+   "source": "https://sketchfab.com/3d-models/e7284849a5c243f28e51a9803c944be8",
+   "orig": "examples/bad_18_orig.jpg",
+   "recon": "examples/bad_18_recon.jpg",
+   "diff": "examples/bad_18_diff.jpg"
+  },
+  {
+   "score": 0.290747,
+   "worst_view": 1,
+   "per_view": [
+    0.354517,
+    0.588195,
+    0.062489,
+    0.031433,
+    0.397547,
+    0.564647,
+    0.26843,
+    0.058718
+   ],
+   "caption": "A tree house on a small island with water around it. The tree house is on a large tree with a red roof. Smaller trees, rocks, and grass are nearby. A wooden bridge connects to the island, and a dock extends into the water.",
+   "source": "https://sketchfab.com/3d-models/749b90a690944fa6bb792ca35d076e40",
+   "orig": "examples/bad_19_orig.jpg",
+   "recon": "examples/bad_19_recon.jpg",
+   "diff": "examples/bad_19_diff.jpg"
+  },
+  {
+   "score": 0.308924,
+   "worst_view": 1,
+   "per_view": [
+    0.307651,
+    0.454193,
+    0.31262,
+    0.104751,
+    0.381304,
+    0.449015,
+    0.392741,
+    0.069114
+   ],
+   "caption": "A wooden mechanical device with a rectangular base, vertical frame, and central shaft. It includes a crank handle, gears, a connecting rod, and a pulley mechanism.",
+   "source": "https://sketchfab.com/3d-models/1af2c56b9a394de8997da79599584c59",
+   "orig": "examples/bad_20_orig.jpg",
+   "recon": "examples/bad_20_recon.jpg",
+   "diff": "examples/bad_20_diff.jpg"
+  },
+  {
+   "score": 0.333455,
+   "worst_view": 1,
+   "per_view": [
+    0.45788,
+    0.561669,
+    0.306664,
+    0.071695,
+    0.439718,
+    0.434732,
+    0.34248,
+    0.052806
+   ],
+   "caption": "The \"Music Turtle\" is a cute, green turtle with a hexagonal-patterned shell, pink headphones, and a bright blue speaker on top. It stands on a circular base and has a dark green tail. The design is playful and friendly.",
+   "source": "https://sketchfab.com/3d-models/e337263e2d9d4979a34f4cf2aa66ff5c",
+   "orig": "examples/bad_21_orig.jpg",
+   "recon": "examples/bad_21_recon.jpg",
+   "diff": "examples/bad_21_diff.jpg"
+  },
+  {
+   "score": 0.363677,
+   "worst_view": 1,
+   "per_view": [
+    0.472216,
+    0.637283,
+    0.441978,
+    0.222255,
+    0.11581,
+    0.361001,
+    0.401049,
+    0.257823
+   ],
+   "caption": "A traditional Japanese room with a wooden floor, blue mat, red pillows, dark brown table with a radio, green lantern, small wooden table with bowls, large brown cabinet, and a wall-mounted shelf with decorations. Cozy and functional.",
+   "source": "https://sketchfab.com/3d-models/1bb2b51f442f49c891601fb687d1c874",
+   "orig": "examples/bad_22_orig.jpg",
+   "recon": "examples/bad_22_recon.jpg",
+   "diff": "examples/bad_22_diff.jpg"
+  },
+  {
+   "score": 0.395456,
+   "worst_view": 5,
+   "per_view": [
+    0.356418,
+    0.740616,
+    0.126671,
+    0.402053,
+    0.521533,
+    0.777565,
+    0.045115,
+    0.193677
+   ],
+   "caption": "A cylindrical 3 oz ice cream cup made of biodegradable paper. It is visually appealing and functional.",
+   "source": "https://sketchfab.com/3d-models/e162231a2e994dc3bf30122252802227",
+   "orig": "examples/bad_23_orig.jpg",
+   "recon": "examples/bad_23_recon.jpg",
+   "diff": "examples/bad_23_diff.jpg"
+  },
+  {
+   "score": 0.398569,
+   "worst_view": 0,
+   "per_view": [
+    0.602198,
+    0.546002,
+    0.036916,
+    0.522358,
+    0.526687,
+    0.408316,
+    0.016132,
+    0.529945
+   ],
+   "caption": "A rectangular, metallic frame with a blue holographic display. It has a top antenna and circular elements on the sides. The bottom has a small box for power, and red wires connect everything. It looks aged and techy.",
+   "source": "https://sketchfab.com/3d-models/dca8428e617f466b9486fa79389ab25e",
+   "orig": "examples/bad_24_orig.jpg",
+   "recon": "examples/bad_24_recon.jpg",
+   "diff": "examples/bad_24_diff.jpg"
+  },
+  {
+   "score": 0.40204,
+   "worst_view": 5,
+   "per_view": [
+    0.138446,
+    0.614956,
+    0.315656,
+    0.585274,
+    0.324491,
+    0.67807,
+    0.046925,
+    0.512506
+   ],
+   "caption": "A circular wooden coffee table with floral inlay and three curved legs. It is smooth and polished, suitable for living rooms and lounges.",
+   "source": "https://sketchfab.com/3d-models/af5fea20188e4c4798553719d7a7fe41",
+   "orig": "examples/bad_25_orig.jpg",
+   "recon": "examples/bad_25_recon.jpg",
+   "diff": "examples/bad_25_diff.jpg"
+  },
+  {
+   "score": 0.423707,
+   "worst_view": 5,
+   "per_view": [
+    0.54734,
+    0.724855,
+    0.256325,
+    0.020569,
+    0.61672,
+    0.759623,
+    0.447233,
+    0.016992
+   ],
+   "caption": "A human figure in a balanced pose, standing on a circular platform with different colored segments. The figure wears a white cap and shirt, with one leg bent and arms extended. The platform has a pie-like pattern with smooth and varied textures.",
+   "source": "https://sketchfab.com/3d-models/a2b8e22679b44444a951e17555f18539",
+   "orig": "examples/bad_26_orig.jpg",
+   "recon": "examples/bad_26_recon.jpg",
+   "diff": "examples/bad_26_diff.jpg"
+  },
+  {
+   "score": 0.436994,
+   "worst_view": 5,
+   "per_view": [
+    0.228117,
+    0.498282,
+    0.544622,
+    0.55611,
+    0.439614,
+    0.618683,
+    0.377469,
+    0.233056
+   ],
+   "caption": "The \"Full Bush\" is a dense cluster of fern leaves in a roughly spherical shape. Each leaf has multiple small leaflets and a rich green color. It looks natural.",
+   "source": "https://sketchfab.com/3d-models/2a0516a7ccf4459b958d030517d7cbbc",
+   "orig": "examples/bad_27_orig.jpg",
+   "recon": "examples/bad_27_recon.jpg",
+   "diff": "examples/bad_27_diff.jpg"
+  },
+  {
+   "score": 0.571413,
+   "worst_view": 4,
+   "per_view": [
+    0.771113,
+    0.713629,
+    0.087196,
+    0.748168,
+    0.776325,
+    0.700552,
+    0.059398,
+    0.714922
+   ],
+   "caption": "A playful, yellow bicycle with a pink seat, red grips, and white fenders. It has large yellow wheels with white spokes and red rims. The bike features a bell and small mirrors on the handlebars, giving it a whimsical look.",
+   "source": "https://sketchfab.com/3d-models/9de59aaa95ff42408b9869a72f3a89e4",
+   "orig": "examples/bad_28_orig.jpg",
+   "recon": "examples/bad_28_recon.jpg",
+   "diff": "examples/bad_28_diff.jpg"
+  },
+  {
+   "score": 0.805285,
+   "worst_view": 3,
+   "per_view": [
+    0.791104,
+    0.817119,
+    0.77277,
+    0.835478,
+    0.793674,
+    0.824519,
+    0.798402,
+    0.809217
+   ],
+   "caption": "A semi-spherical rock formation called \"Half Dome.\" It has a triangular wireframe surface, representing half of a sphere. The model is colored in a bright cyan or light blue wireframe.",
+   "source": "https://sketchfab.com/3d-models/92757e5866c4436baf97c79aaf50b377",
+   "orig": "examples/bad_29_orig.jpg",
+   "recon": "examples/bad_29_recon.jpg",
+   "diff": "examples/bad_29_diff.jpg"
+  }
+ ],
+ "worked": {
+  "score": 0.245471,
+  "caption": "A generic headset with large ear cups, a curved headband, and a flexible boom microphone. The headband and microphone are black, the ear pads are brown, and a golden triangular logo is on the headband.",
+  "views": [
+   {
+    "view": 0,
+    "azimuth": 0,
+    "elevation": 15.0,
+    "score": 0.273752,
+    "orig": "worked/view_00_orig.jpg",
+    "recon": "worked/view_00_recon.jpg",
+    "diff": "worked/view_00_diff.jpg"
+   },
+   {
+    "view": 1,
+    "azimuth": 45,
+    "elevation": 35.0,
+    "score": 0.319162,
+    "orig": "worked/view_01_orig.jpg",
+    "recon": "worked/view_01_recon.jpg",
+    "diff": "worked/view_01_diff.jpg"
+   },
+   {
+    "view": 2,
+    "azimuth": 90,
+    "elevation": 0.0,
+    "score": 0.125327,
+    "orig": "worked/view_02_orig.jpg",
+    "recon": "worked/view_02_recon.jpg",
+    "diff": "worked/view_02_diff.jpg"
+   },
+   {
+    "view": 3,
+    "azimuth": 135,
+    "elevation": -15.0,
+    "score": 0.225086,
+    "orig": "worked/view_03_orig.jpg",
+    "recon": "worked/view_03_recon.jpg",
+    "diff": "worked/view_03_diff.jpg"
+   },
+   {
+    "view": 4,
+    "azimuth": 180,
+    "elevation": 20.0,
+    "score": 0.265905,
+    "orig": "worked/view_04_orig.jpg",
+    "recon": "worked/view_04_recon.jpg",
+    "diff": "worked/view_04_diff.jpg"
+   },
+   {
+    "view": 5,
+    "azimuth": 225,
+    "elevation": 40.0,
+    "score": 0.34781,
+    "orig": "worked/view_05_orig.jpg",
+    "recon": "worked/view_05_recon.jpg",
+    "diff": "worked/view_05_diff.jpg"
+   },
+   {
+    "view": 6,
+    "azimuth": 270,
+    "elevation": 10.0,
+    "score": 0.130407,
+    "orig": "worked/view_06_orig.jpg",
+    "recon": "worked/view_06_recon.jpg",
+    "diff": "worked/view_06_diff.jpg"
+   },
+   {
+    "view": 7,
+    "azimuth": 315,
+    "elevation": -10.0,
+    "score": 0.276318,
+    "orig": "worked/view_07_orig.jpg",
+    "recon": "worked/view_07_recon.jpg",
+    "diff": "worked/view_07_diff.jpg"
+   }
+  ],
+  "texture": "worked/ipn_texture.jpg",
+  "depth": "worked/ipn_depth.jpg"
+ }
+}
