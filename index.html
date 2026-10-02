@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InversEdit: Text-to-3D via Cylindrical Intrinsic Panoramic Diffusion</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Google Model-Viewer for Interactive 3D Inspection -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+  <style>
+    :root {
+      --bg-page: #0b0f19;
+      --bg-card: #131b2e;
+      --bg-card-hover: #1a243d;
+      --bg-surface: #1e2942;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-highlight: rgba(99, 102, 241, 0.4);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent-cyan: #06b6d4;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 100px;
+    }
+
+    /* Global Container */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero Section (Academic Project Page Header) */
+    .hero {
+      text-align: center;
+      padding: 64px 20px 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Google Sans', 'Inter', sans-serif;
+      font-size: 2.85rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #ffffff;
+      max-width: 950px;
+      margin: 0 auto 16px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 28px;
+      font-weight: 400;
+    }
+
+    /* Project Page Links */
+    .hero-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-link:hover {
+      border-color: var(--primary);
+      background: var(--bg-surface);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
+    }
+
+    .btn-link.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+    }
+
+    /* Abstract / Concept Box */
+    .abstract-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px;
+      max-width: 920px;
+      margin: 0 auto 56px;
+      text-align: left;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .abstract-box h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .abstract-box p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section Titles */
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-family: 'Google Sans', 'Inter', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Teaser 4x4 Grid */
+    .teaser-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    @media (max-width: 1100px) {
+      .teaser-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .teaser-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .teaser-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .teaser-card:hover, .teaser-card.selected {
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(6, 182, 212, 0.25);
+    }
+
+    .teaser-media {
+      width: 100%;
+      height: 280px;
+      background: #000000;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .teaser-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .sample-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(10, 15, 25, 0.8);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: #38bdf8;
+    }
+
+    .teaser-caption {
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.015);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .teaser-caption p {
+      font-size: 0.86rem;
+      color: var(--text-main);
+      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+
+    .click-hint {
+      font-size: 0.74rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Detailed Row Inspection Section */
+    .detail-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+      margin-bottom: 64px;
+    }
+
+    .detail-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .detail-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-select {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .detail-select:focus {
+      border-color: var(--primary);
+    }
+
+    /* Row of 4 Columns: Prompt | Texture | Depth | Rotating 3D View */
+    .inspection-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.3fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1050px) {
+      .inspection-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .inspection-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .inspect-col {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inspect-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .inspect-prompt-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .prompt-quote {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .prompt-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+    }
+
+    /* Image Containers for Texture & Depth */
+    .unroll-img-wrap {
+      flex: 1;
+      min-height: 280px;
+      background: #000;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+    }
+
+    .unroll-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease;
+    }
+
+    .unroll-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    /* 3D Media Column */
+    .view-3d-wrap {
+      position: relative;
+      flex: 1;
+      min-height: 280px;
+      background: #000000;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .view-3d-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .view-3d-wrap video.hidden {
+      display: none;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background: #0b0f19;
+      display: none;
+    }
+
+    model-viewer.active {
+      display: block;
+    }
+
+    /* Toggle Bar Beneath 3D Viewer */
+    .viewer-controls-bar {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .pill-switch {
+      display: flex;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      padding: 3px;
+      flex: 1;
+    }
+
+    .pill-btn {
+      flex: 1;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .pill-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-spin-3d {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-spin-3d:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-spin-3d.active {
+      background: var(--accent-cyan);
+      color: #0b0f19;
+      border-color: var(--accent-cyan);
+    }
+
+    /* Lightbox Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-box img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -36px;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+
+    /* Training data section */
+    .td-h3 { font-size: 1.12rem; font-weight: 700; color: var(--text-main); margin: 36px 0 10px; }
+    .td-p { font-size: 0.93rem; color: var(--text-muted); max-width: 900px; margin-bottom: 14px; line-height: 1.7; }
+    .td-p b { color: var(--text-main); }
+    .td-funnel { display: flex; flex-wrap: wrap; align-items: stretch; gap: 10px; margin: 18px 0 8px; }
+    .td-fstep { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px 16px; min-width: 150px; flex: 1; }
+    .td-fstep.hl { border-color: var(--border-highlight); background: rgba(99,102,241,0.10); }
+    .td-fstep .n { font-size: 1.45rem; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
+    .td-fstep .l { font-size: 0.8rem; font-weight: 600; color: var(--text-main); margin-top: 2px; }
+    .td-fstep .s { font-size: 0.74rem; color: var(--text-dim); margin-top: 4px; line-height: 1.4; }
+    .td-fop { align-self: center; color: var(--text-dim); font-size: 1.3rem; font-weight: 700; }
+    .td-subsets { display: flex; flex-direction: column; gap: 6px; flex: 1.2; min-width: 190px; }
+    .td-subsets .td-fstep { padding: 8px 12px; }
+    .td-subsets .n { font-size: 1rem; }
+    .td-h3-sub { font-size: 0.85rem; font-weight: 500; color: var(--text-dim); margin-left: 10px; }
+    .td-note { font-size: 0.84rem; color: var(--text-dim); margin-bottom: 8px; }
+    .td-formula-note { margin-left: auto; font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--accent-cyan); }
+    .td-losses { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .td-drop { font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; line-height: 1.35; font-variant-numeric: tabular-nums; }
+    .td-drop b { color: #fca5a5; margin-right: 4px; }
+    .td-drop span { display: block; font-size: 0.72rem; color: var(--text-dim); }
+    .td-loss { font-size: 0.8rem; color: var(--text-muted); background: rgba(239,68,68,0.07); border: 1px solid rgba(239,68,68,0.25); border-radius: 999px; padding: 4px 12px; font-variant-numeric: tabular-nums; }
+    .td-loss b { color: #fca5a5; margin-right: 4px; }
+    .td-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 16px 0; }
+    .td-step { display: flex; gap: 10px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 14px; font-size: 0.84rem; color: var(--text-muted); line-height: 1.55; }
+    .td-step b { color: var(--text-main); }
+    .td-step-n { flex: 0 0 24px; height: 24px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .td-formula { font-family: 'JetBrains Mono', monospace; font-size: 0.86rem; color: var(--text-main); background: #0d1525; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px 20px; margin: 6px 0 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; overflow-x: auto; }
+    .td-frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; }
+    .td-frac > span:first-child { border-bottom: 1px solid var(--text-muted); padding: 0 4px 2px; }
+    .td-frac > span:last-child { padding: 2px 4px 0; }
+    .td-callout { border-left: 3px solid var(--accent-cyan); background: rgba(6,182,212,0.08); padding: 10px 14px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.88rem; color: var(--text-muted); max-width: 900px; }
+    .td-callout b { color: var(--text-main); }
+    .td-worked-legend { display: flex; gap: 16px; font-size: 0.74rem; color: var(--text-dim); margin: 4px 0 6px; }
+    .td-worked { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
+    .td-view { background: #0d1525; border: 1px solid var(--border-color); border-radius: var(--radius-sm); overflow: hidden; }
+    .td-view img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .td-view .cap { font-size: 0.7rem; color: var(--text-dim); padding: 5px 6px; line-height: 1.35; font-variant-numeric: tabular-nums; }
+    .td-view .cap b { color: var(--text-main); font-size: 0.8rem; }
+    .td-view.worst { border-color: #ef4444; }
+    .td-ipn { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: center; margin-top: 10px; }
+    .td-ipn figure { margin: 0; }
+    .td-ipn img { width: 100%; height: 110px; object-fit: fill; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: block; }
+    .td-ipn figcaption { font-size: 0.72rem; color: var(--text-dim); margin-top: 4px; }
+    .td-ipn .td-mean { font-size: 0.85rem; color: var(--text-muted); text-align: right; padding-left: 12px; }
+    .td-ipn .td-mean b { display: block; font-size: 1.5rem; color: var(--text-main); }
+    @media (max-width: 900px) { .td-worked { grid-template-columns: repeat(4, minmax(0, 1fr)); } .td-ipn { grid-template-columns: 1fr; } .td-ipn .td-mean { text-align: left; padding: 0; } }
+    .td-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0; }
+    .td-stat { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 14px; }
+    .td-stat .n { font-size: 1.35rem; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
+    .td-stat .l { font-size: 0.76rem; color: var(--text-dim); }
+    .td-chart-card { position: relative; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 16px 18px 12px; }
+    .td-legend { display: flex; gap: 18px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+    .td-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+    .td-chart svg { width: 100%; height: auto; display: block; }
+    .td-chart text { fill: var(--text-dim); font-size: 11px; font-family: 'Inter', sans-serif; }
+    .td-chart .lbl { fill: var(--text-muted); font-size: 12px; font-weight: 600; }
+    .td-tooltip { position: absolute; pointer-events: none; background: #0b0f19; border: 1px solid var(--border-highlight); border-radius: var(--radius-sm); padding: 6px 10px; font-size: 0.78rem; color: var(--text-main); white-space: nowrap; box-shadow: var(--shadow-soft); font-variant-numeric: tabular-nums; }
+    .td-table { margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); }
+    .td-table summary { cursor: pointer; color: var(--text-dim); }
+    .td-table table { border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; }
+    .td-table td, .td-table th { padding: 2px 12px 2px 0; text-align: right; }
+    .td-table th { color: var(--text-main); font-weight: 600; }
+    .td-row { margin-top: 18px; }
+    .td-row-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .td-row-title { font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-left: 4px; }
+    .td-row-sub { font-size: 0.8rem; color: var(--text-dim); margin-left: 8px; }
+    .td-pill { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+    .td-pill.good { background: rgba(99,102,241,0.16); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.45); }
+    .td-pill.bad { background: rgba(239,68,68,0.14); color: #fca5a5; border: 1px solid rgba(239,68,68,0.45); }
+    .td-nav { display: flex; align-items: center; gap: 8px; }
+    .td-page { font-size: 0.78rem; color: var(--text-dim); min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+    .td-arrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-main); font-size: 1.4rem; line-height: 1; cursor: pointer; transition: all 0.15s; }
+    .td-arrow:hover:not(:disabled) { border-color: var(--border-highlight); background: var(--bg-card-hover); }
+    .td-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+    .td-cards { --td-per-page: 4; display: grid; grid-template-columns: repeat(var(--td-per-page), minmax(0, 1fr)); gap: 12px; }
+    .td-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; }
+    .td-card-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #000; }
+    .td-card-imgs figure { margin: 0; position: relative; }
+    .td-card-imgs img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .td-card-imgs figcaption { position: absolute; left: 6px; bottom: 5px; font-size: 0.66rem; font-weight: 600; color: #e2e8f0; background: rgba(0,0,0,0.55); padding: 1px 6px; border-radius: 4px; }
+    .td-card-body { padding: 10px 12px 12px; }
+    .td-score { font-size: 0.8rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+    .td-score b { font-size: 1.05rem; color: var(--text-main); margin-right: 4px; }
+    .td-bar { height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); margin: 6px 0 8px; overflow: hidden; }
+    .td-bar > span { display: block; height: 100%; border-radius: 2px; }
+    .td-cap { font-size: 0.78rem; color: var(--text-dim); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    @media (max-width: 1100px) { .td-cards { --td-per-page: 3; } }
+    @media (max-width: 800px) { .td-cards { --td-per-page: 2; } }
+    @media (max-width: 480px) { .td-cards { --td-per-page: 1; } }
+
+    /* 3D editing section */
+    .ed-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 22px; }
+    .ed-card { text-align: left; font: inherit; color: var(--text-muted); background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 10px 12px; cursor: pointer; transition: all 0.15s; }
+    .ed-card:hover { border-color: var(--border-highlight); }
+    .ed-card.active { border-color: var(--primary); background: rgba(99,102,241,0.12); }
+    .ed-card b { display: block; color: var(--text-main); font-size: 0.86rem; }
+    .ed-card .ed-card-t { font-size: 0.76rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .ed-pill { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; }
+    .ed-pill.texture { background: rgba(6,182,212,0.14); color: #67e8f9; }
+    .ed-pill.shape { background: rgba(236,72,153,0.14); color: #f9a8d4; }
+    .ed-pill.local { background: rgba(250,204,21,0.14); color: #fde047; }
+    .ed-group { grid-column: 1 / -1; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-dim); margin-top: 6px; }
+    .ed-main { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 18px; align-items: start; max-width: 1040px; margin: 0 auto; }
+    .ed-col { min-width: 0; }
+    .ed-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .ed-kind { text-transform: none; letter-spacing: 0; }
+    .ed-media { aspect-ratio: 1; background: #ffffff; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); }
+    .ed-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ed-arrow { align-self: center; font-size: 2rem; color: var(--text-dim); padding-top: 24px; }
+    .ed-prompt { font-size: 0.88rem; color: var(--text-main); margin-top: 10px; font-style: italic; line-height: 1.5; }
+    .ed-prompt.dim { color: var(--text-muted); }
+    .ed-methods { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .ed-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 8px; font-variant-numeric: tabular-nums; }
+    .ed-strips { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 20px auto 0; max-width: 1040px; }
+    .ed-strips figure { margin: 0; }
+    .ed-strips img { width: 100%; height: 96px; object-fit: fill; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: block; background: #000; }
+    .ed-strips figcaption { font-size: 0.72rem; color: var(--text-dim); margin-top: 4px; }
+    @media (max-width: 900px) { .ed-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ed-main { grid-template-columns: 1fr; } .ed-arrow { display: none; } .ed-strips { grid-template-columns: 1fr; } }
+
+    /* Hole completion */
+    .hc-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 22px; }
+    .hc-main { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1040px; margin: 0 auto; }
+    .hc-viewer { aspect-ratio: 1; background: #ffffff; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); }
+    .hc-viewer model-viewer { width: 100%; height: 100%; background: #ffffff; --poster-color: #ffffff; }
+    .hc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; min-height: 30px; }
+    .hc-toggles { display: flex; gap: 6px; }
+    .hc-hint { font-size: 0.74rem; color: var(--text-dim); text-align: center; margin-top: 8px; }
+    .hc-evals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px auto 0; max-width: 1040px; }
+    .hc-eval figure { margin: 0; }
+    .hc-eval img { width: 100%; aspect-ratio: 1; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; cursor: pointer; }
+    .hc-eval figcaption { font-size: 0.74rem; color: var(--text-dim); margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .hc-eval figcaption b { color: var(--text-main); }
+    .hc-steps { margin: 26px auto 0; max-width: 1040px; }
+    .hc-step { display: grid; grid-template-columns: 110px repeat(5, minmax(0, 1fr)); gap: 10px; align-items: center; margin-bottom: 10px; }
+    .hc-step img { width: 100%; aspect-ratio: 1; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #fff; }
+    .hc-step .lbl { font-size: 0.76rem; color: var(--text-muted); line-height: 1.4; }
+    .hc-step-head { display: grid; grid-template-columns: 110px repeat(5, minmax(0, 1fr)); gap: 10px; font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .hc-all { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; margin-bottom: 8px; }
+    .hc-thumb { position: relative; padding: 0; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background: #fff; cursor: pointer; overflow: hidden; }
+    .hc-thumb img { width: 100%; aspect-ratio: 1; display: block; }
+    .hc-thumb span { position: absolute; left: 3px; top: 2px; font-size: 0.66rem; color: #334155; font-weight: 600; }
+    .hc-thumb.active { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
+    .hc-sub { font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin: 0 0 4px; }
+    .hc-note { font-size: 0.8rem; color: var(--text-dim); margin: 0 0 12px; }
+    @media (max-width: 900px) { .hc-all { grid-template-columns: repeat(5, minmax(0, 1fr)); } .hc-picker, .hc-evals { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-main { grid-template-columns: 1fr; } .hc-step, .hc-step-head { grid-template-columns: 56px repeat(5, minmax(0, 1fr)); gap: 4px; } }
+
+    /* Model selector (sticky) */
+    .model-bar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 15, 25, 0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 40px;
+    }
+    .model-bar-inner {
+      max-width: 1360px; margin: 0 auto; padding: 12px 24px;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
+    }
+    .model-bar-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+    .model-group { display: flex; align-items: center; gap: 8px; }
+    .model-group-name { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
+    .seg { display: inline-flex; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 999px; padding: 3px; }
+    .seg button {
+      font: inherit; font-size: 0.82rem; font-weight: 600; color: var(--text-muted);
+      background: transparent; border: 0; border-radius: 999px; padding: 5px 14px; cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .seg button:hover:not(:disabled) { color: var(--text-main); }
+    .seg button.active { background: var(--primary); color: #fff; }
+    .seg button:disabled { opacity: 0.35; cursor: not-allowed; }
+    .model-desc { font-size: 0.82rem; color: var(--text-dim); flex: 1; min-width: 220px; }
+    .model-desc code { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--accent-cyan); }
+
+    /* Pill toggle buttons (comparison section) */
+    .toggle-btn {
+      font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+      background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-sm);
+      padding: 6px 14px; cursor: pointer; transition: all 0.15s;
+    }
+    .toggle-btn:hover:not(:disabled) { color: var(--text-main); border-color: var(--border-highlight); }
+    .toggle-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .toggle-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+  <!-- Academic Project Page Header -->
+  <header class="hero">
+    <h1 class="hero-title">InversEdit: Fast Text-to-3D via<br><span>Cylindrical Intrinsic Panoramic Diffusion</span></h1>
+    <p class="hero-subtitle">
+      Joint 2.5D geometry and texture flow matching in a single forward pass, producing watertight, full-surface 3D textured meshes without multi-view test-time optimization.
+    </p>
+
+    <div class="hero-links">
+      <a class="btn-link active" href="#teaser-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L19.5 8 12 11.2 4.5 8 12 4.8zM4 9.4l7 3.7v7.5l-7-3.5V9.4zm9 11.2v-7.5l7-3.7v7.7l-7 3.5z"/></svg>
+        4x4 Teaser Gallery
+      </a>
+      <a class="btn-link" href="#detail-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+        2.5D & 3D Inspection Row
+      </a>
+      <a class="btn-link" href="#comparison-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7.5" height="16" rx="1.5"/><rect x="13.5" y="4" width="7.5" height="16" rx="1.5"/></svg>
+        Comparison
+      </a>
+      <a class="btn-link" href="#edit-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        3D Editing
+      </a>
+      <a class="btn-link" href="#hole-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg>
+        Hole Completion
+      </a>
+      <a class="btn-link" href="#data-section">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C7 3 3 4.8 3 7v10c0 2.2 4 4 9 4s9-1.8 9-4V7c0-2.2-4-4-9-4zm0 2c4.4 0 7 1.4 7 2s-2.6 2-7 2-7-1.4-7-2 2.6-2 7-2zm7 12c0 .6-2.6 2-7 2s-7-1.4-7-2v-2.3c1.6.8 4.2 1.3 7 1.3s5.4-.5 7-1.3V17zm0-5c0 .6-2.6 2-7 2s-7-1.4-7-2V9.7c1.6.8 4.2 1.3 7 1.3s5.4-.5 7-1.3V12z"/></svg>
+        Training Data
+      </a>
+    </div>
+
+    <!-- Abstract Box -->
+    <div class="abstract-box">
+      <h3>Abstract</h3>
+      <p>
+        Existing text-to-3D methods predominantly rely on expensive per-prompt multi-view score distillation or feed-forward triplane transformers. InversEdit represents 3D shapes as 2.5D Intrinsic Panoramic Networks (IPNs), unrolling both surface texture and radial depth around a central cylinder. By fine-tuning FLUX.1-dev with balanced loss weighting (w=1.0), the model directly generates seamless, high-resolution geometry and texture in a single diffusion process, reconstructible into watertight 3D meshes in milliseconds.
+      </p>
+    </div>
+  </header>
+
+  <nav class="model-bar" aria-label="Model selection">
+    <div class="model-bar-inner">
+      <span class="model-bar-label">Our model</span>
+      <div class="model-group"><span class="model-group-name">Positional encoding</span><div class="seg" id="ropeSeg"></div></div>
+      <div class="model-group"><span class="model-group-name">Training steps</span><div class="seg" id="stepsSeg"></div></div>
+      <div class="model-desc" id="modelDesc"></div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- SECTION 1: 4x4 TEASER GRID -->
+    <section id="teaser-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 16h4v4h-4v-4zm6 0h4v4h-4v-4z"/></svg>
+            Selected 4x4 Teaser Gallery
+          </h2>
+          <p class="section-desc">16 representative 3D generations with dual-orbit 360-degree rotations (eye level + elevated 1.5x height vantage)</p>
+        </div>
+        <div style="font-size:0.85rem; color:var(--accent-cyan); font-weight:600;">
+          <span class="js-model-label">Flat RoPE · 60k steps</span>
+        </div>
+      </div>
+
+      <div class="teaser-grid" id="teaserGrid">
+
+        <div class="teaser-card" id="teaserCard_3" onclick="selectSample(3)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #03</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A modern tactical plate-carrier combat vest fitted with modular equipment pouches and reinforced nylon strapping."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_6" onclick="selectSample(6)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #06</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_7" onclick="selectSample(7)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #07</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A charming animated boy adventurer figurine wearing a classic blue outfit and wielding a small play sword."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_9" onclick="selectSample(9)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #09</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A regal ancient Egyptian queen portrait bust with a stately crowned royal headdress and decorative jeweled collar."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_10" onclick="selectSample(10)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #10</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A steampunk deep-sea explorer figure wearing an antique brass diving helm and heavy utility gear."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_11" onclick="selectSample(11)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #11</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"An advanced military combat trooper helmet with a tinted panoramic visor and matte desert camo patterning."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_13" onclick="selectSample(13)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #13</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_16" onclick="selectSample(16)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #16</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A lifelike woodland caribou figure with a thick winter coat, sturdy legs, and graceful antler silhouette."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_20" onclick="selectSample(20)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #20</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A vivid green amphibian tree frog resting in a natural crouch with glossy skin and large alert eyes."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_22" onclick="selectSample(22)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #22</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_30" onclick="selectSample(30)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #30</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A miniature oceanic diorama depicting a tall wooden sailing ship cruising over waters with a surfacing blue whale."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_32" onclick="selectSample(32)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #32</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A powerful martial arts arena combatant with an athletic muscular build, tactical combat gear, and knee pads."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_36" onclick="selectSample(36)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #36</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"A weathered industrial steel hazardous waste drum showing heavy rust patina, structural ribs, and warning graphics."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_44" onclick="selectSample(44)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #44</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"[training prompt] A muscular frost bear with large claws and sharp spikes, featuring icy textures and a dark blue chest plate. The eyes glow turquoise. Suitable for a cold, wintery setting."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_45" onclick="selectSample(45)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #45</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"[training prompt] The inn is a two-story building with a golden straw thatched roof, a wooden balcony, and a tower. It has large windows with shutters, a red door, and a cobblestone path leading to the entrance."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+        <div class="teaser-card" id="teaserCard_47" onclick="selectSample(47)">
+          <div class="teaser-media">
+            <span class="sample-badge">Sample #47</span>
+            <video autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="teaser-caption">
+            <p>"[training prompt] A rectangular box with handles, a blue-lit front panel, and bolts on the top. It has a rough, rusty texture and is designed for easy carrying."</p>
+            <div class="click-hint">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              Click to inspect 2.5D IPN & 3D mesh
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DETAILED ROW INSPECTION -->
+    <section id="detail-section" class="detail-section">
+      <div class="detail-topbar">
+        <div>
+          <h2 class="section-title" style="font-size:1.45rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            2.5D Representation & 3D Geometry Inspection
+          </h2>
+          <p class="section-desc">Prompt conditioning, cylindrical texture panorama, radial depth map, and rotating 3D view</p>
+        </div>
+
+        <div class="detail-select-wrap">
+          <label for="sampleDropdown" style="font-size:0.85rem; color:var(--text-muted); font-weight:500;">Select Sample:</label>
+          <select id="sampleDropdown" class="detail-select" onchange="selectSample(parseInt(this.value))">
+            <option value="1" >Sample #01: A spiraling marine conch seashell with sculpted ...</option>
+            <option value="2" >Sample #02: A quirky stylized cartoon creature figurine with...</option>
+            <option value="3" selected>Sample #03 ★: A modern tactical plate-carrier combat vest fitt...</option>
+            <option value="4" >Sample #04: A realistic sculpted portrait bust of a bald mus...</option>
+            <option value="5" >Sample #05: A minimalist Scandinavian dining chair made from...</option>
+            <option value="6" >Sample #06 ★: A fearsome fantasy goblin warrior head with emer...</option>
+            <option value="7" >Sample #07 ★: A charming animated boy adventurer figurine wear...</option>
+            <option value="8" >Sample #08: An authentic Norse circular battle shield made o...</option>
+            <option value="9" >Sample #09 ★: A regal ancient Egyptian queen portrait bust wit...</option>
+            <option value="10" >Sample #10 ★: A steampunk deep-sea explorer figure wearing an ...</option>
+            <option value="11" >Sample #11 ★: An advanced military combat trooper helmet with ...</option>
+            <option value="12" >Sample #12: A natural whole garden onion bulb wrapped in del...</option>
+            <option value="13" >Sample #13 ★: An antique wooden pirate sea chest with curved i...</option>
+            <option value="14" >Sample #14: A sleek futuristic sci-fi assault rifle featurin...</option>
+            <option value="15" >Sample #15: A rustic handcrafted accent side table made of s...</option>
+            <option value="16" >Sample #16 ★: A lifelike woodland caribou figure with a thick ...</option>
+            <option value="17" >Sample #17: A majestic mythical winged dragon sculpture with...</option>
+            <option value="18" >Sample #18: An energetic cartoon marsupial video game hero i...</option>
+            <option value="19" >Sample #19: A weathered horror animatronic animal with expos...</option>
+            <option value="20" >Sample #20 ★: A vivid green amphibian tree frog resting in a n...</option>
+            <option value="21" >Sample #21: A traditional glazed ceramic condiment bowl feat...</option>
+            <option value="22" >Sample #22 ★: A fantastical forest toadstool mushroom displayi...</option>
+            <option value="23" >Sample #23: A ripe culinary avocado cut in half showcasing c...</option>
+            <option value="24" >Sample #24: A glowing geometric arcane crystal prism carved ...</option>
+            <option value="25" >Sample #25: A classic standing coin-op arcade game cabinet f...</option>
+            <option value="26" >Sample #26: An ancient archaeological pottery goblet vessel ...</option>
+            <option value="27" >Sample #27: A vibrant multicolored geometric cube with clean...</option>
+            <option value="28" >Sample #28: A vintage oak storage cask barrel banded with ri...</option>
+            <option value="29" >Sample #29: An expressive animated fantasy crone bust charac...</option>
+            <option value="30" >Sample #30 ★: A miniature oceanic diorama depicting a tall woo...</option>
+            <option value="31" >Sample #31: A stylized modern male character model dressed i...</option>
+            <option value="32" >Sample #32 ★: A powerful martial arts arena combatant with an ...</option>
+            <option value="33" >Sample #33: A whimsical anthropomorphic teddy bear gentleman...</option>
+            <option value="34" >Sample #34: A classical neoclassical marble sculpture bust p...</option>
+            <option value="35" >Sample #35: A fearsome medieval iron flail weapon featuring ...</option>
+            <option value="36" >Sample #36 ★: A weathered industrial steel hazardous waste dru...</option>
+            <option value="37" >Sample #37: A formidable high-tech robotic mecha warrior in ...</option>
+            <option value="38" >Sample #38: A traditional historical wide-brimmed felt pilgr...</option>
+            <option value="39" >Sample #39: A quirky bipedal utility inspection robot with a...</option>
+            <option value="40" >Sample #40: A professional athletic football protective helm...</option>
+            <option value="41" >Sample #41: [training prompt] The Organic Table has an irreg...</option>
+            <option value="42" >Sample #42: [training prompt] The "Platano Del Mono" is a fu...</option>
+            <option value="43" >Sample #43: [training prompt] A medieval shield with a dark ...</option>
+            <option value="44" >Sample #44 ★: [training prompt] A muscular frost bear with lar...</option>
+            <option value="45" >Sample #45 ★: [training prompt] The inn is a two-story buildin...</option>
+            <option value="46" >Sample #46: [training prompt] The treasure chest is a rectan...</option>
+            <option value="47" >Sample #47 ★: [training prompt] A rectangular box with handles...</option>
+            <option value="48" >Sample #48: [training prompt] Reverse Flash (Unmasked) is an...</option>
+            <option value="49" >Sample #49: [training prompt] A muscular character with spik...</option>
+            <option value="50" >Sample #50: [training prompt] The chicken coop is a rectangu...</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- The 4-Column Row Requested: Prompt | Texture | Depth | Rotating Mesh (with toggle beneath) -->
+      <div class="inspection-row">
+        <!-- Col 1: Prompt & Specs -->
+        <div class="inspect-col">
+          <div class="inspect-label">
+            <span>Text Conditioning</span>
+            <span id="inspectBadge" style="font-family:'JetBrains Mono'; color:#38bdf8;">#03</span>
+          </div>
+          <div class="inspect-prompt-box">
+            <div class="prompt-quote" id="inspectPrompt">
+              "A modern tactical plate-carrier combat vest fitted with modular equipment pouches and reinforced nylon strapping."
+            </div>
+            <div class="prompt-meta">
+              <div style="margin-bottom:6px;"><strong style="color:var(--text-main);">Original Caption:</strong></div>
+              <div id="inspectOrigCaption" style="font-style:italic; font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">
+                "A protective vest with an hourglass shape, adjustable straps, and MOLLE webbing for equipment. It is made from durable materials and features a Multicam camouflage pattern with green accents and black hardware."
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span id="inspectTag" class="hero-badge" style="margin-bottom:0; font-size:0.72rem; padding:3px 8px;">Novel Benchmark</span>
+                <span style="font-size:0.75rem; color:var(--text-dim);">Diffusion Steps: 28</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Cylindrical Texture -->
+        <div class="inspect-col">
+          <div class="inspect-label">
+            <span>Cylindrical Texture</span>
+            <span style="font-size:0.7rem; color:var(--text-dim);">512x512 RGB</span>
+          </div>
+          <div class="unroll-img-wrap" onclick="openLightbox(document.getElementById('inspectTextureImg').src, 'Unrolled Cylindrical Texture')">
+            <img id="inspectTextureImg" src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/texture.png" alt="Cylindrical Texture">
+          </div>
+        </div>
+
+        <!-- Col 3: Cylindrical Depth -->
+        <div class="inspect-col">
+          <div class="inspect-label">
+            <span>Radial Depth Map</span>
+            <span style="font-size:0.7rem; color:var(--text-dim);">Radial Distance</span>
+          </div>
+          <div class="unroll-img-wrap" onclick="openLightbox(document.getElementById('inspectDepthImg').src, 'Unrolled Radial Depth')">
+            <img id="inspectDepthImg" src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/depth.png" alt="Radial Depth Map">
+          </div>
+        </div>
+
+        <!-- Col 4: Rotating 3D View (Mesh / Point Cloud Toggle) -->
+        <div class="inspect-col">
+          <div class="inspect-label">
+            <span id="view3dTitle">3D Rotating Mesh</span>
+            <span style="font-size:0.7rem; color:var(--accent-cyan);">Dual-Orbit 360°</span>
+          </div>
+          
+          <div class="view-3d-wrap">
+            <!-- Video Mesh -->
+            <video id="inspectMeshVideo" autoplay loop muted playsinline preload="metadata">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/rotation_mesh_dual.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Video Point Cloud -->
+            <video id="inspectPcVideo" class="hidden" loop muted playsinline preload="none">
+              <source src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/rotation_pc_dual.mp4" type="video/mp4">
+            </video>
+
+            <!-- Interactive 3D Model Viewer -->
+            <model-viewer id="inspectModelViewer"
+              src="./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/mesh.glb"
+              camera-controls
+              auto-rotate
+              orientation="0deg -90deg 0deg"
+              camera-orbit="0deg 75deg auto"
+              min-camera-orbit="auto 0deg auto"
+              max-camera-orbit="auto 180deg auto"
+              interaction-prompt="none"
+              shadow-intensity="1"
+              exposure="1.0"
+              alt="Interactive 3D Mesh">
+            </model-viewer>
+          </div>
+
+          <!-- Controls Beneath 3D Viewer: Toggle Mesh vs Point Cloud -->
+          <div class="viewer-controls-bar">
+            <div class="pill-switch">
+              <button class="pill-btn active" id="btnSwitchMesh" onclick="setRow3DMode('mesh')">3D Mesh</button>
+              <button class="pill-btn" id="btnSwitchPc" onclick="setRow3DMode('pc')">Point Cloud</button>
+            </div>
+
+            <button class="btn-spin-3d" id="btnToggle3D" onclick="toggleRowInteractive3D()">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.8L19.5 8 12 11.2 4.5 8 12 4.8zM4 9.4l7 3.7v7.5l-7-3.5V9.4zm9 11.2v-7.5l7-3.7v7.7l-7 3.5z"/></svg>
+              <span>Interactive 3D</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION 3: TRELLIS COMPARISON -->
+    <section id="comparison-section" class="detail-section" style="margin-top: 48px;">
+      <div class="section-header" style="padding-bottom:0;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+          <h2 class="section-title" style="margin-bottom:0;">Comparison vs TRELLIS</h2>
+        </div>
+        <p class="section-desc" style="margin-bottom:0;">
+          Side-by-side comparison of InversEdit (ours) against Microsoft TRELLIS (text-xlarge) on the same 50 benchmark prompts. 
+          Both methods use the same text input and are rendered with identical dual-orbit camera paths.
+        </p>
+      </div>
+
+      <div style="margin-top:28px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-lg); overflow:hidden;">
+        <!-- Sample Selector -->
+        <div style="padding:20px 24px; border-bottom:1px solid var(--border-color); display:flex; align-items:center; gap:16px;">
+          <label style="font-size:0.88rem; color:var(--text-muted); font-weight:600;">Select Sample:</label>
+          <select id="cmpSampleDropdown" class="detail-select" onchange="selectCmpSample(parseInt(this.value))" style="width:auto; min-width:280px;">
+          </select>
+          <span id="cmpPromptBadge" style="flex:1; font-size:0.82rem; color:var(--text-dim); font-style:italic;"></span>
+        </div>
+
+        <!-- Side-by-Side Grid -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+          <!-- InversEdit Column -->
+          <div style="padding:24px; border-right:1px solid var(--border-color);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+              <div style="width:10px; height:10px; border-radius:50%; background:var(--primary); flex-shrink:0;"></div>
+              <span style="font-size:1rem; font-weight:700; color:var(--text-main);">InversEdit (Ours)</span>
+              <span class="js-model-label" style="font-size:0.78rem; color:var(--accent-cyan); font-family:'JetBrains Mono',monospace;">Flat RoPE · 60k steps</span>
+            </div>
+            <div style="aspect-ratio:1; background:#0d1525; border-radius:var(--radius-md); overflow:hidden; margin-bottom:12px;">
+              <video id="cmpOursVideo" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+                <source id="cmpOursSrc" src="" type="video/mp4">
+              </video>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="toggle-btn active" id="cmpOursMeshBtn" onclick="setCmpOursView('mesh')">Mesh</button>
+              <button class="toggle-btn" id="cmpOursPcBtn" onclick="setCmpOursView('pc')">Point Cloud</button>
+            </div>
+          </div>
+
+          <!-- TRELLIS Column -->
+          <div style="padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+              <div style="width:10px; height:10px; border-radius:50%; background:#ef4444; flex-shrink:0;"></div>
+              <span style="font-size:1rem; font-weight:700; color:var(--text-main);">TRELLIS</span>
+              <span style="font-size:0.78rem; color:#fca5a5; font-family:'JetBrains Mono',monospace;">microsoft/TRELLIS-text-xlarge</span>
+            </div>
+            <div id="cmpTrellisContainer" style="aspect-ratio:1; background:#0d1525; border-radius:var(--radius-md); overflow:hidden; margin-bottom:12px; display:flex; align-items:center; justify-content:center;">
+              <div id="cmpTrellisPlaceholder" style="text-align:center; padding:24px;">
+                <div style="font-size:2rem; margin-bottom:12px;">⏳</div>
+                <div style="font-size:0.9rem; color:var(--text-muted); font-weight:600;">Inference Running...</div>
+                <div style="font-size:0.8rem; color:var(--text-dim); margin-top:6px;">TRELLIS results will appear here once generation is complete.</div>
+              </div>
+              <video id="cmpTrellisVideo" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:none;">
+                <source id="cmpTrellisSrc" src="" type="video/mp4">
+              </video>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="toggle-btn active" id="cmpTrellisMeshBtn" onclick="setCmpTrellisView('mesh')" disabled>Mesh</button>
+              <button class="toggle-btn" id="cmpTrellisPcBtn" onclick="setCmpTrellisView('pc')" disabled>Point Cloud</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt Display -->
+        <div style="padding:16px 24px; border-top:1px solid var(--border-color); background:rgba(0,0,0,0.2);">
+          <span style="font-size:0.82rem; color:var(--text-dim);">Prompt: </span>
+          <span id="cmpPromptText" style="font-size:0.88rem; color:var(--text-muted); font-style:italic;"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 3D EDITING -->
+    <section id="edit-section" class="detail-section" style="margin-top: 48px;">
+      <div class="section-header" style="padding-bottom:14px;">
+        <div>
+          <h2 class="section-title" style="margin-bottom:0;">3D Editing</h2>
+          <p class="section-desc">Text-driven edits of generated objects, with the same model and no retraining (Flat RoPE · 60k). Local edits change colour and depth only inside a mask painted on the IPN texture.</p>
+        </div>
+      </div>
+      <div class="ed-picker" id="edPicker"></div>
+      <div class="ed-main">
+        <div class="ed-col">
+          <div class="ed-label">Source</div>
+          <div class="ed-media"><video id="edSrcVideo" autoplay loop muted playsinline></video></div>
+          <p class="ed-prompt dim" id="edSrcPrompt"></p>
+        </div>
+        <div class="ed-arrow">&#8594;</div>
+        <div class="ed-col">
+          <div class="ed-label">Edited <span class="ed-kind" id="edKind"></span></div>
+          <div class="ed-media"><video id="edResVideo" autoplay loop muted playsinline></video></div>
+          <p class="ed-prompt" id="edTarPrompt"></p>
+          <div class="ed-methods" id="edMethods"></div>
+          <p class="ed-note" id="edNote"></p>
+        </div>
+      </div>
+      <div class="ed-strips">
+        <figure><img id="edSrcTex" alt="Source IPN texture"><figcaption id="edSrcTexCap">Source IPN texture</figcaption></figure>
+        <figure><img id="edResTex" alt="Edited IPN texture"><figcaption>Edited IPN texture</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- SECTION: HOLE COMPLETION -->
+    <section id="hole-section" class="detail-section" style="margin-top: 48px;">
+      <div class="section-header" style="padding-bottom:14px;">
+        <div>
+          <h2 class="section-title" style="margin-bottom:0;">Hole Completion</h2>
+          <p class="section-desc">An IPN only sees the object along horizontal rays, so tops, bottoms and cavities are never observed. We render the generated mesh from views close to the IPN's own (±25°, then ±50°, then ±75°; 4 views per step), mask the pixels whose ray crosses space the IPN never saw, and fill them: a rough guess (a smooth surface spanning the hole) is refined by the base Modality Forcing model with partial noise, so it keeps the shape and viewing angle. Each fill becomes new surface for the next, steeper step. The generated mesh itself is not changed.</p>
+        </div>
+      </div>
+      <div class="hc-picker" id="hcPicker"></div>
+      <div class="hc-main">
+        <div>
+          <div class="hc-head"><div class="ed-label" style="margin:0;">Generated IPN mesh</div></div>
+          <div class="hc-viewer"><model-viewer id="hcBefore" class="active" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0" exposure="1.0" environment-image="neutral" camera-orbit="0deg 55deg auto"></model-viewer></div>
+        </div>
+        <div>
+          <div class="hc-head"><div class="ed-label" style="margin:0;">After hole completion</div><div class="hc-toggles" id="hcAfterToggles"></div></div>
+          <div class="hc-viewer"><model-viewer id="hcAfter" class="active" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0" exposure="1.0" environment-image="neutral" camera-orbit="0deg 55deg auto"></model-viewer></div>
+        </div>
+      </div>
+      <p class="hc-hint">Drag to rotate. The two views are linked. Look from above and below to see the filled regions.</p>
+      <p class="ed-prompt dim" id="hcPrompt" style="text-align:center;"></p>
+      <p class="ed-note" id="hcStats" style="text-align:center;"></p>
+      <div class="hc-evals" id="hcEvals"></div>
+      <div class="hc-steps">
+        <p class="hc-sub">All 50 evaluation objects <span class="hc-note" style="display:inline;">(no model; click one to inspect it above)</span></p>
+        <div class="hc-all" id="hcAll"></div>
+        <p class="hc-sub" style="margin-top:22px;">How it fills</p>
+        <p class="hc-note">The views that added the most surface, in processing order. Magenta: space the IPN never observed.</p>
+        <div id="hcSteps"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TRAINING DATA & FEASIBILITY -->
+    <section id="data-section" class="detail-section td" style="margin-top: 48px;">
+      <div class="section-header" style="padding-bottom:14px;">
+        <div>
+          <h2 class="section-title" style="margin-bottom:0;">Training Data</h2>
+          <p class="section-desc">Objaverse-XL assets, filtered by three curated lists and by how well an IPN can represent them.</p>
+        </div>
+      </div>
+
+      <h3 class="td-h3">1 · From Objaverse-XL to the training set</h3>
+      <div class="td-funnel" id="tdFunnel"></div>
+
+      <h3 class="td-h3">2 · IPN feasibility score <span class="td-h3-sub">how much of the object an IPN loses</span></h3>
+      <div class="td-steps">
+        <div class="td-step"><span class="td-step-n">1</span><div><b>Render original</b><br>8 cameras around the object</div></div>
+        <div class="td-step"><span class="td-step-n">2</span><div><b>Render from IPN</b><br>mesh rebuilt from its IPN, same cameras</div></div>
+        <div class="td-step"><span class="td-step-n">3</span><div><b>Bad pixel</b><br>blur σ = <span data-td="blur_sigma"></span> px, then colour error &gt; τ = <span data-td="tau"></span></div></div>
+        <div class="td-step"><span class="td-step-n">4</span><div><b>View score</b><br>bad ÷ foreground pixels</div></div>
+        <div class="td-step"><span class="td-step-n">5</span><div><b>Score</b><br>mean over the 8 views</div></div>
+      </div>
+      <div class="td-formula">
+        score = <span class="td-frac"><span>1</span><span>8</span></span> Σ<sub>views</sub>
+        <span class="td-frac"><span>#{ foreground pixels with max<sub>RGB</sub>|orig − recon| &gt; τ }</span><span>#{ foreground pixels }</span></span>
+        <span class="td-formula-note">lower is better · 0 = perfect</span>
+      </div>
+
+      <h3 class="td-h3">Example: one rejected object, all 8 views</h3>
+      <p class="td-note" id="tdWorkedCaption"></p>
+      <div class="td-worked-legend"><span>rows: original · from IPN · difference</span></div>
+      <div class="td-worked" id="tdWorked"></div>
+      <div class="td-ipn" id="tdWorkedIpn"></div>
+
+      <h3 class="td-h3">3 · Distribution <span class="td-h3-sub">keep the best 90% → cut at score <span data-td="threshold"></span></span></h3>
+      <div class="td-stats" id="tdStats"></div>
+      <div class="td-chart-card">
+        <div class="td-legend">
+          <span><i style="background:#6366f1"></i>Kept for training</span>
+          <span><i style="background:#ef4444"></i>Rejected (worst 10%)</span>
+        </div>
+        <div class="td-chart" id="tdHist"></div>
+        <div class="td-tooltip" id="tdTip" hidden></div>
+        <details class="td-table">
+          <summary>Show as table</summary>
+          <div id="tdHistTable"></div>
+        </details>
+      </div>
+
+      <h3 class="td-h3">4 · Examples <span class="td-h3-sub">worst view of each object</span></h3>
+      <div class="td-row">
+        <div class="td-row-head">
+          <div><span class="td-pill good">Good</span> <span class="td-row-title">score ≤ <span data-td="good_max_score"></span></span></div>
+          <div class="td-nav"><button class="td-arrow" data-row="good" data-dir="-1" aria-label="Previous good examples">&#8249;</button><span class="td-page" id="tdPage_good"></span><button class="td-arrow" data-row="good" data-dir="1" aria-label="Next good examples">&#8250;</button></div>
+        </div>
+        <div class="td-cards" id="tdCards_good"></div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-head">
+          <div><span class="td-pill bad">Rejected</span> <span class="td-row-title">score &gt; <span data-td="threshold"></span></span></div>
+          <div class="td-nav"><button class="td-arrow" data-row="bad" data-dir="-1" aria-label="Previous rejected examples">&#8249;</button><span class="td-page" id="tdPage_bad"></span><button class="td-arrow" data-row="bad" data-dir="1" aria-label="Next rejected examples">&#8250;</button></div>
+        </div>
+        <div class="td-cards" id="tdCards_bad"></div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="lightboxModal" onclick="closeLightbox()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeLightbox()">&times;</button>
+      <img id="lightboxImg" src="" alt="Enlarged Image">
+      <div id="lightboxTitle" style="color:#ffffff; margin-top:10px; font-size:0.9rem;"></div>
+    </div>
+  </div>
+
+  <script>
+    const SAMPLES = [{"id": 1, "folder": "sample_01_eval", "prompt": "A spiraling marine conch seashell with sculpted ridge textures and warm amber speckles.", "orig_caption": "The Mitre Shell is a long, cone-shaped object with spiral ridges and a narrow opening. It is symmetrical and mostly white with brownish-red spots. The shell is hard.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_01_eval/pointcloud.ply"}, {"id": 2, "folder": "sample_02_eval", "prompt": "A quirky stylized cartoon creature figurine with big curious eyes, rounded silhouette, and cheerful colors.", "orig_caption": "A playful character with a round head, large eyes, and a tuft of hair. It has a red upper body and brown lower body, with cylindrical arms and flat feet. The face is glossy, and there's a green patch on the chest. Primarily orange, red, and brown.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_02_eval/pointcloud.ply"}, {"id": 3, "folder": "sample_03_eval", "prompt": "A modern tactical plate-carrier combat vest fitted with modular equipment pouches and reinforced nylon strapping.", "orig_caption": "A protective vest with an hourglass shape, adjustable straps, and MOLLE webbing for equipment. It is made from durable materials and features a Multicam camouflage pattern with green accents and black hardware.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_03_eval/pointcloud.ply"}, {"id": 4, "folder": "sample_04_eval", "prompt": "A realistic sculpted portrait bust of a bald muscular male with well-defined facial anatomy and strong jaw.", "orig_caption": "The head and upper neck of a character from \"American History X.\" It has an oval shape, a rounded forehead, a prominent chin, and well-defined features. The skin is smooth and light beige/tan.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_04_eval/pointcloud.ply"}, {"id": 5, "folder": "sample_05_eval", "prompt": "A minimalist Scandinavian dining chair made from smooth natural birch wood featuring an ergonomic curved backrest.", "orig_caption": "A modern wooden chair with a curved seat, arched backrest, and four square legs. It has horizontal supports for stability and a smooth, light brown finish.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_05_eval/pointcloud.ply"}, {"id": 6, "folder": "sample_06_eval", "prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.", "orig_caption": "The orc head is large and green with rough skin, tusks, and elongated ears. It has a ponytail tied with a red bandana and a dark chain around the neck. The eyes are red and narrowed.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_06_eval/pointcloud.ply"}, {"id": 7, "folder": "sample_07_eval", "prompt": "A charming animated boy adventurer figurine wearing a classic blue outfit and wielding a small play sword.", "orig_caption": "Finn from \"Adventure Time.\" It has a human-like shape with a round head, small ears, and simple facial features. The arms extend out, and the legs are straight. The right arm holds a wooden sword hilt. The model is mostly blue and light gray, with a red mark on the cheek.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_07_eval/pointcloud.ply"}, {"id": 8, "folder": "sample_08_eval", "prompt": "An authentic Norse circular battle shield made of sturdy weathered timber planks with a riveted iron boss.", "orig_caption": "The Viking Shield is a round shield with a central boss and a metal rim. It has three wooden planks in blue and red, showing weathered paint. The handles are brown leather, and the rim is iron with visible rivets.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_08_eval/pointcloud.ply"}, {"id": 9, "folder": "sample_09_eval", "prompt": "A regal ancient Egyptian queen portrait bust with a stately crowned royal headdress and decorative jeweled collar.", "orig_caption": "The Nefertiti bust is a head with a detailed face, a slender neck, and a rectangular base. It has a smooth head and neck with realistic skin tones, and a rough, stone-like base. The headdress and collar are geometrically detailed and look metallic.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_09_eval/pointcloud.ply"}, {"id": 10, "folder": "sample_10_eval", "prompt": "A steampunk deep-sea explorer figure wearing an antique brass diving helm and heavy utility gear.", "orig_caption": "A miniature diver in a retro-futuristic diving suit, standing on an alien landscape with green and black moss. The diver wears a large helmet, a weathered vest, and blue and grey shorts. One arm holds a tool, and a backpack with gear is attached to the back.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_10_eval/pointcloud.ply"}, {"id": 11, "folder": "sample_11_eval", "prompt": "An advanced military combat trooper helmet with a tinted panoramic visor and matte desert camo patterning.", "orig_caption": "The MULTICAM CLONE Helmet is a rounded, camouflaged headgear with a black visor, red mouthguard, and vents on the sides and top. It covers most of the head and has a detailed, matte finish.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_11_eval/pointcloud.ply"}, {"id": 12, "folder": "sample_12_eval", "prompt": "A natural whole garden onion bulb wrapped in delicate golden-brown papery skin with dried shoots at the top.", "orig_caption": "A mature onion with a bulbous shape and multiple layers of papery skin. Small, dry green stems extend from the top. The color is mainly light brownish-yellow with some variations.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_12_eval/pointcloud.ply"}, {"id": 13, "folder": "sample_13_eval", "prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.", "orig_caption": "The 3D character has a large round head, a black hoodie with a pocket, grey t-shirt, black pants, and grey sneakers. The shoes are slightly shiny. The character stands in a relaxed pose.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_13_eval/pointcloud.ply"}, {"id": 14, "folder": "sample_14_eval", "prompt": "A sleek futuristic sci-fi assault rifle featuring dual precision barrels, tactical grip, and dark matte plating.", "orig_caption": "A mobile street stall for selling grilled corn and tamales. It has a red canopy, two large pots, storage compartments, and wheels. A control panel is at the front. The canopy is wide and decorative. Made of durable materials with red, white, and silver colors.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_14_eval/pointcloud.ply"}, {"id": 15, "folder": "sample_15_eval", "prompt": "A rustic handcrafted accent side table made of solid timber with smooth rounded edges and sturdy cylindrical legs.", "orig_caption": "The Lindt Gold Easter Bunny is a shiny, gold, rounded figure with perked-up ears and a red ribbon around its neck, with black eyes and nose.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_15_eval/pointcloud.ply"}, {"id": 16, "folder": "sample_16_eval", "prompt": "A lifelike woodland caribou figure with a thick winter coat, sturdy legs, and graceful antler silhouette.", "orig_caption": "The reindeer has a short, stout body with a brown fur coat and a white patch on the lower back. It has black antlers, large eyes, and a small black nose. A red collar with silver bells is around the neck.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_16_eval/pointcloud.ply"}, {"id": 17, "folder": "sample_17_eval", "prompt": "A majestic mythical winged dragon sculpture with sprawling crimson wings, curving horns, and a serpentine tail.", "orig_caption": "A purple dragon with large horns, red wings, and a long tail. It has expressive eyes and spikes along its back, making it look ready to fly.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_17_eval/pointcloud.ply"}, {"id": 18, "folder": "sample_18_eval", "prompt": "An energetic cartoon marsupial video game hero in a dynamic stance with wide expressive smile and pointy ears.", "orig_caption": "Crash Bandicoot is a cartoon marsupial with a rounded body, triangular ears, wide green eyes, and a large nose. It wears black gloves, blue jeans, and red sneakers.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_18_eval/pointcloud.ply"}, {"id": 19, "folder": "sample_19_eval", "prompt": "A weathered horror animatronic animal with exposed mechanical joints, frayed synthetic fur, and glowing eyes.", "orig_caption": "Phantom Foxy is a fox-like animatronic with a mix of fur and mechanical parts. It has a large head, sharp features, and exposed mechanical elements. The arms are outstretched with claws, and the legs are partially skeletal. The model is mainly deep brown with neon green and silver accents. Ideal for horror or game scenes.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_19_eval/pointcloud.ply"}, {"id": 20, "folder": "sample_20_eval", "prompt": "A vivid green amphibian tree frog resting in a natural crouch with glossy skin and large alert eyes.", "orig_caption": "The Australian Tree Frog has a rounded body, wide head, and prominent eyes. It has shorter front legs and strong back legs. The skin is smooth and green with white spots. The eyes have a yellow-to-brown gradient, and the underbelly is pale.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_20_eval/pointcloud.ply"}, {"id": 21, "folder": "sample_21_eval", "prompt": "A traditional glazed ceramic condiment bowl featuring a domed fitted lid and a smooth rounded earthenware base.", "orig_caption": "The sugar bowl is ovoid with a broad base and a wide, gently sloping lid opening. It is dark brown or black with white paw prints on the side and a narrow cream band around the lid rim.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_21_eval/pointcloud.ply"}, {"id": 22, "folder": "sample_22_eval", "prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.", "orig_caption": "A mushroom with a red cap and brown spikes, a light beige stem with blue accents, and a small black mark on the stem.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_22_eval/pointcloud.ply"}, {"id": 23, "folder": "sample_23_eval", "prompt": "A ripe culinary avocado cut in half showcasing creamy pale-green flesh and a smooth central pit.", "orig_caption": "A pear-shaped avocado with a brown pit, a glossy green fruit section, and a dark purple or black outer skin with a grainy texture.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_23_eval/pointcloud.ply"}, {"id": 24, "folder": "sample_24_eval", "prompt": "A glowing geometric arcane crystal prism carved from brilliant multifaceted green gemstone.", "orig_caption": "The Stylized Sorcerer's Emerald is a conical, pointed object with a faceted green emerald on a golden base decorated with triangular elements. It looks like an arrowhead and is visually striking.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_24_eval/pointcloud.ply"}, {"id": 25, "folder": "sample_25_eval", "prompt": "A classic standing coin-op arcade game cabinet featuring colorful side marquee art, joystick, and display screen.", "orig_caption": "The Donkey Kong Remix arcade cabinet is a yellow box with a colorful front panel, an angled screen, a black joystick, and two buttons. It stands on a flat surface with a stable base.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_25_eval/pointcloud.ply"}, {"id": 26, "folder": "sample_26_eval", "prompt": "An ancient archaeological pottery goblet vessel with an inverted flared bell silhouette and earthen clay texture.", "orig_caption": "The Dacian pottery vessel is shaped like an inverted bell with a curved rim and a flat base. It has geometric patterns near the top and is made of fine clay in earthy colors.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_26_eval/pointcloud.ply"}, {"id": 27, "folder": "sample_27_eval", "prompt": "A vibrant multicolored geometric cube with cleanly defined edges and contrasting solid-colored facets.", "orig_caption": "The TestCube is a colorful, symmetrical cube with six different faces: light blue, purple, yellow, green, and pink. It has slightly rounded corners and a soft, durable texture.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_27_eval/pointcloud.ply"}, {"id": 28, "folder": "sample_28_eval", "prompt": "A vintage oak storage cask barrel banded with riveted dark iron hoops and weathered wooden staves.", "orig_caption": "The wooden barrel is a slightly tapered cylinder with visible wood grain. Two metal bands reinforce the structure, and the top and bottom have metal rims. The lid is a flat wooden circle. Moss and fungus patches near the base give it an aged look.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_28_eval/pointcloud.ply"}, {"id": 29, "folder": "sample_29_eval", "prompt": "An expressive animated fantasy crone bust characterized by dramatic facial features, voluminous hair, and jewelry.", "orig_caption": "Yubaba, the elderly witch from \"Spirited Away,\" is shown with her head and upper torso. She has wavy hair, a long nose, bright blue eyes, and large ears with earrings and a green gem.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_29_eval/pointcloud.ply"}, {"id": 30, "folder": "sample_30_eval", "prompt": "A miniature oceanic diorama depicting a tall wooden sailing ship cruising over waters with a surfacing blue whale.", "orig_caption": "The \"Aquatic Stage\" includes a pirate ship with red and white sails and a skull flag. The ship has a wooden hull. The scene also features a blue whale with a smooth, blue body. The setting includes water with a sandy bottom and small sea creatures.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_30_eval/pointcloud.ply"}, {"id": 31, "folder": "sample_31_eval", "prompt": "A stylized modern male character model dressed in a smart casual knit sweater, necktie, and comfortable sneakers.", "orig_caption": "A man standing upright, wearing a white shirt under a gray sweater, a red striped tie, dark gray pants, and red sneakers.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_31_eval/pointcloud.ply"}, {"id": 32, "folder": "sample_32_eval", "prompt": "A powerful martial arts arena combatant with an athletic muscular build, tactical combat gear, and knee pads.", "orig_caption": "A muscular male fighter with a bald head, armored vest, utility belt, elbow and knee pads, and bare feet. The model is symmetrical.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_32_eval/pointcloud.ply"}, {"id": 33, "folder": "sample_33_eval", "prompt": "A whimsical anthropomorphic teddy bear gentleman dressed smartly in a formal tailored suit and bright necktie.", "orig_caption": "The bear has a big, round head, small black eyes, and orange ears. It wears a gray suit, a white shirt, and a red tie. The bear has short, thick legs and rounded feet. The model looks cute and cartoonish.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_33_eval/pointcloud.ply"}, {"id": 34, "folder": "sample_34_eval", "prompt": "A classical neoclassical marble sculpture bust portraying an elegant draped figure with a sculpted headwrap.", "orig_caption": "A marble bust of a classical figure in profile, with detailed hair, a turban-like headdress, and a draped cloth over the shoulders. It stands on a simple circular base and has a smooth, light beige color.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_34_eval/pointcloud.ply"}, {"id": 35, "folder": "sample_35_eval", "prompt": "A fearsome medieval iron flail weapon featuring an ornate dragon-shaped striking head and spiked link chain.", "orig_caption": "The Dragon Flail is a weapon with a dragon head, a thick, spiked chain, and a sturdy handle. The dragon head has sharp teeth and horns, and the handle is cylindrical with a cross-guard. The textures are rough and scaly, and the colors are dark and metallic.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_35_eval/pointcloud.ply"}, {"id": 36, "folder": "sample_36_eval", "prompt": "A weathered industrial steel hazardous waste drum showing heavy rust patina, structural ribs, and warning graphics.", "orig_caption": "The oil barrel is a rusty metal cylinder with a slight hourglass shape. It has flat tops and bottoms, horizontal bands, and a bright yellow label with black text. Used in industrial settings.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_36_eval/pointcloud.ply"}, {"id": 37, "folder": "sample_37_eval", "prompt": "A formidable high-tech robotic mecha warrior in heavy armored plating wielding a gleaming futuristic broadsword.", "orig_caption": "A muscular, armored robot with a helmet, red glowing eyes, and a silver sword. It has a gray and red torso, large shoulder pads, and armored arms and legs. A utility belt and a backpack with red lights complete the design.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_37_eval/pointcloud.ply"}, {"id": 38, "folder": "sample_38_eval", "prompt": "A traditional historical wide-brimmed felt pilgrim hat adorned with a clean dark band and polished metal buckle.", "orig_caption": "The Pilgrim Hat has a short cylindrical crown and a wide, flat brim. It is symmetrical and smooth, with a deep navy blue body, a black band, and a silver buckle.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_38_eval/pointcloud.ply"}, {"id": 39, "folder": "sample_39_eval", "prompt": "A quirky bipedal utility inspection robot with a red cylindrical sensor housing and articulated strut legs.", "orig_caption": "The Pipe Drone has a cylindrical red head with a handle, a yellow spherical middle, and two articulated legs, one bent and one extended. It looks weathered and is designed for rugged terrain.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_39_eval/pointcloud.ply"}, {"id": 40, "folder": "sample_40_eval", "prompt": "A professional athletic football protective helmet featuring a glossy red shell, steel facemask cage, and chin strap.", "orig_caption": "Red, glossy football helmet with a black face mask, white \"KC\" logo, and blue interior padding. Ventilated and secured with a black chinstrap.", "is_train": false, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_40_eval/pointcloud.ply"}, {"id": 41, "folder": "sample_41_train", "prompt": "[training prompt] The Organic Table has an irregular, wood-like top with jagged edges connecting to rough, textured legs. It's mostly brown with some white mushroom-like protrusions. The design looks natural and organic.", "orig_caption": "The Organic Table has an irregular, wood-like top with jagged edges connecting to rough, textured legs. It's mostly brown with some white mushroom-like protrusions. The design looks natural and organic.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_41_train/pointcloud.ply"}, {"id": 42, "folder": "sample_42_train", "prompt": "[training prompt] The \"Platano Del Mono\" is a funny character with a gorilla head and a yellow banana body. It has a green waistband, black furry arms and legs, red wrist and ankle bands, and white feet. It stands upright and is designed to look playful.", "orig_caption": "The \"Platano Del Mono\" is a funny character with a gorilla head and a yellow banana body. It has a green waistband, black furry arms and legs, red wrist and ankle bands, and white feet. It stands upright and is designed to look playful.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_42_train/pointcloud.ply"}, {"id": 43, "folder": "sample_43_train", "prompt": "[training prompt] A medieval shield with a dark metal frame, a brown wooden plate, and a round metallic boss at the center. Two light brown handles are attached at the top. The shield is moderately sized and balanced for handheld defense.", "orig_caption": "A medieval shield with a dark metal frame, a brown wooden plate, and a round metallic boss at the center. Two light brown handles are attached at the top. The shield is moderately sized and balanced for handheld defense.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_43_train/pointcloud.ply"}, {"id": 44, "folder": "sample_44_train", "prompt": "[training prompt] A muscular frost bear with large claws and sharp spikes, featuring icy textures and a dark blue chest plate. The eyes glow turquoise. Suitable for a cold, wintery setting.", "orig_caption": "A muscular frost bear with large claws and sharp spikes, featuring icy textures and a dark blue chest plate. The eyes glow turquoise. Suitable for a cold, wintery setting.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_44_train/pointcloud.ply"}, {"id": 45, "folder": "sample_45_train", "prompt": "[training prompt] The inn is a two-story building with a golden straw thatched roof, a wooden balcony, and a tower. It has large windows with shutters, a red door, and a cobblestone path leading to the entrance.", "orig_caption": "The inn is a two-story building with a golden straw thatched roof, a wooden balcony, and a tower. It has large windows with shutters, a red door, and a cobblestone path leading to the entrance.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_45_train/pointcloud.ply"}, {"id": 46, "folder": "sample_46_train", "prompt": "[training prompt] The treasure chest is a rectangular box with a domed lid, made of light-colored wood and a rusty metal frame. It has a metallic pull handle on the front and a small plate at the bottom. The wood is smooth with natural grain, and the metal shows signs of wear.", "orig_caption": "The treasure chest is a rectangular box with a domed lid, made of light-colored wood and a rusty metal frame. It has a metallic pull handle on the front and a small plate at the bottom. The wood is smooth with natural grain, and the metal shows signs of wear.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_46_train/pointcloud.ply"}, {"id": 47, "folder": "sample_47_train", "prompt": "[training prompt] A rectangular box with handles, a blue-lit front panel, and bolts on the top. It has a rough, rusty texture and is designed for easy carrying.", "orig_caption": "A rectangular box with handles, a blue-lit front panel, and bolts on the top. It has a rough, rusty texture and is designed for easy carrying.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_47_train/pointcloud.ply"}, {"id": 48, "folder": "sample_48_train", "prompt": "[training prompt] Reverse Flash (Unmasked) is an athletic character with long limbs, a broad torso, and a streamlined suit. It features yellow and black colors, with a hint of red around the neck. The character stands with arms outstretched, showing a power stance.", "orig_caption": "Reverse Flash (Unmasked) is an athletic character with long limbs, a broad torso, and a streamlined suit. It features yellow and black colors, with a hint of red around the neck. The character stands with arms outstretched, showing a power stance.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_48_train/pointcloud.ply"}, {"id": 49, "folder": "sample_49_train", "prompt": "[training prompt] A muscular character with spiky yellow hair, wearing a red tank top, green pants, and yellow boots.", "orig_caption": "A muscular character with spiky yellow hair, wearing a red tank top, green pants, and yellow boots.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_49_train/pointcloud.ply"}, {"id": 50, "folder": "sample_50_train", "prompt": "[training prompt] The chicken coop is a rectangular structure with a green corrugated metal roof, a solid door, a wire-mesh window, and a large birdcage section. It is supported by a base frame.", "orig_caption": "The chicken coop is a rectangular structure with a green corrugated metal roof, a solid door, a wire-mesh window, and a large birdcage section. It is supported by a base frame.", "is_train": true, "mesh_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/rotation_mesh_dual.mp4", "pc_video": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/rotation_pc_dual.mp4", "texture": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/texture.png", "depth": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/depth.png", "comparison": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/comparison.png", "glb": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/mesh.glb", "ply": "./mf_feas90_flat_alllora_60k_from45k_w1_eval50/sample_50_train/pointcloud.ply"}];
+    const sampleMap = {};
+    SAMPLES.forEach(s => { sampleMap[s.id] = s; });
+
+    // ── Model selection ───────────────────────────────────────────────────
+    // To add a model: append an entry here. `dir` is its eval folder in this directory.
+    const MODELS = [
+      { id: 'flat60',  rope: 'Flat',        steps: '60k',  dir: 'mf_feas90_flat_alllora_60k_from45k_w1_eval50',
+        desc: 'Baseline. Flat 2D RoPE, 60k steps, depth-loss weight w=1.0.' },
+      { id: 'flat75',  rope: 'Flat',        steps: '75k',  dir: 'mf_feas90_flat_alllora_75k_from60k_gradnorm_final_eval50',
+        desc: 'Flat 2D RoPE, trained further to 75k steps.' },
+      { id: 'flat90',  rope: 'Flat',        steps: '90k',  dir: 'mf_feas90_flat_alllora_90k_from60k_w1_eval50',
+        desc: 'Flat 2D RoPE, trained further to 90k steps, w=1.0.' },
+      { id: 'flat50s', rope: 'Flat',        steps: '50k scratch', dir: 'mf_feas90_flat_alllora_50k_scratch_w1_eval50',
+        desc: 'Ablation: flat 2D RoPE trained from scratch for 50k steps, w=1.0.' },
+      { id: 'flat50g', rope: 'Flat',        steps: '50k scratch GN', dir: 'mf_feas90_flat_alllora_50k_scratch_gradnorm_eval50',
+        desc: 'Ablation: flat 2D RoPE from scratch for 50k steps with GradNorm loss balancing (LoRA rank 32).' },
+      { id: 'cyl90',   rope: 'Cylindrical', steps: '90k',  dir: 'mf_feas90_cylin_90k_w1_sync_eval50',
+        desc: 'Cylindrical RoPE (theta = 0 and 2 pi are neighbours), 90k steps, w=1.0.' },
+      { id: 'cyl105',  rope: 'Cylindrical', steps: '105k', dir: 'mf_feas90_cylin_105k_w1_sync_eval50',
+        desc: 'Cylindrical RoPE, trained further to 105k steps, w=1.0.' },
+    ];
+    const ROPES = ['Flat', 'Cylindrical'];
+    const BASE_DIR = MODELS[0].dir;
+    const PROBE_FILE = 'sample_03_eval/rotation_mesh_dual.mp4';
+    let currentModel = MODELS[0];
+
+    // Store every media path relative to its model folder, so switching models is a prefix swap.
+    SAMPLES.forEach(s => {
+      s.rel = {};
+      Object.keys(s).forEach(k => {
+        const v = s[k];
+        if (typeof v === 'string' && v.startsWith('./' + BASE_DIR + '/')) s.rel[k] = v.slice(BASE_DIR.length + 3);
+      });
+      console.assert(Object.keys(s.rel).length > 0, 'sample has no media paths', s.id);
+    });
+
+    const modelPath = (m, rel) => './' + m.dir + '/' + rel;
+
+    function renderModelBar() {
+      const ropeSeg = document.getElementById('ropeSeg');
+      const stepsSeg = document.getElementById('stepsSeg');
+      ropeSeg.innerHTML = '';
+      stepsSeg.innerHTML = '';
+      ROPES.forEach(rope => {
+        const b = document.createElement('button');
+        b.textContent = rope;
+        b.classList.toggle('active', rope === currentModel.rope);
+        const options = MODELS.filter(m => m.rope === rope && m.available);
+        b.disabled = options.length === 0;
+        b.onclick = () => {
+          const same = options.find(m => m.steps === currentModel.steps);
+          applyModel(same || options[0]);
+        };
+        ropeSeg.appendChild(b);
+      });
+      MODELS.filter(m => m.rope === currentModel.rope).forEach(m => {
+        const b = document.createElement('button');
+        b.textContent = m.steps;
+        b.classList.toggle('active', m === currentModel);
+        b.disabled = !m.available;
+        if (!m.available) b.title = 'Results for this model are still being generated';
+        b.onclick = () => applyModel(m);
+        stepsSeg.appendChild(b);
+      });
+      document.getElementById('modelDesc').innerHTML = currentModel.desc + ' <code>' + currentModel.dir + '</code>';
+    }
+
+    function applyModel(m) {
+      console.assert(m.available, 'applyModel on unavailable model', m.id);
+      currentModel = m;
+      SAMPLES.forEach(s => { Object.entries(s.rel).forEach(([k, rel]) => { s[k] = modelPath(m, rel); }); });
+      document.querySelectorAll('#teaserGrid video').forEach(v => {
+        const src = v.querySelector('source');
+        src.src = modelPath(m, src.dataset.rel);
+        v.load();
+        v.play().catch(() => {});
+      });
+      document.querySelectorAll('.js-model-label').forEach(el => { el.textContent = m.rope + ' RoPE · ' + m.steps + ' steps'; });
+      renderModelBar();
+      selectSample(currentSelectedId);
+      selectCmpSample(currentCmpId);
+      const url = new URL(location.href);
+      url.searchParams.set('model', m.id);
+      history.replaceState(null, '', url);
+    }
+
+    async function initModels() {
+      document.querySelectorAll('#teaserGrid source').forEach(src => {
+        const raw = src.getAttribute('src');
+        console.assert(raw.startsWith('./' + BASE_DIR + '/'), 'unexpected teaser src', raw);
+        src.dataset.rel = raw.slice(BASE_DIR.length + 3);
+      });
+      await Promise.all(MODELS.map(async m => {
+        const r = await fetch(modelPath(m, PROBE_FILE), { method: 'HEAD', cache: 'no-store' }).catch(() => null);
+        m.available = !!(r && r.ok);
+      }));
+      const wanted = MODELS.find(m => m.id === new URL(location.href).searchParams.get('model') && m.available);
+      applyModel(wanted || MODELS.find(m => m.available));
+    }
+
+    let currentSelectedId = 3;
+    let current3DMode = 'mesh'; // 'mesh' or 'pc'
+    let mvFrontToggle = false;
+
+    function selectSample(id) {
+      const data = sampleMap[id];
+      if (!data) return;
+
+      currentSelectedId = id;
+
+      // Update Teaser Card Highlight
+      document.querySelectorAll('.teaser-card').forEach(c => c.classList.remove('selected'));
+      const activeCard = document.getElementById('teaserCard_' + id);
+      if (activeCard) activeCard.classList.add('selected');
+
+      // Update Dropdown
+      const dropdown = document.getElementById('sampleDropdown');
+      if (dropdown) dropdown.value = id;
+
+      // Update Inspection Col 1: Prompt
+      document.getElementById('inspectBadge').innerText = '#' + String(id).padStart(2, '0');
+      document.getElementById('inspectPrompt').innerText = '"' + data.prompt + '"';
+      document.getElementById('inspectOrigCaption').innerText = data.orig_caption ? ('"' + data.orig_caption + '"') : '(None)';
+      document.getElementById('inspectTag').innerText = data.is_train ? 'Training Prompt' : 'Novel Benchmark';
+
+      // Update Inspection Col 2 & 3: Images
+      document.getElementById('inspectTextureImg').src = data.texture;
+      document.getElementById('inspectDepthImg').src = data.depth;
+
+      // Update Inspection Col 4: 3D Media
+      const meshVid = document.getElementById('inspectMeshVideo');
+      const pcVid = document.getElementById('inspectPcVideo');
+      const mv = document.getElementById('inspectModelViewer');
+      const btn3d = document.getElementById('btnToggle3D');
+
+      // Reset interactive 3D if open
+      if (mv.classList.contains('active')) {
+        mv.classList.remove('active');
+        btn3d.classList.remove('active');
+        btn3d.querySelector('span').innerText = 'Interactive 3D';
+      }
+
+      meshVid.querySelector('source').src = data.mesh_video;
+      meshVid.load();
+      pcVid.querySelector('source').src = data.pc_video;
+      pcVid.load();
+      mv.src = data.glb;
+      // model-viewer ignores an unchanged camera-orbit value, so alternate between two equivalent front views.
+      mvFrontToggle = !mvFrontToggle;
+      mv.cameraOrbit = (mvFrontToggle ? '0.001deg' : '0deg') + ' 75deg auto';
+      if (mv.resetTurntableRotation) mv.resetTurntableRotation();
+      if (mv.jumpCameraToGoal) mv.jumpCameraToGoal();
+
+      if (current3DMode === 'mesh') {
+        meshVid.classList.remove('hidden');
+        pcVid.classList.add('hidden');
+        meshVid.play().catch(() => {});
+      } else {
+        meshVid.classList.add('hidden');
+        pcVid.classList.remove('hidden');
+        pcVid.play().catch(() => {});
+      }
+    }
+
+    function setRow3DMode(mode) {
+      current3DMode = mode;
+      document.getElementById('btnSwitchMesh').classList.toggle('active', mode === 'mesh');
+      document.getElementById('btnSwitchPc').classList.toggle('active', mode === 'pc');
+
+      const meshVid = document.getElementById('inspectMeshVideo');
+      const pcVid = document.getElementById('inspectPcVideo');
+      const mv = document.getElementById('inspectModelViewer');
+      const btn3d = document.getElementById('btnToggle3D');
+      const title = document.getElementById('view3dTitle');
+
+      // If interactive 3D was on, close it
+      if (mv.classList.contains('active')) {
+        mv.classList.remove('active');
+        btn3d.classList.remove('active');
+        btn3d.querySelector('span').innerText = 'Interactive 3D';
+      }
+
+      if (mode === 'mesh') {
+        title.innerText = '3D Rotating Mesh';
+        meshVid.classList.remove('hidden');
+        pcVid.classList.add('hidden');
+        meshVid.play().catch(() => {});
+      } else {
+        title.innerText = '3D Rotating Point Cloud';
+        meshVid.classList.add('hidden');
+        pcVid.classList.remove('hidden');
+        pcVid.play().catch(() => {});
+      }
+    }
+
+    function toggleRowInteractive3D() {
+      const meshVid = document.getElementById('inspectMeshVideo');
+      const pcVid = document.getElementById('inspectPcVideo');
+      const mv = document.getElementById('inspectModelViewer');
+      const btn3d = document.getElementById('btnToggle3D');
+
+      const isActive = mv.classList.contains('active');
+      if (isActive) {
+        mv.classList.remove('active');
+        btn3d.classList.remove('active');
+        btn3d.querySelector('span').innerText = 'Interactive 3D';
+        if (current3DMode === 'mesh') {
+          meshVid.classList.remove('hidden');
+          meshVid.play().catch(() => {});
+        } else {
+          pcVid.classList.remove('hidden');
+          pcVid.play().catch(() => {});
+        }
+      } else {
+        meshVid.classList.add('hidden');
+        pcVid.classList.add('hidden');
+        mv.classList.add('active');
+        btn3d.classList.add('active');
+        btn3d.querySelector('span').innerText = 'Exit 3D';
+      }
+    }
+
+    function openLightbox(src, title) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxTitle').innerText = title;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ── Comparison Section JS ──────────────────────────────────────────────
+    // TRELLIS data - will be populated from trellis_eval50/manifest.json
+    // when it's ready. For now we load from a manifest file if it exists.
+    let TRELLIS_MANIFEST = null;
+    const TRELLIS_DIR = './trellis_eval50/';
+
+    // Fetch TRELLIS manifest (non-blocking)
+    fetch(TRELLIS_DIR + 'manifest.json', { cache: 'no-store' })
+      .then(r => r.json())
+      .then(data => {
+        TRELLIS_MANIFEST = {};
+        data.forEach(s => { TRELLIS_MANIFEST[s.id] = s; });
+        // If a comparison sample is selected, update it
+        selectCmpSample(currentCmpId);
+      })
+      .catch(() => { /* manifest not ready yet */ });
+
+    let currentCmpId = 3;
+    let currentCmpOursMode = 'mesh';
+    let currentCmpTrellisMode = 'mesh';
+
+    // Selected samples for the comparison dropdown
+    // Comparison dropdown: every benchmark sample
+    (() => {
+      const dd = document.getElementById('cmpSampleDropdown');
+      SAMPLES.forEach(smp => {
+        const o = document.createElement('option');
+        o.value = smp.id;
+        const short = smp.prompt.length > 60 ? smp.prompt.slice(0, 57).replace(/\s+\S*$/, '') + '…' : smp.prompt;
+        o.textContent = 'Sample #' + String(smp.id).padStart(2, '0') + ' - ' + short;
+        dd.appendChild(o);
+      });
+      dd.value = 3;
+    })();
+
+    function selectCmpSample(id) {
+      currentCmpId = id;
+      const ourData = sampleMap[id];
+
+      // Update prompt text
+      const promptEl = document.getElementById('cmpPromptText');
+      const badgeEl = document.getElementById('cmpPromptBadge');
+      if (ourData) {
+        if (promptEl) promptEl.innerText = ourData.prompt;
+        if (badgeEl) badgeEl.innerText = '#' + String(id).padStart(2, '0');
+      }
+
+      // Update InversEdit video
+      const oursVid = document.getElementById('cmpOursVideo');
+      const oursSrc = document.getElementById('cmpOursSrc');
+      if (ourData && oursVid && oursSrc) {
+        oursSrc.src = currentCmpOursMode === 'mesh' ? ourData.mesh_video : ourData.pc_video;
+        oursVid.load();
+        oursVid.play().catch(() => {});
+      }
+
+      // Update TRELLIS video (if manifest loaded)
+      if (TRELLIS_MANIFEST && TRELLIS_MANIFEST[id]) {
+        const tData = TRELLIS_MANIFEST[id];
+        const trellisVid = document.getElementById('cmpTrellisVideo');
+        const trellisSrc = document.getElementById('cmpTrellisSrc');
+        const placeholder = document.getElementById('cmpTrellisPlaceholder');
+        const meshBtn = document.getElementById('cmpTrellisMeshBtn');
+        const pcBtn = document.getElementById('cmpTrellisPcBtn');
+        const src = currentCmpTrellisMode === 'mesh' ? (TRELLIS_DIR + tData.mesh_video) : (TRELLIS_DIR + tData.pc_video);
+        trellisSrc.src = src;
+        trellisVid.load();
+        trellisVid.play().catch(() => {});
+        trellisVid.style.display = '';
+        if (placeholder) placeholder.style.display = 'none';
+        if (meshBtn) meshBtn.disabled = false;
+        if (pcBtn) pcBtn.disabled = false;
+      }
+    }
+
+    function setCmpOursView(mode) {
+      currentCmpOursMode = mode;
+      const ourData = sampleMap[currentCmpId];
+      const oursVid = document.getElementById('cmpOursVideo');
+      const oursSrc = document.getElementById('cmpOursSrc');
+      document.getElementById('cmpOursMeshBtn').classList.toggle('active', mode === 'mesh');
+      document.getElementById('cmpOursPcBtn').classList.toggle('active', mode === 'pc');
+      if (ourData && oursVid && oursSrc) {
+        oursSrc.src = mode === 'mesh' ? ourData.mesh_video : ourData.pc_video;
+        oursVid.load();
+        oursVid.play().catch(() => {});
+      }
+    }
+
+    function setCmpTrellisView(mode) {
+      currentCmpTrellisMode = mode;
+      document.getElementById('cmpTrellisMeshBtn').classList.toggle('active', mode === 'mesh');
+      document.getElementById('cmpTrellisPcBtn').classList.toggle('active', mode === 'pc');
+      if (TRELLIS_MANIFEST && TRELLIS_MANIFEST[currentCmpId]) {
+        const tData = TRELLIS_MANIFEST[currentCmpId];
+        const src = mode === 'mesh' ? (TRELLIS_DIR + tData.mesh_video) : (TRELLIS_DIR + tData.pc_video);
+        document.getElementById('cmpTrellisSrc').src = src;
+        document.getElementById('cmpTrellisVideo').load();
+        document.getElementById('cmpTrellisVideo').play().catch(() => {});
+      }
+    }
+
+    // Initialize comparison section on load
+    // ── 3D editing section ────────────────────────────────────────────────
+    const ED_DIR = './editing/';
+    let ED = null, edCur = 0, edMethod = 0;
+
+    function edShow() {
+      const e = ED.edits[edCur], r = e.results[edMethod];
+      document.querySelectorAll('#edPicker .ed-card').forEach((c, i) => c.classList.toggle('active', i === edCur));
+      const sv = document.getElementById('edSrcVideo'), rv = document.getElementById('edResVideo');
+      sv.src = ED_DIR + e.source.video;
+      rv.src = ED_DIR + r.video;
+      [sv, rv].forEach(v => { v.currentTime = 0; v.play().catch(() => {}); });
+      document.getElementById('edSrcPrompt').textContent = '"' + e.source_prompt + '"';
+      document.getElementById('edTarPrompt').textContent = '"' + e.target_prompt + '"';
+      document.getElementById('edKind').innerHTML = `<span class="ed-pill ${e.kind}">${e.kind === 'local' ? 'local edit: ' + e.region : e.kind + ' edit'}</span>`;
+      document.getElementById('edSrcTex').src = ED_DIR + (e.mask || e.source.texture);
+      document.getElementById('edSrcTexCap').textContent = e.mask ? 'Mask painted on the source IPN texture (' + e.region + ')' : 'Source IPN texture';
+      document.getElementById('edResTex').src = ED_DIR + r.texture;
+      document.getElementById('edMethods').innerHTML = e.results.map((m, i) =>
+        `<button class="toggle-btn${i === edMethod ? ' active' : ''}" data-i="${i}">${m.label}${i === 0 ? ' (best)' : ''}</button>`).join('');
+      document.querySelectorAll('#edMethods button').forEach(b => b.addEventListener('click', () => { edMethod = +b.dataset.i; edShow(); }));
+      const geo = r.mask_iou === 1 && r.depth_l1 === 0 ? 'geometry unchanged' : `silhouette IoU ${r.mask_iou.toFixed(3)} · depth change ${r.depth_l1.toFixed(3)}`;
+      const outside = r.outside_tex_l1 === undefined ? '' : ` Outside the mask: colour change ${r.outside_tex_l1.toFixed(4)}, depth change ${r.outside_depth_l1.toFixed(4)}.`;
+      document.getElementById('edNote').textContent = `${r.label}: ${r.note}. ${geo} · ${r.seconds}s on an H100.${outside}`;
+    }
+
+    async function initEditing() {
+      const res = await fetch(ED_DIR + 'data.json', { cache: 'no-store' });
+      console.assert(res.ok, 'editing/data.json missing');
+      ED = await res.json();
+      const card = (e, i) => `<button class="ed-card" data-i="${i}"><b>${e.object}<span class="ed-pill ${e.kind}">${e.kind === 'local' ? e.region : e.kind}</span></b><span class="ed-card-t">${e.target_prompt}</span></button>`;
+      const global = ED.edits.map((e, i) => [e, i]).filter(([e]) => e.kind !== 'local');
+      const local = ED.edits.map((e, i) => [e, i]).filter(([e]) => e.kind === 'local');
+      document.getElementById('edPicker').innerHTML = '<div class="ed-group">Whole-object edits</div>' + global.map(([e, i]) => card(e, i)).join('') +
+        '<div class="ed-group">Local edits (masked)</div>' + local.map(([e, i]) => card(e, i)).join('');
+      document.querySelectorAll('#edPicker .ed-card').forEach(c => c.addEventListener('click', () => { edCur = +c.dataset.i; edMethod = 0; edShow(); }));
+      edShow();
+    }
+
+    // ── Hole completion section ───────────────────────────────────────────
+    const HC_DIR = './inpainting/';
+    const HC_MODES = [
+      { key: 'guess', label: 'Rough guess', title: 'Smooth surface spanning each hole, coloured by a smooth blend of its rim. No model, CPU only' },
+      { key: 'detail', label: '+ texture detail', title: 'The rough guess plus the surrounding surface\'s fine texture (grain, speckle), copied in tiles. No model, CPU only' },
+      { key: 'model', label: 'Guess + model', title: 'The rough guess refined by the Modality Forcing model (partial noise)' },
+    ];
+    let HC = null, hcCur = 0, hcMode = 'guess', hcSyncing = false;
+
+    function hcShow() {
+      const o = HC.objects[hcCur];
+      if (!o.results[hcMode]) hcMode = 'guess';
+      const r = o.results[hcMode];
+      document.querySelectorAll('.hc-card, .hc-thumb').forEach(c => c.classList.toggle('active', +c.dataset.i === hcCur));
+      document.getElementById('hcBefore').src = HC_DIR + o.orig_mesh;
+      document.getElementById('hcAfter').src = HC_DIR + r.mesh;
+      document.getElementById('hcAfterToggles').innerHTML = HC_MODES.filter(m => o.results[m.key]).map(m =>
+        `<button class="toggle-btn${m.key === hcMode ? ' active' : ''}" data-k="${m.key}" title="${m.title}">${m.label}</button>`).join('');
+      document.querySelectorAll('#hcAfterToggles button').forEach(b => b.addEventListener('click', () => { hcMode = b.dataset.k; hcShow(); }));
+      document.getElementById('hcPrompt').textContent = '"' + o.prompt + '"';
+      const t = r.timing, cpu = t.views_s + t.integrate_s;
+      const time = hcMode !== 'model' ? `${Math.round(cpu)} s on CPU, no GPU`
+        : `${Math.round(t.model_s + cpu)} s (model ${Math.round(t.model_s)} s on one L40S, everything else ${Math.round(cpu)} s)`;
+      document.getElementById('hcStats').textContent = `#${o.id} · ${r.views_added} of ${r.views_total} views added surface (${fmtInt(r.added_vertices)} vertices) · ${time}`;
+      const pct = x => (100 * x).toFixed(1) + '%';
+      document.getElementById('hcEvals').innerHTML = r.evals.map(e => `
+        <div class="hc-eval"><figure>
+          <img src="${HC_DIR + e.before}" data-before="${HC_DIR + e.before}" data-after="${HC_DIR + e.after}" alt="${e.view} before" title="Hover to see after">
+          <figcaption>${e.view.replace('_', ' ')} · unknown <b>${pct(e.unknown_before)}</b> → <b>${pct(e.unknown_after)}</b></figcaption>
+        </figure></div>`).join('');
+      document.querySelectorAll('#hcEvals img').forEach(im => {
+        im.addEventListener('mouseenter', () => { im.src = im.dataset.after; });
+        im.addEventListener('mouseleave', () => { im.src = im.dataset.before; });
+      });
+      const kinds = HC.step_kinds[hcMode];
+      const cols = `grid-template-columns: 110px repeat(${kinds.length}, minmax(0, 1fr));`;
+      const head = `<div class="hc-step-head" style="${cols}"><span>View</span>` + kinds.map(k => `<span>${k.label}</span>`).join('') + '</div>';
+      document.getElementById('hcSteps').innerHTML = head + r.steps.map(s => `
+        <div class="hc-step" style="${cols}"><div class="lbl">${s.view.replace(/^up/, '↑ ').replace(/^dn/, '↓ ').replace('_az', '° · az ')}°<br>+${fmtInt(s.added_vertices)} vertices</div>
+          ${kinds.map(k => `<img src="${HC_DIR + s.files[k.key]}" alt="${s.view} ${k.label}" loading="lazy">`).join('')}
+        </div>`).join('');
+    }
+
+    function hcLink(a, b) {
+      a.addEventListener('camera-change', e => {
+        if (hcSyncing || e.detail.source !== 'user-interaction') return;
+        hcSyncing = true;
+        const o = a.getCameraOrbit();
+        b.cameraOrbit = `${o.theta}rad ${o.phi}rad ${o.radius}m`;
+        b.fieldOfView = a.getFieldOfView() + 'deg';
+        b.jumpCameraToGoal();
+        hcSyncing = false;
+      });
+    }
+
+    async function initHoles() {
+      const res = await fetch(HC_DIR + 'data.json', { cache: 'no-store' });
+      console.assert(res.ok, 'inpainting/data.json missing');
+      HC = await res.json();
+      const featured = HC.objects.map((o, i) => [o, i]).filter(([o]) => o.featured);
+      const rest = HC.objects.map((o, i) => [o, i]).filter(([o]) => !o.featured);
+      document.getElementById('hcPicker').innerHTML = featured.map(([o, i]) =>
+        `<button class="ed-card hc-card" data-i="${i}"><b>${o.name}</b><span class="ed-card-t">${o.prompt}</span></button>`).join('');
+      document.getElementById('hcAll').innerHTML = rest.map(([o, i]) =>
+        `<button class="hc-thumb" data-i="${i}" title="#${o.id}: ${o.prompt.replace(/"/g, '&quot;')}"><img src="${HC_DIR + o.results.guess.evals[2].after}" alt="#${o.id}" loading="lazy"><span>#${o.id}</span></button>`).join('');
+      document.querySelectorAll('.hc-card, .hc-thumb').forEach(c => c.addEventListener('click', () => {
+        hcCur = +c.dataset.i; hcShow();
+        document.getElementById('hole-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }));
+      const before = document.getElementById('hcBefore'), after = document.getElementById('hcAfter');
+      hcLink(before, after);
+      hcLink(after, before);
+      hcShow();
+    }
+
+    // ── Training data section ─────────────────────────────────────────────
+    const TD_DIR = './training_data/';
+    const TD_KEEP = '#6366f1', TD_REJECT = '#ef4444';
+    const fmtInt = n => n.toLocaleString('en-US');
+    const tdPage = { good: 0, bad: 0 };
+    let TD = null;
+
+    function tdPerPage() {
+      const w = window.innerWidth;
+      return w > 1100 ? 4 : w > 800 ? 3 : w > 480 ? 2 : 1;
+    }
+
+    function tdRenderFunnel(d) {
+      const L = d.losses;
+      const subsets = d.funnel.slice(0, 3).map(f =>
+        `<div class="td-fstep"><div class="n">${fmtInt(f.count)}</div><div class="l">${f.label}</div></div>`).join('');
+      const inter = d.funnel[3];
+      document.getElementById('tdFunnel').innerHTML = `
+        <div class="td-fstep"><div class="n">Objaverse-XL</div><div class="l">Sketchfab assets</div></div>
+        <div class="td-fop">→</div>
+        <div class="td-subsets">${subsets}</div>
+        <div class="td-fop">∩</div>
+        <div class="td-fstep"><div class="n">${fmtInt(inter.count)}</div><div class="l">${inter.label}</div></div>
+        <div class="td-fop">→</div>
+        <div class="td-fstep"><div class="n">${fmtInt(d.n_scored)}</div><div class="l">Converted to IPNs</div>
+          <div class="td-drop"><b>−${fmtInt(L.height_rejected)}</b> bad aspect ratio<span>height outside ${L.min_height}× – ${L.max_height}× the max radius</span></div>
+          <div class="td-drop"><b>−${fmtInt(L.load_failed)}</b> failed to load<span>timeouts, download and depth errors, after one retry (the retry recovered ${fmtInt(L.recovery.converted)})</span></div></div>
+        <div class="td-fop">→</div>
+        <div class="td-fstep"><div class="n">${fmtInt(d.n_kept)}</div><div class="l">Feasible</div><div class="s">best ${Math.round(d.keep_fraction * 100)}% by feasibility</div>
+          <div class="td-drop"><b>−${fmtInt(d.n_rejected)}</b> low feasibility<span>score above the cut, see below</span></div></div>
+        <div class="td-fop">→</div>
+        <div class="td-fstep hl"><div class="n">${fmtInt(d.n_train)}</div><div class="l">Training set</div>
+          <div class="td-drop"><b>−${fmtInt(d.n_heldout)}</b> held out<span>never trained on, for evaluation</span></div></div>`;
+    }
+
+    function tdRenderWorked(d) {
+      const w = d.worked;
+      const worst = w.views.reduce((a, b) => (b.score > a.score ? b : a));
+      document.getElementById('tdWorkedCaption').innerHTML =
+        `Headset: the inner sides of the ear cups are hidden from the cylinder, so the IPN gets them wrong. Red border = worst view.`;
+      document.getElementById('tdWorked').innerHTML = w.views.map(v => `
+        <div class="td-view${v === worst ? ' worst' : ''}">
+          <img src="${TD_DIR + v.orig}" alt="View ${v.view} original" loading="lazy">
+          <img src="${TD_DIR + v.recon}" alt="View ${v.view} rebuilt from IPN" loading="lazy">
+          <img src="${TD_DIR + v.diff}" alt="View ${v.view} difference" loading="lazy">
+          <div class="cap"><b>${v.score.toFixed(3)}</b><br>az ${v.azimuth}° · el ${v.elevation}°</div>
+        </div>`).join('');
+      document.getElementById('tdWorkedIpn').innerHTML = `
+        <figure><img src="${TD_DIR + w.texture}" alt="IPN texture"><figcaption>IPN texture (0° → 360°)</figcaption></figure>
+        <figure><img src="${TD_DIR + w.depth}" alt="IPN depth"><figcaption>IPN depth</figcaption></figure>
+        <div class="td-mean">score<b>${w.score.toFixed(3)}</b>&gt; ${d.threshold} → rejected</div>`;
+    }
+
+    function tdRenderStats(d) {
+      const tiles = [
+        [fmtInt(d.n_scored), 'objects scored'],
+        [d.median.toFixed(3), 'median score'],
+        [d.threshold.toFixed(3), 'cut (90th percentile)'],
+        [fmtInt(d.n_kept), 'kept'],
+        [fmtInt(d.n_rejected), 'rejected'],
+      ];
+      document.getElementById('tdStats').innerHTML = tiles.map(([n, l]) => `<div class="td-stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+    }
+
+    function tdRenderHist(d) {
+      const W = 1000, H = 300, M = { l: 52, r: 16, t: 26, b: 40 };
+      const iw = W - M.l - M.r, ih = H - M.t - M.b;
+      const bins = d.hist, xMax = bins[bins.length - 1].hi;
+      const yMax = Math.max(...bins.map(b => b.count));
+      const step = Math.pow(10, Math.floor(Math.log10(yMax)));
+      const yTop = Math.ceil(yMax / step) * step;
+      const x = v => M.l + (v / xMax) * iw, y = v => M.t + ih - (v / yTop) * ih;
+      const bw = iw / bins.length;
+      let g = '';
+      for (let t = 0; t <= yTop; t += yTop / 4) {
+        g += `<line x1="${M.l}" x2="${W - M.r}" y1="${y(t)}" y2="${y(t)}" stroke="rgba(255,255,255,0.06)"/>`;
+        g += `<text x="${M.l - 8}" y="${y(t) + 4}" text-anchor="end">${fmtInt(t)}</text>`;
+      }
+      for (let v = 0; v <= xMax + 1e-9; v += 0.1) g += `<text x="${x(v)}" y="${H - M.b + 18}" text-anchor="middle">${v.toFixed(1)}${v >= xMax - 1e-9 ? '+' : ''}</text>`;
+      g += `<text x="${M.l + iw / 2}" y="${H - 4}" text-anchor="middle">feasibility score (lower is better)</text>`;
+      g += `<text x="14" y="${M.t + ih / 2}" text-anchor="middle" transform="rotate(-90 14 ${M.t + ih / 2})">objects</text>`;
+      g += `<rect x="${x(d.threshold)}" y="${M.t}" width="${W - M.r - x(d.threshold)}" height="${ih}" fill="rgba(239,68,68,0.05)"/>`;
+      bins.forEach((b, i) => {
+        if (!b.count) return;
+        const x0 = M.l + i * bw + 1, w = Math.max(bw - 2, 1), y0 = y(b.count), h = M.t + ih - y0, r = Math.min(3, w / 2, h);
+        const col = b.lo >= d.threshold - 1e-9 ? TD_REJECT : TD_KEEP;
+        g += `<path d="M${x0},${M.t + ih} V${y0 + r} Q${x0},${y0} ${x0 + r},${y0} H${x0 + w - r} Q${x0 + w},${y0} ${x0 + w},${y0 + r} V${M.t + ih} Z" fill="${col}"/>`;
+      });
+      bins.forEach((b, i) => { g += `<rect class="td-hit" data-i="${i}" x="${M.l + i * bw}" y="${M.t}" width="${bw}" height="${ih}" fill="transparent"/>`; });
+      g += `<line x1="${x(d.threshold)}" x2="${x(d.threshold)}" y1="${M.t - 8}" y2="${M.t + ih}" stroke="#f8fafc" stroke-width="2" stroke-dasharray="5 4"/>`;
+      g += `<text class="lbl" x="${x(d.threshold) + 8}" y="${M.t + 6}">cut = ${d.threshold} (90th percentile)</text>`;
+      g += `<text class="lbl" x="${x(d.threshold) - 8}" y="${M.t + 26}" text-anchor="end">kept: ${fmtInt(d.n_kept)} (90%)</text>`;
+      g += `<text class="lbl" x="${x(d.threshold) + 8}" y="${M.t + 26}">rejected: ${fmtInt(d.n_rejected)} (10%)</text>`;
+      g += `<line x1="${M.l}" x2="${W - M.r}" y1="${M.t + ih}" y2="${M.t + ih}" stroke="rgba(255,255,255,0.18)"/>`;
+      const el = document.getElementById('tdHist');
+      el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Histogram of feasibility scores with the 90th-percentile cut at ${d.threshold}">${g}</svg>`;
+
+      const tip = document.getElementById('tdTip'), card = el.closest('.td-chart-card');
+      el.querySelectorAll('.td-hit').forEach(r => {
+        r.addEventListener('mousemove', e => {
+          const b = bins[+r.dataset.i];
+          const range = b.open_ended ? `≥ ${b.lo.toFixed(2)}` : `${b.lo.toFixed(2)} – ${b.hi.toFixed(2)}`;
+          tip.innerHTML = `score ${range}<br><b>${fmtInt(b.count)}</b> objects · ${b.lo >= d.threshold - 1e-9 ? 'rejected' : 'kept'}`;
+          tip.hidden = false;
+          const cr = card.getBoundingClientRect();
+          tip.style.left = Math.min(e.clientX - cr.left + 12, cr.width - tip.offsetWidth - 8) + 'px';
+          tip.style.top = (e.clientY - cr.top - 44) + 'px';
+        });
+        r.addEventListener('mouseleave', () => { tip.hidden = true; });
+      });
+      document.getElementById('tdHistTable').innerHTML = '<table><tr><th>score range</th><th>objects</th><th>status</th></tr>' +
+        bins.map(b => `<tr><td>${b.open_ended ? '≥ ' + b.lo.toFixed(2) : b.lo.toFixed(2) + ' – ' + b.hi.toFixed(2)}</td><td>${fmtInt(b.count)}</td><td>${b.lo >= d.threshold - 1e-9 ? 'rejected' : 'kept'}</td></tr>`).join('') + '</table>';
+    }
+
+    function tdRenderRow(row) {
+      const items = TD[row], per = tdPerPage();
+      const pages = Math.ceil(items.length / per);
+      tdPage[row] = Math.min(Math.max(tdPage[row], 0), pages - 1);
+      const start = tdPage[row] * per;
+      const col = row === 'good' ? TD_KEEP : TD_REJECT;
+      const cards = document.getElementById('tdCards_' + row);
+      cards.style.gridTemplateColumns = `repeat(${per}, minmax(0, 1fr))`;
+      cards.innerHTML = items.slice(start, start + per).map(e => `
+        <div class="td-card" title="${e.caption.replace(/"/g, '&quot;')}">
+          <div class="td-card-imgs">
+            <figure><img src="${TD_DIR + e.orig}" alt="Original render"><figcaption>Original</figcaption></figure>
+            <figure><img src="${TD_DIR + e.recon}" alt="Rebuilt from IPN"><figcaption>From IPN</figcaption></figure>
+          </div>
+          <div class="td-card-body">
+            <div class="td-score"><b>${e.score.toFixed(3)}</b>score · worst view ${e.worst_view}</div>
+            <div class="td-bar"><span style="width:${Math.min(100, e.score * 100)}%; background:${col}"></span></div>
+            <div class="td-cap">${e.caption}</div>
+          </div>
+        </div>`).join('');
+      document.getElementById('tdPage_' + row).textContent = `${tdPage[row] + 1} / ${pages}`;
+      document.querySelectorAll(`.td-arrow[data-row="${row}"]`).forEach(b => {
+        b.disabled = (+b.dataset.dir < 0 && tdPage[row] === 0) || (+b.dataset.dir > 0 && tdPage[row] === pages - 1);
+      });
+    }
+
+    async function initTrainingData() {
+      const r = await fetch(TD_DIR + 'data.json', { cache: 'no-store' });
+      console.assert(r.ok, 'training_data/data.json missing');
+      TD = await r.json();
+      TD.bad.sort((a, b) => b.score - a.score);
+      TD.good.sort((a, b) => a.caption.localeCompare(b.caption));
+      document.querySelectorAll('[data-td]').forEach(el => { const v = TD[el.dataset.td]; el.textContent = typeof v === 'number' && v >= 1000 ? fmtInt(v) : v; });
+      tdRenderFunnel(TD);
+      tdRenderWorked(TD);
+      tdRenderStats(TD);
+      tdRenderHist(TD);
+      ['good', 'bad'].forEach(tdRenderRow);
+      document.querySelectorAll('.td-arrow').forEach(b => b.addEventListener('click', () => {
+        tdPage[b.dataset.row] += +b.dataset.dir;
+        tdRenderRow(b.dataset.row);
+      }));
+      let lastPer = tdPerPage();
+      window.addEventListener('resize', () => {
+        const per = tdPerPage();
+        if (per !== lastPer) { lastPer = per; ['good', 'bad'].forEach(tdRenderRow); }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      selectCmpSample(3);
+      initModels();
+      initTrainingData();
+      initEditing();
+      initHoles();
+    });
+  </script>
+</body>
+</html>
