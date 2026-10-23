@@ -1,0 +1,603 @@
+{
+ "edits": [
+  {
+   "id": "13_texture",
+   "object": "Pirate chest",
+   "kind": "texture",
+   "source_prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.",
+   "target_prompt": "An antique pirate sea chest made entirely of polished shiny gold with engraved ornate patterns.",
+   "source": {
+    "video": "src_13/source_rotation_mesh_dual.mp4",
+    "texture": "src_13/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_rgb_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_13/texture/flowedit_rgb_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_13/texture/flowedit_rgb_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_rgb_t0.95",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 25.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_13/texture/sdedit_rgb_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_13/texture/sdedit_rgb_t0.95_texture.png"
+    },
+    {
+     "label": "Retexture",
+     "method": "retexture",
+     "note": "the model's depth-to-colour mode: keep depth, generate a new texture",
+     "seconds": 29.2,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_13/texture/retexture_rotation_mesh_dual.mp4",
+     "texture": "src_13/texture/retexture_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "13_shape",
+   "object": "Pirate chest",
+   "kind": "shape",
+   "source_prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.",
+   "target_prompt": "An antique wooden pirate sea chest with its lid wide open, overflowing with gold coins and jewels.",
+   "source": {
+    "video": "src_13/source_rotation_mesh_dual.mp4",
+    "texture": "src_13/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_joint_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.7,
+     "mask_iou": 0.986,
+     "depth_l1": 0.1316,
+     "video": "src_13/shape/flowedit_joint_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_13/shape/flowedit_joint_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_joint_t0.98",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 27.3,
+     "mask_iou": 0.981,
+     "depth_l1": 0.129,
+     "video": "src_13/shape/sdedit_joint_t0.98_rotation_mesh_dual.mp4",
+     "texture": "src_13/shape/sdedit_joint_t0.98_texture.png"
+    },
+    {
+     "label": "SDEdit (asym.)",
+     "method": "sdedit_asym_r0.95_d0.9",
+     "note": "SDEdit with less noise on depth than on colour",
+     "seconds": 24.8,
+     "mask_iou": 0.996,
+     "depth_l1": 0.035,
+     "video": "src_13/shape/sdedit_asym_r0.95_d0.9_rotation_mesh_dual.mp4",
+     "texture": "src_13/shape/sdedit_asym_r0.95_d0.9_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "06_texture",
+   "object": "Goblin head",
+   "kind": "texture",
+   "source_prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+   "target_prompt": "A fearsome fantasy goblin warrior head with icy pale blue skin, frosted white tusks, pointed ears and tied hair.",
+   "source": {
+    "video": "src_06/source_rotation_mesh_dual.mp4",
+    "texture": "src_06/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_rgb_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.8,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_06/texture/flowedit_rgb_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_06/texture/flowedit_rgb_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_rgb_t0.95",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 25.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_06/texture/sdedit_rgb_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_06/texture/sdedit_rgb_t0.95_texture.png"
+    },
+    {
+     "label": "Retexture",
+     "method": "retexture",
+     "note": "the model's depth-to-colour mode: keep depth, generate a new texture",
+     "seconds": 29.4,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_06/texture/retexture_rotation_mesh_dual.mp4",
+     "texture": "src_06/texture/retexture_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "06_shape",
+   "object": "Goblin head",
+   "kind": "shape",
+   "source_prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+   "target_prompt": "A fearsome fantasy goblin warrior head with emerald skin wearing a tall pointed purple wizard hat.",
+   "source": {
+    "video": "src_06/source_rotation_mesh_dual.mp4",
+    "texture": "src_06/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_joint_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.8,
+     "mask_iou": 0.999,
+     "depth_l1": 0.0716,
+     "video": "src_06/shape/flowedit_joint_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_06/shape/flowedit_joint_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_joint_t0.98",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 27.4,
+     "mask_iou": 0.974,
+     "depth_l1": 0.1277,
+     "video": "src_06/shape/sdedit_joint_t0.98_rotation_mesh_dual.mp4",
+     "texture": "src_06/shape/sdedit_joint_t0.98_texture.png"
+    },
+    {
+     "label": "SDEdit (asym.)",
+     "method": "sdedit_asym_r0.95_d0.9",
+     "note": "SDEdit with less noise on depth than on colour",
+     "seconds": 24.9,
+     "mask_iou": 0.992,
+     "depth_l1": 0.0768,
+     "video": "src_06/shape/sdedit_asym_r0.95_d0.9_rotation_mesh_dual.mp4",
+     "texture": "src_06/shape/sdedit_asym_r0.95_d0.9_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "22_texture",
+   "object": "Toadstool",
+   "kind": "texture",
+   "source_prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+   "target_prompt": "A glowing blue bioluminescent forest mushroom with bright cyan spots on its cap.",
+   "source": {
+    "video": "src_22/source_rotation_mesh_dual.mp4",
+    "texture": "src_22/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_rgb_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 55.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_22/texture/flowedit_rgb_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_22/texture/flowedit_rgb_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_rgb_t0.95",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 24.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_22/texture/sdedit_rgb_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_22/texture/sdedit_rgb_t0.95_texture.png"
+    },
+    {
+     "label": "Retexture",
+     "method": "retexture",
+     "note": "the model's depth-to-colour mode: keep depth, generate a new texture",
+     "seconds": 29.4,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_22/texture/retexture_rotation_mesh_dual.mp4",
+     "texture": "src_22/texture/retexture_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "22_shape",
+   "object": "Toadstool",
+   "kind": "shape",
+   "source_prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+   "target_prompt": "A cluster of three small forest toadstools with red spotted caps growing together from one base.",
+   "source": {
+    "video": "src_22/source_rotation_mesh_dual.mp4",
+    "texture": "src_22/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_joint_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.9,
+     "mask_iou": 0.999,
+     "depth_l1": 0.1252,
+     "video": "src_22/shape/flowedit_joint_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_22/shape/flowedit_joint_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_joint_t0.98",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 27.4,
+     "mask_iou": 0.974,
+     "depth_l1": 0.125,
+     "video": "src_22/shape/sdedit_joint_t0.98_rotation_mesh_dual.mp4",
+     "texture": "src_22/shape/sdedit_joint_t0.98_texture.png"
+    },
+    {
+     "label": "SDEdit (asym.)",
+     "method": "sdedit_asym_r0.95_d0.9",
+     "note": "SDEdit with less noise on depth than on colour",
+     "seconds": 24.9,
+     "mask_iou": 0.995,
+     "depth_l1": 0.0543,
+     "video": "src_22/shape/sdedit_asym_r0.95_d0.9_rotation_mesh_dual.mp4",
+     "texture": "src_22/shape/sdedit_asym_r0.95_d0.9_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "05_texture",
+   "object": "Chair",
+   "kind": "texture",
+   "source_prompt": "A minimalist Scandinavian dining chair made from smooth natural birch wood featuring an ergonomic curved backrest.",
+   "target_prompt": "A minimalist Scandinavian dining chair made of dark walnut wood with a bright red seat cushion.",
+   "source": {
+    "video": "src_05/source_rotation_mesh_dual.mp4",
+    "texture": "src_05/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_rgb_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_05/texture/flowedit_rgb_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_05/texture/flowedit_rgb_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_rgb_t0.95",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 25.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_05/texture/sdedit_rgb_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_05/texture/sdedit_rgb_t0.95_texture.png"
+    },
+    {
+     "label": "Retexture",
+     "method": "retexture",
+     "note": "the model's depth-to-colour mode: keep depth, generate a new texture",
+     "seconds": 29.5,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0,
+     "video": "src_05/texture/retexture_rotation_mesh_dual.mp4",
+     "texture": "src_05/texture/retexture_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "05_shape",
+   "object": "Chair",
+   "kind": "shape",
+   "source_prompt": "A minimalist Scandinavian dining chair made from smooth natural birch wood featuring an ergonomic curved backrest.",
+   "target_prompt": "A minimalist Scandinavian armchair made from smooth natural birch wood with wide curved armrests.",
+   "source": {
+    "video": "src_05/source_rotation_mesh_dual.mp4",
+    "texture": "src_05/source_texture.png"
+   },
+   "results": [
+    {
+     "label": "FlowEdit",
+     "method": "flowedit_joint_s0.95",
+     "note": "inversion-free flow editing: the difference between target- and source-prompt velocities",
+     "seconds": 54.8,
+     "mask_iou": 0.857,
+     "depth_l1": 0.0263,
+     "video": "src_05/shape/flowedit_joint_s0.95_rotation_mesh_dual.mp4",
+     "texture": "src_05/shape/flowedit_joint_s0.95_texture.png"
+    },
+    {
+     "label": "SDEdit",
+     "method": "sdedit_joint_t0.98",
+     "note": "re-noise the source, then denoise with the new prompt",
+     "seconds": 27.4,
+     "mask_iou": 0.734,
+     "depth_l1": 0.118,
+     "video": "src_05/shape/sdedit_joint_t0.98_rotation_mesh_dual.mp4",
+     "texture": "src_05/shape/sdedit_joint_t0.98_texture.png"
+    },
+    {
+     "label": "SDEdit (asym.)",
+     "method": "sdedit_asym_r0.95_d0.9",
+     "note": "SDEdit with less noise on depth than on colour",
+     "seconds": 24.9,
+     "mask_iou": 0.958,
+     "depth_l1": 0.0502,
+     "video": "src_05/shape/sdedit_asym_r0.95_d0.9_rotation_mesh_dual.mp4",
+     "texture": "src_05/shape/sdedit_asym_r0.95_d0.9_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "13_emblem",
+   "object": "Pirate chest",
+   "kind": "local",
+   "region": "emblem only",
+   "source_prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.",
+   "target_prompt": "An antique wooden pirate sea chest with a large shiny golden lion head emblem on the front.",
+   "source": {
+    "video": "src_13/source_rotation_mesh_dual.mp4",
+    "texture": "src_13/source_texture.png"
+   },
+   "mask": "src_13/mask_emblem.png",
+   "results": [
+    {
+     "label": "Masked FlowEdit",
+     "method": "flowedit_joint_masked",
+     "note": "FlowEdit on colour and depth, updating only tokens inside the painted mask",
+     "seconds": 55.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0029,
+     "outside_tex_l1": 0.0,
+     "outside_depth_l1": 0.0,
+     "video": "src_13/emblem/flowedit_joint_masked_rotation_mesh_dual.mp4",
+     "texture": "src_13/emblem/flowedit_joint_masked_texture.png"
+    },
+    {
+     "label": "Masked SDEdit",
+     "method": "sdedit_joint_masked_t0.95",
+     "note": "SDEdit where tokens outside the mask are reset to the noised source every step",
+     "seconds": 25.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0032,
+     "outside_tex_l1": 0.0001,
+     "outside_depth_l1": 0.0,
+     "video": "src_13/emblem/sdedit_joint_masked_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_13/emblem/sdedit_joint_masked_t0.95_texture.png"
+    },
+    {
+     "label": "Unmasked FlowEdit",
+     "method": "flowedit_joint_unmasked",
+     "note": "the same prompt without a mask, for comparison: the whole object drifts",
+     "seconds": 54.8,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0139,
+     "outside_tex_l1": 0.021,
+     "outside_depth_l1": 0.004,
+     "video": "src_13/emblem/flowedit_joint_unmasked_rotation_mesh_dual.mp4",
+     "texture": "src_13/emblem/flowedit_joint_unmasked_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "06_face_paint",
+   "object": "Goblin head",
+   "kind": "local",
+   "region": "face only",
+   "source_prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+   "target_prompt": "A fearsome fantasy goblin warrior head with emerald skin and bright red tribal war paint stripes across its face.",
+   "source": {
+    "video": "src_06/source_rotation_mesh_dual.mp4",
+    "texture": "src_06/source_texture.png"
+   },
+   "mask": "src_06/mask_face_paint.png",
+   "results": [
+    {
+     "label": "Masked FlowEdit",
+     "method": "flowedit_joint_masked",
+     "note": "FlowEdit on colour and depth, updating only tokens inside the painted mask",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0048,
+     "outside_tex_l1": 0.0,
+     "outside_depth_l1": 0.0,
+     "video": "src_06/face_paint/flowedit_joint_masked_rotation_mesh_dual.mp4",
+     "texture": "src_06/face_paint/flowedit_joint_masked_texture.png"
+    },
+    {
+     "label": "Masked SDEdit",
+     "method": "sdedit_joint_masked_t0.95",
+     "note": "SDEdit where tokens outside the mask are reset to the noised source every step",
+     "seconds": 24.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0049,
+     "outside_tex_l1": 0.0001,
+     "outside_depth_l1": 0.0,
+     "video": "src_06/face_paint/sdedit_joint_masked_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_06/face_paint/sdedit_joint_masked_t0.95_texture.png"
+    },
+    {
+     "label": "Unmasked FlowEdit",
+     "method": "flowedit_joint_unmasked",
+     "note": "the same prompt without a mask, for comparison: the whole object drifts",
+     "seconds": 54.9,
+     "mask_iou": 0.998,
+     "depth_l1": 0.0471,
+     "outside_tex_l1": 0.0287,
+     "outside_depth_l1": 0.0285,
+     "video": "src_06/face_paint/flowedit_joint_unmasked_rotation_mesh_dual.mp4",
+     "texture": "src_06/face_paint/flowedit_joint_unmasked_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "06_hat",
+   "object": "Goblin head",
+   "kind": "local",
+   "region": "top of head only",
+   "source_prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+   "target_prompt": "A fearsome fantasy goblin warrior head with emerald skin wearing a tall pointed purple wizard hat.",
+   "source": {
+    "video": "src_06/source_rotation_mesh_dual.mp4",
+    "texture": "src_06/source_texture.png"
+   },
+   "mask": "src_06/mask_hat.png",
+   "results": [
+    {
+     "label": "Masked FlowEdit",
+     "method": "flowedit_joint_masked",
+     "note": "FlowEdit on colour and depth, updating only tokens inside the painted mask",
+     "seconds": 54.8,
+     "mask_iou": 0.996,
+     "depth_l1": 0.0164,
+     "outside_tex_l1": 0.0005,
+     "outside_depth_l1": 0.0,
+     "video": "src_06/hat/flowedit_joint_masked_rotation_mesh_dual.mp4",
+     "texture": "src_06/hat/flowedit_joint_masked_texture.png"
+    },
+    {
+     "label": "Masked SDEdit",
+     "method": "sdedit_joint_masked_t0.95",
+     "note": "SDEdit where tokens outside the mask are reset to the noised source every step",
+     "seconds": 25.0,
+     "mask_iou": 0.996,
+     "depth_l1": 0.0159,
+     "outside_tex_l1": 0.0002,
+     "outside_depth_l1": 0.0,
+     "video": "src_06/hat/sdedit_joint_masked_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_06/hat/sdedit_joint_masked_t0.95_texture.png"
+    },
+    {
+     "label": "Unmasked FlowEdit",
+     "method": "flowedit_joint_unmasked",
+     "note": "the same prompt without a mask, for comparison: the whole object drifts",
+     "seconds": 54.9,
+     "mask_iou": 0.995,
+     "depth_l1": 0.0771,
+     "outside_tex_l1": 0.034,
+     "outside_depth_l1": 0.0522,
+     "video": "src_06/hat/flowedit_joint_unmasked_rotation_mesh_dual.mp4",
+     "texture": "src_06/hat/flowedit_joint_unmasked_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "22_cap",
+   "object": "Toadstool",
+   "kind": "local",
+   "region": "cap only",
+   "source_prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+   "target_prompt": "A forest toadstool with a glowing blue bioluminescent cap covered in bright cyan spots.",
+   "source": {
+    "video": "src_22/source_rotation_mesh_dual.mp4",
+    "texture": "src_22/source_texture.png"
+   },
+   "mask": "src_22/mask_cap.png",
+   "results": [
+    {
+     "label": "Masked FlowEdit",
+     "method": "flowedit_joint_masked",
+     "note": "FlowEdit on colour and depth, updating only tokens inside the painted mask",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0117,
+     "outside_tex_l1": 0.0003,
+     "outside_depth_l1": 0.0,
+     "video": "src_22/cap/flowedit_joint_masked_rotation_mesh_dual.mp4",
+     "texture": "src_22/cap/flowedit_joint_masked_texture.png"
+    },
+    {
+     "label": "Masked SDEdit",
+     "method": "sdedit_joint_masked_t0.95",
+     "note": "SDEdit where tokens outside the mask are reset to the noised source every step",
+     "seconds": 24.9,
+     "mask_iou": 0.997,
+     "depth_l1": 0.039,
+     "outside_tex_l1": 0.0002,
+     "outside_depth_l1": 0.0,
+     "video": "src_22/cap/sdedit_joint_masked_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_22/cap/sdedit_joint_masked_t0.95_texture.png"
+    },
+    {
+     "label": "Unmasked FlowEdit",
+     "method": "flowedit_joint_unmasked",
+     "note": "the same prompt without a mask, for comparison: the whole object drifts",
+     "seconds": 55.0,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0461,
+     "outside_tex_l1": 0.0798,
+     "outside_depth_l1": 0.0524,
+     "video": "src_22/cap/flowedit_joint_unmasked_rotation_mesh_dual.mp4",
+     "texture": "src_22/cap/flowedit_joint_unmasked_texture.png"
+    }
+   ]
+  },
+  {
+   "id": "22_stem",
+   "object": "Toadstool",
+   "kind": "local",
+   "region": "stem only",
+   "source_prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+   "target_prompt": "A red spotted forest toadstool with a thick stem wrapped in bright green moss.",
+   "source": {
+    "video": "src_22/source_rotation_mesh_dual.mp4",
+    "texture": "src_22/source_texture.png"
+   },
+   "mask": "src_22/mask_stem.png",
+   "results": [
+    {
+     "label": "Masked FlowEdit",
+     "method": "flowedit_joint_masked",
+     "note": "FlowEdit on colour and depth, updating only tokens inside the painted mask",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0188,
+     "outside_tex_l1": 0.0001,
+     "outside_depth_l1": 0.0,
+     "video": "src_22/stem/flowedit_joint_masked_rotation_mesh_dual.mp4",
+     "texture": "src_22/stem/flowedit_joint_masked_texture.png"
+    },
+    {
+     "label": "Masked SDEdit",
+     "method": "sdedit_joint_masked_t0.95",
+     "note": "SDEdit where tokens outside the mask are reset to the noised source every step",
+     "seconds": 25.0,
+     "mask_iou": 0.99,
+     "depth_l1": 0.0284,
+     "outside_tex_l1": 0.0002,
+     "outside_depth_l1": 0.0,
+     "video": "src_22/stem/sdedit_joint_masked_t0.95_rotation_mesh_dual.mp4",
+     "texture": "src_22/stem/sdedit_joint_masked_t0.95_texture.png"
+    },
+    {
+     "label": "Unmasked FlowEdit",
+     "method": "flowedit_joint_unmasked",
+     "note": "the same prompt without a mask, for comparison: the whole object drifts",
+     "seconds": 54.9,
+     "mask_iou": 1.0,
+     "depth_l1": 0.0258,
+     "outside_tex_l1": 0.0906,
+     "outside_depth_l1": 0.0116,
+     "video": "src_22/stem/flowedit_joint_unmasked_rotation_mesh_dual.mp4",
+     "texture": "src_22/stem/flowedit_joint_unmasked_texture.png"
+    }
+   ]
+  }
+ ]
+}

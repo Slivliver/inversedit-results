@@ -1,0 +1,5259 @@
+{
+ "eval_dir": "v2_final100k_mir_m100k_dcfg4_eval50",
+ "objects": [
+  {
+   "id": 36,
+   "name": "Rusty drum",
+   "featured": true,
+   "dir": "sample_36_eval",
+   "prompt": "A weathered industrial steel hazardous waste drum showing heavy rust patina, structural ribs, and warning graphics.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_36_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 2,
+     "mesh": "sample_36_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 31.20384430885315,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 31.20384430885315
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.4001045227050781,
+       "unknown_after": 0.003520965576171875,
+       "before": "sample_36_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_36_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_36_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.36850738525390625,
+       "unknown_after": 0.00445556640625,
+       "before": "sample_36_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_36_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_36_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.1794891357421875,
+       "unknown_after": 0.002895355224609375,
+       "before": "sample_36_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_36_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_36_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.12969207763671875,
+       "unknown_after": 0.00254058837890625,
+       "before": "sample_36_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_36_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_36_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_36_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 35.25111198425293,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 35.25111198425293
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.4001045227050781,
+       "unknown_after": 0.003406524658203125,
+       "before": "sample_36_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_36_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_36_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.36850738525390625,
+       "unknown_after": 0.004150390625,
+       "before": "sample_36_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_36_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_36_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.1794891357421875,
+       "unknown_after": 0.002658843994140625,
+       "before": "sample_36_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_36_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_36_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.12969207763671875,
+       "unknown_after": 0.00250244140625,
+       "before": "sample_36_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_36_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_36_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 13,
+   "name": "Pirate chest",
+   "featured": true,
+   "dir": "sample_13_eval",
+   "prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_13_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 28,
+     "mesh": "sample_13_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 22.033594369888306,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 22.033594369888306
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.06824493408203125,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_13_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_13_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.194610595703125,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_13_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_13_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.05316162109375,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_13_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_13_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.1158447265625,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_13_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_13_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_13_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 36.91733241081238,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 36.91733241081238
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.06824493408203125,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_13_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_13_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.194610595703125,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_13_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_13_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.05316162109375,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_13_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_13_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.1158447265625,
+       "unknown_after": 0.0,
+       "before": "sample_13_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_13_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_13_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 22,
+   "name": "Toadstool",
+   "featured": true,
+   "dir": "sample_22_eval",
+   "prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_22_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 27,
+     "mesh": "sample_22_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 35.197471380233765,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 35.197471380233765
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.00194549560546875,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_22_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_22_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.10471343994140625,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_22_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_22_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.000774383544921875,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_22_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_22_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.10152435302734375,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_22_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_22_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_22_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 63.53063201904297,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 63.53063201904297
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.00194549560546875,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_22_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_22_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.10471343994140625,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_22_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_22_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.000774383544921875,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_22_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_22_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.10152435302734375,
+       "unknown_after": 0.0,
+       "before": "sample_22_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_22_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_22_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 6,
+   "name": "Goblin head",
+   "featured": true,
+   "dir": "sample_06_eval",
+   "prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_06_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 35,
+     "mesh": "sample_06_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 24.47435212135315,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 24.47435212135315
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.017482757568359375,
+       "unknown_after": 0.00118255615234375,
+       "before": "sample_06_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_06_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_06_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.04825592041015625,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_06_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_06_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.011272430419921875,
+       "unknown_after": 0.001262664794921875,
+       "before": "sample_06_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_06_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_06_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.019718170166015625,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_06_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_06_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_06_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 58.59276556968689,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 58.59276556968689
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.017482757568359375,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_06_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_06_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.04825592041015625,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_06_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_06_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.011272430419921875,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_06_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_06_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.019718170166015625,
+       "unknown_after": 0.0,
+       "before": "sample_06_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_06_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_06_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 1,
+   "name": "#1",
+   "featured": false,
+   "dir": "sample_01_eval",
+   "prompt": "A spiraling marine conch seashell with sculpted ridge textures and warm amber speckles.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_01_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 22,
+     "mesh": "sample_01_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 17.656505823135376,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 17.656505823135376
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.029018402099609375,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_01_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_01_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.006267547607421875,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_01_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_01_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0164337158203125,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_01_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_01_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00383758544921875,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_01_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_01_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_01_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.72874641418457,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.72874641418457
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.029018402099609375,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_01_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_01_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.006267547607421875,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_01_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_01_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0164337158203125,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_01_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_01_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00383758544921875,
+       "unknown_after": 0.0,
+       "before": "sample_01_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_01_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_01_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 2,
+   "name": "#2",
+   "featured": false,
+   "dir": "sample_02_eval",
+   "prompt": "A quirky stylized cartoon creature figurine with big curious eyes, rounded silhouette, and cheerful colors.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_02_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 49,
+     "mesh": "sample_02_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 28.85886526107788,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 28.85886526107788
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009250640869140625,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_02_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_02_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.079864501953125,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_02_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_02_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0085906982421875,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_02_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_02_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0401763916015625,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_02_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_02_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_02_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 62.8979549407959,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 62.8979549407959
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009250640869140625,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_02_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_02_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.079864501953125,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_02_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_02_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0085906982421875,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_02_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_02_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0401763916015625,
+       "unknown_after": 0.0,
+       "before": "sample_02_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_02_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_02_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 3,
+   "name": "#3",
+   "featured": false,
+   "dir": "sample_03_eval",
+   "prompt": "A modern tactical plate-carrier combat vest fitted with modular equipment pouches and reinforced nylon strapping.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_03_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 243,
+     "mesh": "sample_03_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 50.510446071624756,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 50.510446071624756
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.11716842651367188,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_03_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_03_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.15778350830078125,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_03_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_03_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.10883712768554688,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_03_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_03_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.10788726806640625,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_03_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_03_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_03_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 60.609912633895874,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 60.609912633895874
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.11716842651367188,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_03_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_03_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.15778350830078125,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_03_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_03_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.10883712768554688,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_03_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_03_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.10788726806640625,
+       "unknown_after": 0.0,
+       "before": "sample_03_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_03_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_03_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 4,
+   "name": "#4",
+   "featured": false,
+   "dir": "sample_04_eval",
+   "prompt": "A realistic sculpted portrait bust of a bald muscular male with well-defined facial anatomy and strong jaw.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_04_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 14,
+     "mesh": "sample_04_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.38959574699402,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.38959574699402
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009342193603515625,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_04_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_04_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.05422210693359375,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_04_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_04_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.016696929931640625,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_04_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_04_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01860809326171875,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_04_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_04_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_04_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 64.33862400054932,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 64.33862400054932
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009342193603515625,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_04_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_04_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.05422210693359375,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_04_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_04_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.016696929931640625,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_04_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_04_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01860809326171875,
+       "unknown_after": 0.0,
+       "before": "sample_04_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_04_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_04_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 5,
+   "name": "#5",
+   "featured": false,
+   "dir": "sample_05_eval",
+   "prompt": "A minimalist Scandinavian dining chair made from smooth natural birch wood featuring an ergonomic curved backrest.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_05_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 57,
+     "mesh": "sample_05_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 60.72195053100586,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 60.72195053100586
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.060459136962890625,
+       "unknown_after": 0.0,
+       "before": "sample_05_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_05_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_05_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.07797622680664062,
+       "unknown_after": 0.0010223388671875,
+       "before": "sample_05_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_05_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_05_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0545806884765625,
+       "unknown_after": 0.000690460205078125,
+       "before": "sample_05_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_05_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_05_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06813430786132812,
+       "unknown_after": 0.002201080322265625,
+       "before": "sample_05_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_05_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_05_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_05_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 46.88282060623169,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 46.88282060623169
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.060459136962890625,
+       "unknown_after": 0.0,
+       "before": "sample_05_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_05_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_05_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.07797622680664062,
+       "unknown_after": 0.0,
+       "before": "sample_05_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_05_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_05_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0545806884765625,
+       "unknown_after": 0.0,
+       "before": "sample_05_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_05_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_05_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06813430786132812,
+       "unknown_after": 0.000301361083984375,
+       "before": "sample_05_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_05_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_05_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 7,
+   "name": "#7",
+   "featured": false,
+   "dir": "sample_07_eval",
+   "prompt": "A charming animated boy adventurer figurine wearing a classic blue outfit and wielding a small play sword.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_07_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 45,
+     "mesh": "sample_07_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 59.316728591918945,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 59.316728591918945
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.017673492431640625,
+       "unknown_after": 0.001132965087890625,
+       "before": "sample_07_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_07_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_07_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.004627227783203125,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_07_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_07_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0244598388671875,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_07_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_07_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.005916595458984375,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_07_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_07_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_07_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 56.492682218551636,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 56.492682218551636
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.017673492431640625,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_07_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_07_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.004627227783203125,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_07_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_07_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0244598388671875,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_07_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_07_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.005916595458984375,
+       "unknown_after": 0.0,
+       "before": "sample_07_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_07_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_07_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 8,
+   "name": "#8",
+   "featured": false,
+   "dir": "sample_08_eval",
+   "prompt": "An authentic Norse circular battle shield made of sturdy weathered timber planks with a riveted iron boss.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_08_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 62,
+     "mesh": "sample_08_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 53.8814013004303,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 53.8814013004303
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.027557373046875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_08_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_08_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.021697998046875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_08_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_08_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007099151611328125,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_08_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_08_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0029754638671875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_08_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_08_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_08_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 48.51610612869263,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 48.51610612869263
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.027557373046875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_08_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_08_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.021697998046875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_08_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_08_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007099151611328125,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_08_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_08_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0029754638671875,
+       "unknown_after": 0.0,
+       "before": "sample_08_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_08_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_08_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 9,
+   "name": "#9",
+   "featured": false,
+   "dir": "sample_09_eval",
+   "prompt": "A regal ancient Egyptian queen portrait bust with a stately crowned royal headdress and decorative jeweled collar.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_09_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 44,
+     "mesh": "sample_09_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 38.554128885269165,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 38.554128885269165
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.14377593994140625,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_09_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_09_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0625457763671875,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_09_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_09_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.07621002197265625,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_09_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_09_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.016437530517578125,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_09_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_09_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_09_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 61.48743653297424,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 61.48743653297424
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.14377593994140625,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_09_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_09_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0625457763671875,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_09_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_09_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.07621002197265625,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_09_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_09_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.016437530517578125,
+       "unknown_after": 0.0,
+       "before": "sample_09_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_09_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_09_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 10,
+   "name": "#10",
+   "featured": false,
+   "dir": "sample_10_eval",
+   "prompt": "A steampunk deep-sea explorer figure wearing an antique brass diving helm and heavy utility gear.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_10_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 68,
+     "mesh": "sample_10_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 46.82946443557739,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 46.82946443557739
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0313873291015625,
+       "unknown_after": 0.00070953369140625,
+       "before": "sample_10_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_10_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_10_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.1188812255859375,
+       "unknown_after": 0.00099945068359375,
+       "before": "sample_10_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_10_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_10_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0179595947265625,
+       "unknown_after": 0.000244140625,
+       "before": "sample_10_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_10_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_10_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.047115325927734375,
+       "unknown_after": 0.00029754638671875,
+       "before": "sample_10_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_10_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_10_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_10_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 47.04015588760376,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 47.04015588760376
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0313873291015625,
+       "unknown_after": 0.0,
+       "before": "sample_10_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_10_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_10_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.1188812255859375,
+       "unknown_after": 0.0,
+       "before": "sample_10_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_10_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_10_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0179595947265625,
+       "unknown_after": 0.0,
+       "before": "sample_10_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_10_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_10_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.047115325927734375,
+       "unknown_after": 0.0,
+       "before": "sample_10_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_10_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_10_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 11,
+   "name": "#11",
+   "featured": false,
+   "dir": "sample_11_eval",
+   "prompt": "An advanced military combat trooper helmet with a tinted panoramic visor and matte desert camo patterning.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_11_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 86,
+     "mesh": "sample_11_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 43.81732988357544,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 43.81732988357544
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03218841552734375,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_11_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_11_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13664627075195312,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_11_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_11_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00971221923828125,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_11_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_11_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06287765502929688,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_11_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_11_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_11_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 49.46206593513489,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 49.46206593513489
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03218841552734375,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_11_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_11_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13664627075195312,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_11_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_11_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00971221923828125,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_11_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_11_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06287765502929688,
+       "unknown_after": 0.0,
+       "before": "sample_11_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_11_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_11_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 12,
+   "name": "#12",
+   "featured": false,
+   "dir": "sample_12_eval",
+   "prompt": "A natural whole garden onion bulb wrapped in delicate golden-brown papery skin with dried shoots at the top.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_12_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 116,
+     "mesh": "sample_12_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 39.01444721221924,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 39.01444721221924
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01114654541015625,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_12_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_12_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.000244140625,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_12_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_12_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006099700927734375,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_12_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_12_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_12_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_12_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_12_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 56.40007710456848,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 56.40007710456848
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01114654541015625,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_12_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_12_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.000244140625,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_12_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_12_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006099700927734375,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_12_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_12_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_12_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_12_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_12_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 14,
+   "name": "#14",
+   "featured": false,
+   "dir": "sample_14_eval",
+   "prompt": "A sleek futuristic sci-fi assault rifle featuring dual precision barrels, tactical grip, and dark matte plating.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_14_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 32,
+     "mesh": "sample_14_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 30.785160064697266,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 30.785160064697266
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.012065887451171875,
+       "unknown_after": 0.0015869140625,
+       "before": "sample_14_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_14_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_14_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.013919830322265625,
+       "unknown_after": 0.00138092041015625,
+       "before": "sample_14_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_14_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_14_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.005786895751953125,
+       "unknown_after": 0.0,
+       "before": "sample_14_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_14_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_14_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.006549835205078125,
+       "unknown_after": 0.000667572021484375,
+       "before": "sample_14_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_14_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_14_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_14_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 30.58956527709961,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 30.58956527709961
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.012065887451171875,
+       "unknown_after": 0.0,
+       "before": "sample_14_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_14_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_14_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.013919830322265625,
+       "unknown_after": 0.0,
+       "before": "sample_14_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_14_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_14_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.005786895751953125,
+       "unknown_after": 0.0,
+       "before": "sample_14_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_14_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_14_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.006549835205078125,
+       "unknown_after": 0.0,
+       "before": "sample_14_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_14_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_14_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 15,
+   "name": "#15",
+   "featured": false,
+   "dir": "sample_15_eval",
+   "prompt": "A rustic handcrafted accent side table made of solid timber with smooth rounded edges and sturdy cylindrical legs.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_15_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 19,
+     "mesh": "sample_15_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 56.164977073669434,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 56.164977073669434
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.20409774780273438,
+       "unknown_after": 0.000881195068359375,
+       "before": "sample_15_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_15_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_15_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.16359329223632812,
+       "unknown_after": 0.015865325927734375,
+       "before": "sample_15_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_15_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_15_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.14766693115234375,
+       "unknown_after": 0.015560150146484375,
+       "before": "sample_15_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_15_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_15_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.15913772583007812,
+       "unknown_after": 0.02477264404296875,
+       "before": "sample_15_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_15_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_15_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_15_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 55.668984174728394,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 55.668984174728394
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.20409774780273438,
+       "unknown_after": 0.0,
+       "before": "sample_15_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_15_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_15_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.16359329223632812,
+       "unknown_after": 0.0,
+       "before": "sample_15_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_15_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_15_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.14766693115234375,
+       "unknown_after": 0.0,
+       "before": "sample_15_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_15_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_15_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.15913772583007812,
+       "unknown_after": 0.00051116943359375,
+       "before": "sample_15_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_15_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_15_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 16,
+   "name": "#16",
+   "featured": false,
+   "dir": "sample_16_eval",
+   "prompt": "A lifelike woodland caribou figure with a thick winter coat, sturdy legs, and graceful antler silhouette.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_16_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 45,
+     "mesh": "sample_16_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 43.40089511871338,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 43.40089511871338
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.023040771484375,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_16_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_16_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.012119293212890625,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_16_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_16_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.017375946044921875,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_16_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_16_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.012603759765625,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_16_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_16_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_16_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 33.19604516029358,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 33.19604516029358
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.023040771484375,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_16_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_16_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.012119293212890625,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_16_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_16_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.017375946044921875,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_16_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_16_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.012603759765625,
+       "unknown_after": 0.0,
+       "before": "sample_16_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_16_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_16_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 17,
+   "name": "#17",
+   "featured": false,
+   "dir": "sample_17_eval",
+   "prompt": "A majestic mythical winged dragon sculpture with sprawling crimson wings, curving horns, and a serpentine tail.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_17_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 111,
+     "mesh": "sample_17_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 53.99416136741638,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 53.99416136741638
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.07340621948242188,
+       "unknown_after": 0.0006103515625,
+       "before": "sample_17_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_17_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_17_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.046855926513671875,
+       "unknown_after": 0.0,
+       "before": "sample_17_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_17_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_17_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.05120086669921875,
+       "unknown_after": 0.000640869140625,
+       "before": "sample_17_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_17_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_17_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.044231414794921875,
+       "unknown_after": 0.00153350830078125,
+       "before": "sample_17_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_17_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_17_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_17_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 37.68106389045715,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 37.68106389045715
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.07340621948242188,
+       "unknown_after": 0.0,
+       "before": "sample_17_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_17_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_17_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.046855926513671875,
+       "unknown_after": 0.0,
+       "before": "sample_17_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_17_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_17_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.05120086669921875,
+       "unknown_after": 0.0,
+       "before": "sample_17_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_17_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_17_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.044231414794921875,
+       "unknown_after": 0.0,
+       "before": "sample_17_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_17_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_17_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 18,
+   "name": "#18",
+   "featured": false,
+   "dir": "sample_18_eval",
+   "prompt": "An energetic cartoon marsupial video game hero in a dynamic stance with wide expressive smile and pointy ears.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_18_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 26,
+     "mesh": "sample_18_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 54.477054595947266,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 54.477054595947266
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01526641845703125,
+       "unknown_after": 0.001415252685546875,
+       "before": "sample_18_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_18_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_18_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.022708892822265625,
+       "unknown_after": 0.00359344482421875,
+       "before": "sample_18_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_18_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_18_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.014392852783203125,
+       "unknown_after": 0.003814697265625,
+       "before": "sample_18_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_18_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_18_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0154571533203125,
+       "unknown_after": 0.00409698486328125,
+       "before": "sample_18_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_18_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_18_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_18_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 38.65211868286133,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 38.65211868286133
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01526641845703125,
+       "unknown_after": 0.0,
+       "before": "sample_18_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_18_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_18_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.022708892822265625,
+       "unknown_after": 0.0,
+       "before": "sample_18_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_18_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_18_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.014392852783203125,
+       "unknown_after": 0.0,
+       "before": "sample_18_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_18_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_18_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0154571533203125,
+       "unknown_after": 0.0,
+       "before": "sample_18_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_18_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_18_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 19,
+   "name": "#19",
+   "featured": false,
+   "dir": "sample_19_eval",
+   "prompt": "A weathered horror animatronic animal with exposed mechanical joints, frayed synthetic fur, and glowing eyes.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_19_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 291,
+     "mesh": "sample_19_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 39.01933789253235,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 39.01933789253235
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0243072509765625,
+       "unknown_after": 0.001781463623046875,
+       "before": "sample_19_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_19_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_19_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.03143310546875,
+       "unknown_after": 0.002223968505859375,
+       "before": "sample_19_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_19_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_19_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.01552581787109375,
+       "unknown_after": 0.00144195556640625,
+       "before": "sample_19_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_19_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_19_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.019039154052734375,
+       "unknown_after": 0.001033782958984375,
+       "before": "sample_19_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_19_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_19_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_19_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.82521653175354,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.82521653175354
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0243072509765625,
+       "unknown_after": 0.0,
+       "before": "sample_19_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_19_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_19_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.03143310546875,
+       "unknown_after": 0.0,
+       "before": "sample_19_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_19_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_19_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.01552581787109375,
+       "unknown_after": 0.0,
+       "before": "sample_19_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_19_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_19_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.019039154052734375,
+       "unknown_after": 0.0,
+       "before": "sample_19_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_19_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_19_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 20,
+   "name": "#20",
+   "featured": false,
+   "dir": "sample_20_eval",
+   "prompt": "A vivid green amphibian tree frog resting in a natural crouch with glossy skin and large alert eyes.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_20_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 73,
+     "mesh": "sample_20_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 45.5004768371582,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 45.5004768371582
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.040069580078125,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_20_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_20_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.089447021484375,
+       "unknown_after": 0.000621795654296875,
+       "before": "sample_20_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_20_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_20_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.03073883056640625,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_20_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_20_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.065277099609375,
+       "unknown_after": 0.001316070556640625,
+       "before": "sample_20_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_20_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_20_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_20_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 48.64278221130371,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 48.64278221130371
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.040069580078125,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_20_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_20_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.089447021484375,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_20_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_20_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.03073883056640625,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_20_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_20_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.065277099609375,
+       "unknown_after": 0.0,
+       "before": "sample_20_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_20_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_20_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 21,
+   "name": "#21",
+   "featured": false,
+   "dir": "sample_21_eval",
+   "prompt": "A traditional glazed ceramic condiment bowl featuring a domed fitted lid and a smooth rounded earthenware base.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_21_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 6,
+     "mesh": "sample_21_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 14.88303256034851,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 14.88303256034851
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.000377655029296875,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_21_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_21_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.021240234375,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_21_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_21_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_21_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_21_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.008457183837890625,
+       "unknown_after": 0.000255584716796875,
+       "before": "sample_21_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_21_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_21_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_21_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 54.38831424713135,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 54.38831424713135
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.000377655029296875,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_21_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_21_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.021240234375,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_21_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_21_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_21_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_21_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_21_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.008457183837890625,
+       "unknown_after": 0.000255584716796875,
+       "before": "sample_21_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_21_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_21_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 23,
+   "name": "#23",
+   "featured": false,
+   "dir": "sample_23_eval",
+   "prompt": "A ripe culinary avocado cut in half showcasing creamy pale-green flesh and a smooth central pit.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_23_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 20,
+     "mesh": "sample_23_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 19.457713842391968,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 19.457713842391968
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.019439697265625,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_23_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_23_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.02428436279296875,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_23_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_23_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006561279296875,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_23_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_23_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00640869140625,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_23_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_23_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_23_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 53.977150201797485,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 53.977150201797485
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.019439697265625,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_23_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_23_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.02428436279296875,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_23_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_23_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006561279296875,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_23_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_23_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00640869140625,
+       "unknown_after": 0.0,
+       "before": "sample_23_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_23_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_23_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 24,
+   "name": "#24",
+   "featured": false,
+   "dir": "sample_24_eval",
+   "prompt": "A glowing geometric arcane crystal prism carved from brilliant multifaceted green gemstone.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_24_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 24,
+     "mesh": "sample_24_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 29.411930322647095,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 29.411930322647095
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.04791259765625,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_24_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_24_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.032131195068359375,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_24_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_24_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.022014617919921875,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_24_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_24_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.012035369873046875,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_24_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_24_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_24_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 33.735645055770874,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 33.735645055770874
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.04791259765625,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_24_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_24_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.032131195068359375,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_24_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_24_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.022014617919921875,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_24_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_24_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.012035369873046875,
+       "unknown_after": 0.0,
+       "before": "sample_24_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_24_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_24_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 25,
+   "name": "#25",
+   "featured": false,
+   "dir": "sample_25_eval",
+   "prompt": "A classic standing coin-op arcade game cabinet featuring colorful side marquee art, joystick, and display screen.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_25_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 29,
+     "mesh": "sample_25_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 52.05073809623718,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 52.05073809623718
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.14885711669921875,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_25_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_25_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.15235519409179688,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_25_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_25_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.06550216674804688,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_25_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_25_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.060760498046875,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_25_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_25_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_25_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 65.59581327438354,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 65.59581327438354
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.14885711669921875,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_25_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_25_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.15235519409179688,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_25_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_25_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.06550216674804688,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_25_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_25_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.060760498046875,
+       "unknown_after": 0.0,
+       "before": "sample_25_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_25_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_25_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 26,
+   "name": "#26",
+   "featured": false,
+   "dir": "sample_26_eval",
+   "prompt": "An ancient archaeological pottery goblet vessel with an inverted flared bell silhouette and earthen clay texture.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_26_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 4,
+     "mesh": "sample_26_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 36.44708704948425,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 36.44708704948425
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.2987556457519531,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_26_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_26_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_26_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_26_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.1700439453125,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_26_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_26_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_26_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_26_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_26_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 64.5440468788147,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 64.5440468788147
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.2987556457519531,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_26_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_26_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_26_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_26_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.1700439453125,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_26_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_26_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0,
+       "unknown_after": 0.0,
+       "before": "sample_26_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_26_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_26_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 27,
+   "name": "#27",
+   "featured": false,
+   "dir": "sample_27_eval",
+   "prompt": "A vibrant multicolored geometric cube with cleanly defined edges and contrasting solid-colored facets.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_27_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 2,
+     "mesh": "sample_27_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 28.23665738105774,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 28.23665738105774
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.3048667907714844,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_27_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_27_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.30406951904296875,
+       "unknown_after": 0.00045013427734375,
+       "before": "sample_27_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_27_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_27_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.17161178588867188,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_27_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_27_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.15151596069335938,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_27_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_27_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_27_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 57.95075726509094,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 57.95075726509094
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.3048667907714844,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_27_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_27_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.30406951904296875,
+       "unknown_after": 0.000392913818359375,
+       "before": "sample_27_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_27_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_27_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.17161178588867188,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_27_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_27_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.15151596069335938,
+       "unknown_after": 0.0,
+       "before": "sample_27_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_27_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_27_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 28,
+   "name": "#28",
+   "featured": false,
+   "dir": "sample_28_eval",
+   "prompt": "A vintage oak storage cask barrel banded with riveted dark iron hoops and weathered wooden staves.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_28_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 2,
+     "mesh": "sample_28_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 31.015636205673218,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 31.015636205673218
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.29840087890625,
+       "unknown_after": 0.001739501953125,
+       "before": "sample_28_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_28_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_28_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.3295173645019531,
+       "unknown_after": 0.002864837646484375,
+       "before": "sample_28_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_28_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_28_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.12806320190429688,
+       "unknown_after": 0.001964569091796875,
+       "before": "sample_28_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_28_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_28_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.11234283447265625,
+       "unknown_after": 0.001277923583984375,
+       "before": "sample_28_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_28_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_28_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_28_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 65.67855024337769,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 65.67855024337769
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.29840087890625,
+       "unknown_after": 0.001739501953125,
+       "before": "sample_28_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_28_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_28_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.3295173645019531,
+       "unknown_after": 0.002864837646484375,
+       "before": "sample_28_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_28_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_28_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.12806320190429688,
+       "unknown_after": 0.001964569091796875,
+       "before": "sample_28_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_28_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_28_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.11234283447265625,
+       "unknown_after": 0.001277923583984375,
+       "before": "sample_28_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_28_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_28_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 29,
+   "name": "#29",
+   "featured": false,
+   "dir": "sample_29_eval",
+   "prompt": "An expressive animated fantasy crone bust characterized by dramatic facial features, voluminous hair, and jewelry.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_29_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 52,
+     "mesh": "sample_29_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 28.02827262878418,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 28.02827262878418
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.005474090576171875,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_29_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_29_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.02144622802734375,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_29_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_29_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.002613067626953125,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_29_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_29_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.015811920166015625,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_29_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_29_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_29_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 48.57473015785217,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 48.57473015785217
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.005474090576171875,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_29_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_29_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.02144622802734375,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_29_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_29_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.002613067626953125,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_29_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_29_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.015811920166015625,
+       "unknown_after": 0.0,
+       "before": "sample_29_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_29_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_29_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 30,
+   "name": "#30",
+   "featured": false,
+   "dir": "sample_30_eval",
+   "prompt": "A miniature oceanic diorama depicting a tall wooden sailing ship cruising over waters with a surfacing blue whale.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_30_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 224,
+     "mesh": "sample_30_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 44.503607988357544,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 44.503607988357544
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03905487060546875,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_30_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_30_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19268035888671875,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_30_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_30_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.024806976318359375,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_30_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_30_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09582901000976562,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_30_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_30_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_30_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 38.12163329124451,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 38.12163329124451
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03905487060546875,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_30_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_30_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19268035888671875,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_30_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_30_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.024806976318359375,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_30_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_30_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09582901000976562,
+       "unknown_after": 0.0,
+       "before": "sample_30_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_30_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_30_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 31,
+   "name": "#31",
+   "featured": false,
+   "dir": "sample_31_eval",
+   "prompt": "A stylized modern male character model dressed in a smart casual knit sweater, necktie, and comfortable sneakers.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_31_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 18,
+     "mesh": "sample_31_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 46.438618183135986,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 46.438618183135986
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0296478271484375,
+       "unknown_after": 0.0112457275390625,
+       "before": "sample_31_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_31_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_31_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0687408447265625,
+       "unknown_after": 0.009082794189453125,
+       "before": "sample_31_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_31_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_31_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.012302398681640625,
+       "unknown_after": 0.00496673583984375,
+       "before": "sample_31_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_31_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_31_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01861572265625,
+       "unknown_after": 0.00363922119140625,
+       "before": "sample_31_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_31_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_31_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_31_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 49.12122678756714,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 49.12122678756714
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0296478271484375,
+       "unknown_after": 0.0,
+       "before": "sample_31_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_31_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_31_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0687408447265625,
+       "unknown_after": 0.0,
+       "before": "sample_31_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_31_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_31_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.012302398681640625,
+       "unknown_after": 0.0,
+       "before": "sample_31_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_31_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_31_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01861572265625,
+       "unknown_after": 0.0,
+       "before": "sample_31_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_31_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_31_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 32,
+   "name": "#32",
+   "featured": false,
+   "dir": "sample_32_eval",
+   "prompt": "A powerful martial arts arena combatant with an athletic muscular build, tactical combat gear, and knee pads.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_32_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 81,
+     "mesh": "sample_32_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 45.96093678474426,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 45.96093678474426
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.04772186279296875,
+       "unknown_after": 0.004123687744140625,
+       "before": "sample_32_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_32_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_32_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0804290771484375,
+       "unknown_after": 0.00860595703125,
+       "before": "sample_32_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_32_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_32_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.023395538330078125,
+       "unknown_after": 0.001712799072265625,
+       "before": "sample_32_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_32_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_32_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.02970123291015625,
+       "unknown_after": 0.00406646728515625,
+       "before": "sample_32_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_32_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_32_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_32_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 51.465768814086914,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 51.465768814086914
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.04772186279296875,
+       "unknown_after": 0.0,
+       "before": "sample_32_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_32_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_32_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0804290771484375,
+       "unknown_after": 0.0,
+       "before": "sample_32_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_32_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_32_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.023395538330078125,
+       "unknown_after": 0.0,
+       "before": "sample_32_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_32_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_32_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.02970123291015625,
+       "unknown_after": 0.0,
+       "before": "sample_32_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_32_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_32_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 33,
+   "name": "#33",
+   "featured": false,
+   "dir": "sample_33_eval",
+   "prompt": "A whimsical anthropomorphic teddy bear gentleman dressed smartly in a formal tailored suit and bright necktie.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_33_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 39,
+     "mesh": "sample_33_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 24.164414882659912,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 24.164414882659912
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01776885986328125,
+       "unknown_after": 0.003345489501953125,
+       "before": "sample_33_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_33_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_33_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.04209136962890625,
+       "unknown_after": 0.00272369384765625,
+       "before": "sample_33_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_33_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_33_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.011474609375,
+       "unknown_after": 0.0027923583984375,
+       "before": "sample_33_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_33_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_33_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0169219970703125,
+       "unknown_after": 0.002620697021484375,
+       "before": "sample_33_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_33_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_33_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_33_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 33.57242131233215,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 33.57242131233215
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01776885986328125,
+       "unknown_after": 0.0,
+       "before": "sample_33_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_33_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_33_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.04209136962890625,
+       "unknown_after": 0.0,
+       "before": "sample_33_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_33_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_33_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.011474609375,
+       "unknown_after": 0.0,
+       "before": "sample_33_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_33_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_33_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0169219970703125,
+       "unknown_after": 0.0,
+       "before": "sample_33_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_33_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_33_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 34,
+   "name": "#34",
+   "featured": false,
+   "dir": "sample_34_eval",
+   "prompt": "A classical neoclassical marble sculpture bust portraying an elegant draped figure with a sculpted headwrap.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_34_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 53,
+     "mesh": "sample_34_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 29.74081254005432,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 29.74081254005432
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009624481201171875,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_34_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_34_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13867568969726562,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_34_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_34_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0070037841796875,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_34_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_34_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0561676025390625,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_34_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_34_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_34_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 38.55312776565552,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 38.55312776565552
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.009624481201171875,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_34_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_34_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13867568969726562,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_34_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_34_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.0070037841796875,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_34_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_34_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0561676025390625,
+       "unknown_after": 0.0,
+       "before": "sample_34_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_34_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_34_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 35,
+   "name": "#35",
+   "featured": false,
+   "dir": "sample_35_eval",
+   "prompt": "A fearsome medieval iron flail weapon featuring an ornate dragon-shaped striking head and spiked link chain.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_35_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 89,
+     "mesh": "sample_35_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 24.557692289352417,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 24.557692289352417
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.006061553955078125,
+       "unknown_after": 0.000308990478515625,
+       "before": "sample_35_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_35_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_35_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.004756927490234375,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_35_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_35_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.003086090087890625,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_35_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_35_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00524139404296875,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_35_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_35_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_35_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 16.40732717514038,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 16.40732717514038
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.006061553955078125,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_35_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_35_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.004756927490234375,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_35_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_35_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.003086090087890625,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_35_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_35_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00524139404296875,
+       "unknown_after": 0.0,
+       "before": "sample_35_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_35_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_35_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 37,
+   "name": "#37",
+   "featured": false,
+   "dir": "sample_37_eval",
+   "prompt": "A formidable high-tech robotic mecha warrior in heavy armored plating wielding a gleaming futuristic broadsword.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_37_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 61,
+     "mesh": "sample_37_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 33.08981966972351,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 33.08981966972351
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.014392852783203125,
+       "unknown_after": 0.002796173095703125,
+       "before": "sample_37_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_37_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_37_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.009471893310546875,
+       "unknown_after": 0.002262115478515625,
+       "before": "sample_37_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_37_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_37_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007892608642578125,
+       "unknown_after": 0.0009002685546875,
+       "before": "sample_37_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_37_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_37_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.006153106689453125,
+       "unknown_after": 0.0023651123046875,
+       "before": "sample_37_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_37_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_37_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_37_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 16.971285581588745,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 16.971285581588745
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.014392852783203125,
+       "unknown_after": 0.0,
+       "before": "sample_37_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_37_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_37_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.009471893310546875,
+       "unknown_after": 0.0,
+       "before": "sample_37_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_37_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_37_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007892608642578125,
+       "unknown_after": 0.0,
+       "before": "sample_37_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_37_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_37_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.006153106689453125,
+       "unknown_after": 0.0,
+       "before": "sample_37_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_37_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_37_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 38,
+   "name": "#38",
+   "featured": false,
+   "dir": "sample_38_eval",
+   "prompt": "A traditional historical wide-brimmed felt pilgrim hat adorned with a clean dark band and polished metal buckle.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_38_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 32,
+     "mesh": "sample_38_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.783016443252563,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.783016443252563
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.16279220581054688,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_38_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_38_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19794464111328125,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_38_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_38_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.111846923828125,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_38_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_38_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.114227294921875,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_38_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_38_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_38_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 25.37548518180847,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 25.37548518180847
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.16279220581054688,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_38_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_38_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19794464111328125,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_38_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_38_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.111846923828125,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_38_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_38_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.114227294921875,
+       "unknown_after": 0.0,
+       "before": "sample_38_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_38_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_38_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 39,
+   "name": "#39",
+   "featured": false,
+   "dir": "sample_39_eval",
+   "prompt": "A quirky bipedal utility inspection robot with a red cylindrical sensor housing and articulated strut legs.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_39_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 95,
+     "mesh": "sample_39_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 24.50884222984314,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 24.50884222984314
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0016937255859375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_39_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_39_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.009181976318359375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_39_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_39_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.001682281494140625,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_39_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_39_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.007198333740234375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_39_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_39_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_39_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 22.718867778778076,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 22.718867778778076
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.0016937255859375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_39_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_39_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.009181976318359375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_39_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_39_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.001682281494140625,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_39_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_39_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.007198333740234375,
+       "unknown_after": 0.0,
+       "before": "sample_39_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_39_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_39_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 40,
+   "name": "#40",
+   "featured": false,
+   "dir": "sample_40_eval",
+   "prompt": "A professional athletic football protective helmet featuring a glossy red shell, steel facemask cage, and chin strap.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_40_eval/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 116,
+     "mesh": "sample_40_eval/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 33.18055820465088,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 33.18055820465088
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.008930206298828125,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/membrane3_eval_top_front_before.jpg",
+       "after": "sample_40_eval/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_40_eval/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13707733154296875,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_40_eval/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_40_eval/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006641387939453125,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/membrane3_eval_high_left_before.jpg",
+       "after": "sample_40_eval/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_40_eval/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.046306610107421875,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/membrane3_eval_low_left_before.jpg",
+       "after": "sample_40_eval/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_40_eval/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_40_eval/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 28.486870288848877,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 28.486870288848877
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.008930206298828125,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/volume2_eval_top_front_before.jpg",
+       "after": "sample_40_eval/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_40_eval/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.13707733154296875,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_40_eval/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_40_eval/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.006641387939453125,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/volume2_eval_high_left_before.jpg",
+       "after": "sample_40_eval/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_40_eval/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.046306610107421875,
+       "unknown_after": 0.0,
+       "before": "sample_40_eval/volume2_eval_low_left_before.jpg",
+       "after": "sample_40_eval/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_40_eval/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 41,
+   "name": "#41",
+   "featured": false,
+   "dir": "sample_41_train",
+   "prompt": "The Organic Table has an irregular, wood-like top with jagged edges connecting to rough, textured legs. It's mostly brown with some white mushroom-like protrusions. The design looks natural and organic.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_41_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 110,
+     "mesh": "sample_41_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 32.848564863204956,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 32.848564863204956
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.304046630859375,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_41_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_41_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.10239410400390625,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_41_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_41_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.19099807739257812,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_41_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_41_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06853485107421875,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_41_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_41_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_41_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 23.1214702129364,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 23.1214702129364
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.304046630859375,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_41_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_41_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.10239410400390625,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_41_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_41_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.19099807739257812,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_41_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_41_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.06853485107421875,
+       "unknown_after": 0.0,
+       "before": "sample_41_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_41_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_41_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 42,
+   "name": "#42",
+   "featured": false,
+   "dir": "sample_42_train",
+   "prompt": "The \"Platano Del Mono\" is a funny character with a gorilla head and a yellow banana body. It has a green waistband, black furry arms and legs, red wrist and ankle bands, and white feet. It stands upright and is designed to look playful.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_42_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 141,
+     "mesh": "sample_42_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 32.43513894081116,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 32.43513894081116
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.019069671630859375,
+       "unknown_after": 0.003387451171875,
+       "before": "sample_42_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_42_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_42_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.033512115478515625,
+       "unknown_after": 0.002410888671875,
+       "before": "sample_42_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_42_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_42_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00733184814453125,
+       "unknown_after": 0.001483917236328125,
+       "before": "sample_42_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_42_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_42_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.02347564697265625,
+       "unknown_after": 0.00244903564453125,
+       "before": "sample_42_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_42_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_42_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_42_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.61486053466797,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.61486053466797
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.019069671630859375,
+       "unknown_after": 0.0,
+       "before": "sample_42_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_42_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_42_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.033512115478515625,
+       "unknown_after": 0.0,
+       "before": "sample_42_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_42_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_42_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00733184814453125,
+       "unknown_after": 0.0,
+       "before": "sample_42_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_42_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_42_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.02347564697265625,
+       "unknown_after": 0.0,
+       "before": "sample_42_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_42_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_42_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 43,
+   "name": "#43",
+   "featured": false,
+   "dir": "sample_43_train",
+   "prompt": "A medieval shield with a dark metal frame, a brown wooden plate, and a round metallic boss at the center. Two light brown handles are attached at the top. The shield is moderately sized and balanced for handheld defense.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_43_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 72,
+     "mesh": "sample_43_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 35.66529393196106,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 35.66529393196106
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03907012939453125,
+       "unknown_after": 0.002788543701171875,
+       "before": "sample_43_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_43_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_43_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.033451080322265625,
+       "unknown_after": 0.0,
+       "before": "sample_43_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_43_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_43_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007625579833984375,
+       "unknown_after": 0.003681182861328125,
+       "before": "sample_43_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_43_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_43_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00310516357421875,
+       "unknown_after": 0.00030517578125,
+       "before": "sample_43_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_43_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_43_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_43_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 24.943119287490845,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 24.943119287490845
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.03907012939453125,
+       "unknown_after": 0.0,
+       "before": "sample_43_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_43_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_43_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.033451080322265625,
+       "unknown_after": 0.0,
+       "before": "sample_43_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_43_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_43_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.007625579833984375,
+       "unknown_after": 0.0,
+       "before": "sample_43_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_43_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_43_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00310516357421875,
+       "unknown_after": 0.0,
+       "before": "sample_43_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_43_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_43_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 44,
+   "name": "#44",
+   "featured": false,
+   "dir": "sample_44_train",
+   "prompt": "A muscular frost bear with large claws and sharp spikes, featuring icy textures and a dark blue chest plate. The eyes glow turquoise. Suitable for a cold, wintery setting.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_44_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 94,
+     "mesh": "sample_44_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 52.85845327377319,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 52.85845327377319
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.061862945556640625,
+       "unknown_after": 0.0013885498046875,
+       "before": "sample_44_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_44_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_44_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.111114501953125,
+       "unknown_after": 0.00241851806640625,
+       "before": "sample_44_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_44_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_44_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.02260589599609375,
+       "unknown_after": 0.00182342529296875,
+       "before": "sample_44_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_44_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_44_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.043109893798828125,
+       "unknown_after": 0.002536773681640625,
+       "before": "sample_44_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_44_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_44_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_44_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 25.684202671051025,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 25.684202671051025
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.061862945556640625,
+       "unknown_after": 0.0,
+       "before": "sample_44_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_44_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_44_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.111114501953125,
+       "unknown_after": 0.0,
+       "before": "sample_44_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_44_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_44_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.02260589599609375,
+       "unknown_after": 0.0,
+       "before": "sample_44_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_44_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_44_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.043109893798828125,
+       "unknown_after": 0.0,
+       "before": "sample_44_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_44_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_44_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 45,
+   "name": "#45",
+   "featured": false,
+   "dir": "sample_45_train",
+   "prompt": "The inn is a two-story building with a golden straw thatched roof, a wooden balcony, and a tower. It has large windows with shutters, a red door, and a cobblestone path leading to the entrance.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_45_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 36,
+     "mesh": "sample_45_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 19.72218894958496,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 19.72218894958496
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.031482696533203125,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_45_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_45_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.1630859375,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_45_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_45_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.016422271728515625,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_45_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_45_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09489059448242188,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_45_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_45_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_45_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 18.94305682182312,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 18.94305682182312
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.031482696533203125,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_45_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_45_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.1630859375,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_45_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_45_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.016422271728515625,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_45_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_45_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09489059448242188,
+       "unknown_after": 0.0,
+       "before": "sample_45_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_45_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_45_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 46,
+   "name": "#46",
+   "featured": false,
+   "dir": "sample_46_train",
+   "prompt": "The treasure chest is a rectangular box with a domed lid, made of light-colored wood and a rusty metal frame. It has a metallic pull handle on the front and a small plate at the bottom. The wood is smooth with natural grain, and the metal shows signs of wear.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_46_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 21,
+     "mesh": "sample_46_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 20.831379175186157,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 20.831379175186157
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.07693862915039062,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_46_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_46_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.21897506713867188,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_46_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_46_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.051273345947265625,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_46_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_46_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.12895584106445312,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_46_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_46_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_46_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 20.55249810218811,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 20.55249810218811
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.07693862915039062,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_46_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_46_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.21897506713867188,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_46_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_46_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.051273345947265625,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_46_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_46_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.12895584106445312,
+       "unknown_after": 0.0,
+       "before": "sample_46_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_46_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_46_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 47,
+   "name": "#47",
+   "featured": false,
+   "dir": "sample_47_train",
+   "prompt": "A rectangular box with handles, a blue-lit front panel, and bolts on the top. It has a rough, rusty texture and is designed for easy carrying.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_47_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 28,
+     "mesh": "sample_47_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 21.851595640182495,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 21.851595640182495
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.1736602783203125,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_47_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_47_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19432830810546875,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_47_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_47_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.101776123046875,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_47_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_47_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0987548828125,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_47_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_47_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_47_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 20.303202629089355,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 20.303202629089355
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.1736602783203125,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_47_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_47_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.19432830810546875,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_47_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_47_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.101776123046875,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_47_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_47_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.0987548828125,
+       "unknown_after": 0.0,
+       "before": "sample_47_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_47_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_47_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 48,
+   "name": "#48",
+   "featured": false,
+   "dir": "sample_48_train",
+   "prompt": "Reverse Flash (Unmasked) is an athletic character with long limbs, a broad torso, and a streamlined suit. It features yellow and black colors, with a hint of red around the neck. The character stands with arms outstretched, showing a power stance.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_48_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 33,
+     "mesh": "sample_48_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 18.681011199951172,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 18.681011199951172
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.018798828125,
+       "unknown_after": 0.005084991455078125,
+       "before": "sample_48_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_48_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_48_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0119781494140625,
+       "unknown_after": 0.0035247802734375,
+       "before": "sample_48_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_48_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_48_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.012073516845703125,
+       "unknown_after": 0.003253936767578125,
+       "before": "sample_48_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_48_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_48_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00841522216796875,
+       "unknown_after": 0.0023345947265625,
+       "before": "sample_48_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_48_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_48_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_48_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 19.41162085533142,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 19.41162085533142
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.018798828125,
+       "unknown_after": 0.0,
+       "before": "sample_48_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_48_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_48_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.0119781494140625,
+       "unknown_after": 0.0,
+       "before": "sample_48_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_48_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_48_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.012073516845703125,
+       "unknown_after": 0.0,
+       "before": "sample_48_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_48_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_48_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.00841522216796875,
+       "unknown_after": 0.0,
+       "before": "sample_48_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_48_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_48_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 49,
+   "name": "#49",
+   "featured": false,
+   "dir": "sample_49_train",
+   "prompt": "A muscular character with spiky yellow hair, wearing a red tank top, green pants, and yellow boots.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_49_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 61,
+     "mesh": "sample_49_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 26.44457983970642,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 26.44457983970642
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01038360595703125,
+       "unknown_after": 0.003757476806640625,
+       "before": "sample_49_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_49_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_49_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.039337158203125,
+       "unknown_after": 0.00232696533203125,
+       "before": "sample_49_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_49_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_49_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00341033935546875,
+       "unknown_after": 0.000957489013671875,
+       "before": "sample_49_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_49_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_49_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01300048828125,
+       "unknown_after": 0.00250244140625,
+       "before": "sample_49_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_49_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_49_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_49_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 23.28013253211975,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 23.28013253211975
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.01038360595703125,
+       "unknown_after": 0.0,
+       "before": "sample_49_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_49_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_49_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.039337158203125,
+       "unknown_after": 0.0,
+       "before": "sample_49_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_49_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_49_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.00341033935546875,
+       "unknown_after": 0.0,
+       "before": "sample_49_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_49_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_49_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.01300048828125,
+       "unknown_after": 0.0,
+       "before": "sample_49_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_49_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_49_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  },
+  {
+   "id": 50,
+   "name": "#50",
+   "featured": false,
+   "dir": "sample_50_train",
+   "prompt": "The chicken coop is a rectangular structure with a green corrugated metal roof, a solid door, a wire-mesh window, and a large birdcage section. It is supported by a base frame.",
+   "orig_mesh": "../v2_final100k_mir_m100k_dcfg4_eval50/sample_50_train/mesh.glb",
+   "results": {
+    "membrane3": {
+     "loops": 409,
+     "mesh": "sample_50_train/membrane3_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 27.7770357131958,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 27.7770357131958
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.033275604248046875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/membrane3_eval_top_front_before.jpg",
+       "after": "sample_50_train/membrane3_eval_top_front_after.jpg",
+       "after_unknown": "sample_50_train/membrane3_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.175018310546875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/membrane3_eval_bottom_front_before.jpg",
+       "after": "sample_50_train/membrane3_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_50_train/membrane3_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.021942138671875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/membrane3_eval_high_left_before.jpg",
+       "after": "sample_50_train/membrane3_eval_high_left_after.jpg",
+       "after_unknown": "sample_50_train/membrane3_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09444808959960938,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/membrane3_eval_low_left_before.jpg",
+       "after": "sample_50_train/membrane3_eval_low_left_after.jpg",
+       "after_unknown": "sample_50_train/membrane3_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    },
+    "volume2": {
+     "mesh": "sample_50_train/volume2_mesh.glb",
+     "views_total": 0,
+     "views_added": 0,
+     "added_vertices": 0,
+     "timing": {
+      "total_s": 20.24411702156067,
+      "model_s": 0.0,
+      "views_s": 0.0,
+      "integrate_s": 20.24411702156067
+     },
+     "evals": [
+      {
+       "view": "top_front",
+       "unknown_before": 0.033275604248046875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/volume2_eval_top_front_before.jpg",
+       "after": "sample_50_train/volume2_eval_top_front_after.jpg",
+       "after_unknown": "sample_50_train/volume2_eval_top_front_after_unknown.jpg"
+      },
+      {
+       "view": "bottom_front",
+       "unknown_before": 0.175018310546875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/volume2_eval_bottom_front_before.jpg",
+       "after": "sample_50_train/volume2_eval_bottom_front_after.jpg",
+       "after_unknown": "sample_50_train/volume2_eval_bottom_front_after_unknown.jpg"
+      },
+      {
+       "view": "high_left",
+       "unknown_before": 0.021942138671875,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/volume2_eval_high_left_before.jpg",
+       "after": "sample_50_train/volume2_eval_high_left_after.jpg",
+       "after_unknown": "sample_50_train/volume2_eval_high_left_after_unknown.jpg"
+      },
+      {
+       "view": "low_left",
+       "unknown_before": 0.09444808959960938,
+       "unknown_after": 0.0,
+       "before": "sample_50_train/volume2_eval_low_left_before.jpg",
+       "after": "sample_50_train/volume2_eval_low_left_after.jpg",
+       "after_unknown": "sample_50_train/volume2_eval_low_left_after_unknown.jpg"
+      }
+     ],
+     "steps": []
+    }
+   }
+  }
+ ],
+ "step_kinds": {
+  "membrane3": [],
+  "volume2": []
+ }
+}
