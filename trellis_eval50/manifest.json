@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "prompt": "A spiraling marine conch seashell with sculpted ridge textures and warm amber speckles.",
+    "glb": "sample_01/mesh.glb",
+    "ply": "sample_01/pointcloud.ply",
+    "mesh_video": "sample_01/mesh_orbit.mp4",
+    "pc_video": "sample_01/pc_orbit.mp4"
+  },
+  {
+    "id": 2,
+    "prompt": "A quirky stylized cartoon creature figurine with big curious eyes, rounded silhouette, and cheerful colors.",
+    "glb": "sample_02/mesh.glb",
+    "ply": "sample_02/pointcloud.ply",
+    "mesh_video": "sample_02/mesh_orbit.mp4",
+    "pc_video": "sample_02/pc_orbit.mp4"
+  },
+  {
+    "id": 3,
+    "prompt": "A modern tactical plate-carrier combat vest fitted with modular equipment pouches and reinforced nylon strapping.",
+    "glb": "sample_03/mesh.glb",
+    "ply": "sample_03/pointcloud.ply",
+    "mesh_video": "sample_03/mesh_orbit.mp4",
+    "pc_video": "sample_03/pc_orbit.mp4"
+  },
+  {
+    "id": 4,
+    "prompt": "A realistic sculpted portrait bust of a bald muscular male with well-defined facial anatomy and strong jaw.",
+    "glb": "sample_04/mesh.glb",
+    "ply": "sample_04/pointcloud.ply",
+    "mesh_video": "sample_04/mesh_orbit.mp4",
+    "pc_video": "sample_04/pc_orbit.mp4"
+  },
+  {
+    "id": 5,
+    "prompt": "A minimalist Scandinavian dining chair made from smooth natural birch wood featuring an ergonomic curved backrest.",
+    "glb": "sample_05/mesh.glb",
+    "ply": "sample_05/pointcloud.ply",
+    "mesh_video": "sample_05/mesh_orbit.mp4",
+    "pc_video": "sample_05/pc_orbit.mp4"
+  },
+  {
+    "id": 6,
+    "prompt": "A fearsome fantasy goblin warrior head with emerald skin, sharp protruding tusks, pointed ears, and tied hair.",
+    "glb": "sample_06/mesh.glb",
+    "ply": "sample_06/pointcloud.ply",
+    "mesh_video": "sample_06/mesh_orbit.mp4",
+    "pc_video": "sample_06/pc_orbit.mp4"
+  },
+  {
+    "id": 7,
+    "prompt": "A charming animated boy adventurer figurine wearing a classic blue outfit and wielding a small play sword.",
+    "glb": "sample_07/mesh.glb",
+    "ply": "sample_07/pointcloud.ply",
+    "mesh_video": "sample_07/mesh_orbit.mp4",
+    "pc_video": "sample_07/pc_orbit.mp4"
+  },
+  {
+    "id": 8,
+    "prompt": "An authentic Norse circular battle shield made of sturdy weathered timber planks with a riveted iron boss.",
+    "glb": "sample_08/mesh.glb",
+    "ply": "sample_08/pointcloud.ply",
+    "mesh_video": "sample_08/mesh_orbit.mp4",
+    "pc_video": "sample_08/pc_orbit.mp4"
+  },
+  {
+    "id": 9,
+    "prompt": "A regal ancient Egyptian queen portrait bust with a stately crowned royal headdress and decorative jeweled collar.",
+    "glb": "sample_09/mesh.glb",
+    "ply": "sample_09/pointcloud.ply",
+    "mesh_video": "sample_09/mesh_orbit.mp4",
+    "pc_video": "sample_09/pc_orbit.mp4"
+  },
+  {
+    "id": 10,
+    "prompt": "A steampunk deep-sea explorer figure wearing an antique brass diving helm and heavy utility gear.",
+    "glb": "sample_10/mesh.glb",
+    "ply": "sample_10/pointcloud.ply",
+    "mesh_video": "sample_10/mesh_orbit.mp4",
+    "pc_video": "sample_10/pc_orbit.mp4"
+  },
+  {
+    "id": 11,
+    "prompt": "An advanced military combat trooper helmet with a tinted panoramic visor and matte desert camo patterning.",
+    "glb": "sample_11/mesh.glb",
+    "ply": "sample_11/pointcloud.ply",
+    "mesh_video": "sample_11/mesh_orbit.mp4",
+    "pc_video": "sample_11/pc_orbit.mp4"
+  },
+  {
+    "id": 12,
+    "prompt": "A natural whole garden onion bulb wrapped in delicate golden-brown papery skin with dried shoots at the top.",
+    "glb": "sample_12/mesh.glb",
+    "ply": "sample_12/pointcloud.ply",
+    "mesh_video": "sample_12/mesh_orbit.mp4",
+    "pc_video": "sample_12/pc_orbit.mp4"
+  },
+  {
+    "id": 13,
+    "prompt": "An antique wooden pirate sea chest with curved iron-banded lid, skull embellishments, and gleaming treasure accents.",
+    "glb": "sample_13/mesh.glb",
+    "ply": "sample_13/pointcloud.ply",
+    "mesh_video": "sample_13/mesh_orbit.mp4",
+    "pc_video": "sample_13/pc_orbit.mp4"
+  },
+  {
+    "id": 14,
+    "prompt": "A sleek futuristic sci-fi assault rifle featuring dual precision barrels, tactical grip, and dark matte plating.",
+    "glb": "sample_14/mesh.glb",
+    "ply": "sample_14/pointcloud.ply",
+    "mesh_video": "sample_14/mesh_orbit.mp4",
+    "pc_video": "sample_14/pc_orbit.mp4"
+  },
+  {
+    "id": 15,
+    "prompt": "A rustic handcrafted accent side table made of solid timber with smooth rounded edges and sturdy cylindrical legs.",
+    "glb": "sample_15/mesh.glb",
+    "ply": "sample_15/pointcloud.ply",
+    "mesh_video": "sample_15/mesh_orbit.mp4",
+    "pc_video": "sample_15/pc_orbit.mp4"
+  },
+  {
+    "id": 16,
+    "prompt": "A lifelike woodland caribou figure with a thick winter coat, sturdy legs, and graceful antler silhouette.",
+    "glb": "sample_16/mesh.glb",
+    "ply": "sample_16/pointcloud.ply",
+    "mesh_video": "sample_16/mesh_orbit.mp4",
+    "pc_video": "sample_16/pc_orbit.mp4"
+  },
+  {
+    "id": 17,
+    "prompt": "A majestic mythical winged dragon sculpture with sprawling crimson wings, curving horns, and a serpentine tail.",
+    "glb": "sample_17/mesh.glb",
+    "ply": "sample_17/pointcloud.ply",
+    "mesh_video": "sample_17/mesh_orbit.mp4",
+    "pc_video": "sample_17/pc_orbit.mp4"
+  },
+  {
+    "id": 18,
+    "prompt": "An energetic cartoon marsupial video game hero in a dynamic stance with wide expressive smile and pointy ears.",
+    "glb": "sample_18/mesh.glb",
+    "ply": "sample_18/pointcloud.ply",
+    "mesh_video": "sample_18/mesh_orbit.mp4",
+    "pc_video": "sample_18/pc_orbit.mp4"
+  },
+  {
+    "id": 19,
+    "prompt": "A weathered horror animatronic animal with exposed mechanical joints, frayed synthetic fur, and glowing eyes.",
+    "glb": "sample_19/mesh.glb",
+    "ply": "sample_19/pointcloud.ply",
+    "mesh_video": "sample_19/mesh_orbit.mp4",
+    "pc_video": "sample_19/pc_orbit.mp4"
+  },
+  {
+    "id": 20,
+    "prompt": "A vivid green amphibian tree frog resting in a natural crouch with glossy skin and large alert eyes.",
+    "glb": "sample_20/mesh.glb",
+    "ply": "sample_20/pointcloud.ply",
+    "mesh_video": "sample_20/mesh_orbit.mp4",
+    "pc_video": "sample_20/pc_orbit.mp4"
+  },
+  {
+    "id": 21,
+    "prompt": "A traditional glazed ceramic condiment bowl featuring a domed fitted lid and a smooth rounded earthenware base.",
+    "glb": "sample_21/mesh.glb",
+    "ply": "sample_21/pointcloud.ply",
+    "mesh_video": "sample_21/mesh_orbit.mp4",
+    "pc_video": "sample_21/pc_orbit.mp4"
+  },
+  {
+    "id": 22,
+    "prompt": "A fantastical forest toadstool mushroom displaying an ornate crimson spotted cap and textured organic stalk.",
+    "glb": "sample_22/mesh.glb",
+    "ply": "sample_22/pointcloud.ply",
+    "mesh_video": "sample_22/mesh_orbit.mp4",
+    "pc_video": "sample_22/pc_orbit.mp4"
+  },
+  {
+    "id": 23,
+    "prompt": "A ripe culinary avocado cut in half showcasing creamy pale-green flesh and a smooth central pit.",
+    "glb": "sample_23/mesh.glb",
+    "ply": "sample_23/pointcloud.ply",
+    "mesh_video": "sample_23/mesh_orbit.mp4",
+    "pc_video": "sample_23/pc_orbit.mp4"
+  },
+  {
+    "id": 24,
+    "prompt": "A glowing geometric arcane crystal prism carved from brilliant multifaceted green gemstone.",
+    "glb": "sample_24/mesh.glb",
+    "ply": "sample_24/pointcloud.ply",
+    "mesh_video": "sample_24/mesh_orbit.mp4",
+    "pc_video": "sample_24/pc_orbit.mp4"
+  },
+  {
+    "id": 25,
+    "prompt": "A classic standing coin-op arcade game cabinet featuring colorful side marquee art, joystick, and display screen.",
+    "glb": "sample_25/mesh.glb",
+    "ply": "sample_25/pointcloud.ply",
+    "mesh_video": "sample_25/mesh_orbit.mp4",
+    "pc_video": "sample_25/pc_orbit.mp4"
+  },
+  {
+    "id": 26,
+    "prompt": "An ancient archaeological pottery goblet vessel with an inverted flared bell silhouette and earthen clay texture.",
+    "glb": "sample_26/mesh.glb",
+    "ply": "sample_26/pointcloud.ply",
+    "mesh_video": "sample_26/mesh_orbit.mp4",
+    "pc_video": "sample_26/pc_orbit.mp4"
+  },
+  {
+    "id": 27,
+    "prompt": "A vibrant multicolored geometric cube with cleanly defined edges and contrasting solid-colored facets.",
+    "glb": "sample_27/mesh.glb",
+    "ply": "sample_27/pointcloud.ply",
+    "mesh_video": "sample_27/mesh_orbit.mp4",
+    "pc_video": "sample_27/pc_orbit.mp4"
+  },
+  {
+    "id": 28,
+    "prompt": "A vintage oak storage cask barrel banded with riveted dark iron hoops and weathered wooden staves.",
+    "glb": "sample_28/mesh.glb",
+    "ply": "sample_28/pointcloud.ply",
+    "mesh_video": "sample_28/mesh_orbit.mp4",
+    "pc_video": "sample_28/pc_orbit.mp4"
+  },
+  {
+    "id": 29,
+    "prompt": "An expressive animated fantasy crone bust characterized by dramatic facial features, voluminous hair, and jewelry.",
+    "glb": "sample_29/mesh.glb",
+    "ply": "sample_29/pointcloud.ply",
+    "mesh_video": "sample_29/mesh_orbit.mp4",
+    "pc_video": "sample_29/pc_orbit.mp4"
+  },
+  {
+    "id": 30,
+    "prompt": "A miniature oceanic diorama depicting a tall wooden sailing ship cruising over waters with a surfacing blue whale.",
+    "glb": "sample_30/mesh.glb",
+    "ply": "sample_30/pointcloud.ply",
+    "mesh_video": "sample_30/mesh_orbit.mp4",
+    "pc_video": "sample_30/pc_orbit.mp4"
+  },
+  {
+    "id": 31,
+    "prompt": "A stylized modern male character model dressed in a smart casual knit sweater, necktie, and comfortable sneakers.",
+    "glb": "sample_31/mesh.glb",
+    "ply": "sample_31/pointcloud.ply",
+    "mesh_video": "sample_31/mesh_orbit.mp4",
+    "pc_video": "sample_31/pc_orbit.mp4"
+  },
+  {
+    "id": 32,
+    "prompt": "A powerful martial arts arena combatant with an athletic muscular build, tactical combat gear, and knee pads.",
+    "glb": "sample_32/mesh.glb",
+    "ply": "sample_32/pointcloud.ply",
+    "mesh_video": "sample_32/mesh_orbit.mp4",
+    "pc_video": "sample_32/pc_orbit.mp4"
+  },
+  {
+    "id": 33,
+    "prompt": "A whimsical anthropomorphic teddy bear gentleman dressed smartly in a formal tailored suit and bright necktie.",
+    "glb": "sample_33/mesh.glb",
+    "ply": "sample_33/pointcloud.ply",
+    "mesh_video": "sample_33/mesh_orbit.mp4",
+    "pc_video": "sample_33/pc_orbit.mp4"
+  },
+  {
+    "id": 34,
+    "prompt": "A classical neoclassical marble sculpture bust portraying an elegant draped figure with a sculpted headwrap.",
+    "glb": "sample_34/mesh.glb",
+    "ply": "sample_34/pointcloud.ply",
+    "mesh_video": "sample_34/mesh_orbit.mp4",
+    "pc_video": "sample_34/pc_orbit.mp4"
+  },
+  {
+    "id": 35,
+    "prompt": "A fearsome medieval iron flail weapon featuring an ornate dragon-shaped striking head and spiked link chain.",
+    "glb": "sample_35/mesh.glb",
+    "ply": "sample_35/pointcloud.ply",
+    "mesh_video": "sample_35/mesh_orbit.mp4",
+    "pc_video": "sample_35/pc_orbit.mp4"
+  },
+  {
+    "id": 36,
+    "prompt": "A weathered industrial steel hazardous waste drum showing heavy rust patina, structural ribs, and warning graphics.",
+    "glb": "sample_36/mesh.glb",
+    "ply": "sample_36/pointcloud.ply",
+    "mesh_video": "sample_36/mesh_orbit.mp4",
+    "pc_video": "sample_36/pc_orbit.mp4"
+  },
+  {
+    "id": 37,
+    "prompt": "A formidable high-tech robotic mecha warrior in heavy armored plating wielding a gleaming futuristic broadsword.",
+    "glb": "sample_37/mesh.glb",
+    "ply": "sample_37/pointcloud.ply",
+    "mesh_video": "sample_37/mesh_orbit.mp4",
+    "pc_video": "sample_37/pc_orbit.mp4"
+  },
+  {
+    "id": 38,
+    "prompt": "A traditional historical wide-brimmed felt pilgrim hat adorned with a clean dark band and polished metal buckle.",
+    "glb": "sample_38/mesh.glb",
+    "ply": "sample_38/pointcloud.ply",
+    "mesh_video": "sample_38/mesh_orbit.mp4",
+    "pc_video": "sample_38/pc_orbit.mp4"
+  },
+  {
+    "id": 39,
+    "prompt": "A quirky bipedal utility inspection robot with a red cylindrical sensor housing and articulated strut legs.",
+    "glb": "sample_39/mesh.glb",
+    "ply": "sample_39/pointcloud.ply",
+    "mesh_video": "sample_39/mesh_orbit.mp4",
+    "pc_video": "sample_39/pc_orbit.mp4"
+  },
+  {
+    "id": 40,
+    "prompt": "A professional athletic football protective helmet featuring a glossy red shell, steel facemask cage, and chin strap.",
+    "glb": "sample_40/mesh.glb",
+    "ply": "sample_40/pointcloud.ply",
+    "mesh_video": "sample_40/mesh_orbit.mp4",
+    "pc_video": "sample_40/pc_orbit.mp4"
+  },
+  {
+    "id": 41,
+    "prompt": "[training prompt] The Organic Table has an irregular, wood-like top with jagged edges connecting to rough, textured legs. It's mostly brown with some white mushroom-like protrusions. The design looks natural and organic.",
+    "glb": "sample_41/mesh.glb",
+    "ply": "sample_41/pointcloud.ply",
+    "mesh_video": "sample_41/mesh_orbit.mp4",
+    "pc_video": "sample_41/pc_orbit.mp4"
+  },
+  {
+    "id": 42,
+    "prompt": "[training prompt] The \"Platano Del Mono\" is a funny character with a gorilla head and a yellow banana body. It has a green waistband, black furry arms and legs, red wrist and ankle bands, and white feet. It stands upright and is designed to look playful.",
+    "glb": "sample_42/mesh.glb",
+    "ply": "sample_42/pointcloud.ply",
+    "mesh_video": "sample_42/mesh_orbit.mp4",
+    "pc_video": "sample_42/pc_orbit.mp4"
+  },
+  {
+    "id": 43,
+    "prompt": "[training prompt] A medieval shield with a dark metal frame, a brown wooden plate, and a round metallic boss at the center. Two light brown handles are attached at the top. The shield is moderately sized and balanced for handheld defense.",
+    "glb": "sample_43/mesh.glb",
+    "ply": "sample_43/pointcloud.ply",
+    "mesh_video": "sample_43/mesh_orbit.mp4",
+    "pc_video": "sample_43/pc_orbit.mp4"
+  },
+  {
+    "id": 44,
+    "prompt": "[training prompt] A muscular frost bear with large claws and sharp spikes, featuring icy textures and a dark blue chest plate. The eyes glow turquoise. Suitable for a cold, wintery setting.",
+    "glb": "sample_44/mesh.glb",
+    "ply": "sample_44/pointcloud.ply",
+    "mesh_video": "sample_44/mesh_orbit.mp4",
+    "pc_video": "sample_44/pc_orbit.mp4"
+  },
+  {
+    "id": 45,
+    "prompt": "[training prompt] The inn is a two-story building with a golden straw thatched roof, a wooden balcony, and a tower. It has large windows with shutters, a red door, and a cobblestone path leading to the entrance.",
+    "glb": "sample_45/mesh.glb",
+    "ply": "sample_45/pointcloud.ply",
+    "mesh_video": "sample_45/mesh_orbit.mp4",
+    "pc_video": "sample_45/pc_orbit.mp4"
+  },
+  {
+    "id": 46,
+    "prompt": "[training prompt] The treasure chest is a rectangular box with a domed lid, made of light-colored wood and a rusty metal frame. It has a metallic pull handle on the front and a small plate at the bottom. The wood is smooth with natural grain, and the metal shows signs of wear.",
+    "glb": "sample_46/mesh.glb",
+    "ply": "sample_46/pointcloud.ply",
+    "mesh_video": "sample_46/mesh_orbit.mp4",
+    "pc_video": "sample_46/pc_orbit.mp4"
+  },
+  {
+    "id": 47,
+    "prompt": "[training prompt] A rectangular box with handles, a blue-lit front panel, and bolts on the top. It has a rough, rusty texture and is designed for easy carrying.",
+    "glb": "sample_47/mesh.glb",
+    "ply": "sample_47/pointcloud.ply",
+    "mesh_video": "sample_47/mesh_orbit.mp4",
+    "pc_video": "sample_47/pc_orbit.mp4"
+  },
+  {
+    "id": 48,
+    "prompt": "[training prompt] Reverse Flash (Unmasked) is an athletic character with long limbs, a broad torso, and a streamlined suit. It features yellow and black colors, with a hint of red around the neck. The character stands with arms outstretched, showing a power stance.",
+    "glb": "sample_48/mesh.glb",
+    "ply": "sample_48/pointcloud.ply",
+    "mesh_video": "sample_48/mesh_orbit.mp4",
+    "pc_video": "sample_48/pc_orbit.mp4"
+  },
+  {
+    "id": 49,
+    "prompt": "[training prompt] A muscular character with spiky yellow hair, wearing a red tank top, green pants, and yellow boots.",
+    "glb": "sample_49/mesh.glb",
+    "ply": "sample_49/pointcloud.ply",
+    "mesh_video": "sample_49/mesh_orbit.mp4",
+    "pc_video": "sample_49/pc_orbit.mp4"
+  },
+  {
+    "id": 50,
+    "prompt": "[training prompt] The chicken coop is a rectangular structure with a green corrugated metal roof, a solid door, a wire-mesh window, and a large birdcage section. It is supported by a base frame.",
+    "glb": "sample_50/mesh.glb",
+    "ply": "sample_50/pointcloud.ply",
+    "mesh_video": "sample_50/mesh_orbit.mp4",
+    "pc_video": "sample_50/pc_orbit.mp4"
+  }
+]
